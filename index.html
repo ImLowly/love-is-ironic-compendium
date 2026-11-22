@@ -1145,6 +1145,430 @@
       color: var(--card-accent, var(--kim-accent));
     }
 
+    /* 00 // 60-Second Partner Brief */
+    .brief-compression-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .brief-compression-list li {
+      padding: 8px 10px;
+      border: 1.5px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 22%, transparent);
+      background-color: color-mix(in srgb, var(--card-well, var(--kim-well)) 65%, transparent);
+      font-size: 12.5px;
+      color: var(--card-muted, var(--kim-muted));
+      line-height: 1.4;
+    }
+
+    .brief-compression-list strong {
+      color: var(--card-ink, var(--kim-ink));
+      display: block;
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+
+    .door-card {
+      padding: 15px;
+      border: 2px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 28%, transparent);
+      background-color: color-mix(in srgb, var(--card-well, var(--kim-well)) 56%, transparent);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .door-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .door-time {
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border: 1.5px solid var(--card-accent, var(--kim-accent));
+      color: var(--card-accent, var(--kim-accent));
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .door-action {
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px dashed color-mix(in srgb, var(--card-ink, var(--kim-ink)) 22%, transparent);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--card-ink, var(--kim-ink));
+    }
+
+    .brief-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 10px 12px;
+      margin-bottom: 14px;
+      border: 1.8px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 26%, transparent);
+      background-color: color-mix(in srgb, var(--card-well, var(--kim-well)) 70%, transparent);
+    }
+
+    .brief-action-btns {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .guardrail-strip {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 2px solid color-mix(in srgb, var(--card-accent, var(--kim-accent)) 55%, transparent);
+    }
+
+    .guardrail-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .guardrail-item {
+      padding: 11px 12px;
+      border: 1.8px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 28%, transparent);
+      border-top: 3.5px solid var(--card-accent, var(--kim-accent));
+      background-color: color-mix(in srgb, var(--card-well, var(--kim-well)) 64%, transparent);
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .guardrail-title {
+      font-size: 12.5px;
+      font-weight: 900;
+      line-height: 1.2;
+      color: var(--card-ink, var(--kim-ink));
+    }
+
+    .guardrail-copy {
+      font-size: 11.8px;
+      line-height: 1.42;
+      color: var(--card-muted, var(--kim-muted));
+    }
+
+    .guardrail-copy strong {
+      color: var(--card-ink, var(--kim-ink));
+    }
+
+    .print-masthead {
+      display: none;
+    }
+
+    /* 07 // Team Blog Timeline */
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-pills {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-wrap: wrap;
+    }
+
+    .timeline-track {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding-left: 26px;
+    }
+
+    .timeline-track::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 14px;
+      bottom: 14px;
+      width: 2.5px;
+      background-color: color-mix(in srgb, var(--kim-ink) 32%, transparent);
+    }
+
+    .timeline-entry {
+      position: relative;
+    }
+
+    .timeline-entry.is-hidden {
+      display: none;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -25px;
+      top: 24px;
+      width: 14px;
+      height: 14px;
+      border: 2.5px solid var(--kim-ink);
+      background-color: var(--kim-paper2);
+      z-index: 6;
+    }
+
+    .timeline-entry[data-status="live"] .timeline-dot {
+      background-color: var(--kim-accent);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--kim-accent) 24%, transparent);
+    }
+
+    .timeline-entry[data-status="active"] .timeline-dot {
+      background-color: var(--kim-accent2);
+    }
+
+    .timeline-entry[data-status="next"] .timeline-dot {
+      background-color: var(--kim-accent3);
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border: 1.8px solid var(--card-ink, var(--kim-ink));
+    }
+
+    .status-pill.is-live {
+      background-color: var(--card-accent, var(--kim-accent));
+      color: var(--card-accent-fg, var(--kim-accent-fg));
+    }
+
+    .status-pill.is-active {
+      background-color: var(--card-accent2, var(--kim-accent2));
+      color: #FFFDF8;
+    }
+
+    .status-pill.is-next {
+      background-color: color-mix(in srgb, var(--card-well, var(--kim-well)) 85%, transparent);
+      color: var(--card-ink, var(--kim-ink));
+    }
+
+    .deliverable-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .pill-chip {
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border: 1.4px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 30%, transparent);
+      background-color: color-mix(in srgb, var(--card-well, var(--kim-well)) 65%, transparent);
+      color: var(--card-ink, var(--kim-ink));
+    }
+
+    .dispatch-drawer {
+      margin-top: 12px;
+      border-top: 1.5px dashed color-mix(in srgb, var(--card-ink, var(--kim-ink)) 24%, transparent);
+      padding-top: 10px;
+    }
+
+    .dispatch-body {
+      display: none;
+      margin-top: 12px;
+      padding: 14px 16px;
+      border: 1.8px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 26%, transparent);
+      background-color: color-mix(in srgb, var(--card-well, var(--kim-well)) 70%, transparent);
+      font-size: 13px;
+      color: var(--card-muted, var(--kim-muted));
+      line-height: 1.58;
+    }
+
+    .dispatch-drawer.open .dispatch-body {
+      display: block;
+    }
+
+    .dispatch-body p {
+      margin-bottom: 9px;
+    }
+
+    .dispatch-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .dispatch-body strong {
+      color: var(--card-ink, var(--kim-ink));
+    }
+
+    /* 08 // Recruiting Kit & Candidate Pipeline */
+    .recruit-panel {
+      display: none;
+    }
+
+    .recruit-panel.active {
+      display: block;
+    }
+
+    .audition-meta {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed color-mix(in srgb, var(--card-ink, var(--kim-ink)) 22%, transparent);
+      font-size: 11.5px;
+      color: var(--card-muted, var(--kim-muted));
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .audition-meta strong {
+      color: var(--card-ink, var(--kim-ink));
+    }
+
+    .pipe-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .pipe-stage {
+      padding: 12px;
+      border: 2px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 26%, transparent);
+      background-color: color-mix(in srgb, var(--card-well, var(--kim-well)) 58%, transparent);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .pipe-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .pipe-btn {
+      cursor: pointer;
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      font-family: var(--font-mono);
+      font-size: 15px;
+      font-weight: 900;
+      border: 2px solid var(--card-ink, var(--kim-ink));
+      background-color: var(--kim-paper2);
+      color: var(--card-ink, var(--kim-ink));
+      box-shadow: 2px 2px 0 var(--kim-plate);
+    }
+
+    .pipe-btn:hover {
+      background-color: var(--card-accent, var(--kim-accent));
+      color: var(--card-accent-fg, var(--kim-accent-fg));
+    }
+
+    .pipe-count {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--card-ink, var(--kim-ink));
+      min-width: 34px;
+      text-align: center;
+    }
+
+    .bench-track {
+      width: 100%;
+      height: 7px;
+      border: 1px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 35%, transparent);
+      background-color: var(--kim-paper2);
+      overflow: hidden;
+    }
+
+    .bench-fill {
+      height: 100%;
+      width: 0%;
+      background-color: var(--card-accent, var(--kim-accent));
+      transition: width 180ms ease;
+    }
+
+    .pipe-conv-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    /* 09 // End-to-End Sales Flow & Deal Pipeline */
+    .sales-pipe-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(0, 1.15fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .deal-stage-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .deal-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 9px 12px;
+      border: 1.6px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 24%, transparent);
+      background-color: color-mix(in srgb, var(--card-well, var(--kim-well)) 56%, transparent);
+    }
+
+    .deal-info {
+      min-width: 0;
+    }
+
+    .deal-name {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--card-ink, var(--kim-ink));
+      line-height: 1.25;
+    }
+
+    .deal-sub {
+      font-size: 11px;
+      color: var(--card-muted, var(--kim-muted));
+    }
+
+    .deal-stepper {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      flex-shrink: 0;
+    }
+
+    .deal-val {
+      font-size: 17px;
+      font-weight: 900;
+      min-width: 26px;
+      text-align: center;
+      color: var(--card-accent, var(--kim-accent));
+    }
+
     /* Footer */
     .footer-inner {
       display: flex;
@@ -1172,13 +1596,17 @@
 
     @media (max-width: 960px) {
       .hero-grid,
-      .calc-layout {
+      .calc-layout,
+      .sales-pipe-layout {
         grid-template-columns: 1fr;
       }
-      .grid-5 {
+      .grid-5,
+      .pipe-grid,
+      .guardrail-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-      .grid-4 {
+      .grid-4,
+      .pipe-conv-strip {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
       .grid-3 {
@@ -1193,10 +1621,20 @@
       .grid-2,
       .grid-4,
       .grid-5,
+      .guardrail-grid,
+      .pipe-grid,
+      .pipe-conv-strip,
+      .brief-compression-list,
       .phase-grid,
       .hero-stats,
       .calc-results {
         grid-template-columns: 1fr;
+      }
+      .timeline-track {
+        padding-left: 20px;
+      }
+      .timeline-dot {
+        left: -19px;
       }
       .kpi-card.is-primary {
         grid-column: span 1;
@@ -1206,6 +1644,137 @@
       }
       .footer-meta {
         align-items: flex-start;
+      }
+    }
+
+    @media print {
+      @page {
+        margin: 0.45in;
+      }
+      html,
+      body,
+      .kim-sheet {
+        background: #FFFFFF !important;
+        background-image: none !important;
+        color: #111111 !important;
+        font-size: 11px !important;
+        line-height: 1.38 !important;
+      }
+      #kim-lamps-canvas,
+      #kim-particle-canvas,
+      #kim-tool-canvas,
+      .kim-card-canvas,
+      .kim-dock,
+      .ribbon-section,
+      .brief-actions,
+      .preset-row,
+      .filter-bar,
+      .tab-bar,
+      .door-action a,
+      button {
+        display: none !important;
+      }
+      .print-masthead {
+        display: flex !important;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        padding-bottom: 8px;
+        margin-bottom: 10px;
+        border-bottom: 2.5px solid #111111;
+      }
+      .print-masthead-title {
+        font-size: 18px;
+        font-weight: 900;
+        letter-spacing: 0.01em;
+        color: #111111;
+      }
+      .print-masthead-meta {
+        font-family: var(--font-mono);
+        font-size: 9.5px;
+        font-weight: 700;
+        color: #444444;
+      }
+      .kim-stage {
+        max-width: 100% !important;
+        padding: 0 !important;
+        gap: 14px !important;
+      }
+      .kim-card {
+        transform: none !important;
+        border: 1.5px solid #222222 !important;
+        background: #FFFFFF !important;
+        break-inside: avoid;
+      }
+      .kim-card-inner {
+        padding: 12px 14px !important;
+        color: #111111 !important;
+      }
+      .chapter-header {
+        padding-bottom: 6px !important;
+        margin-bottom: 4px !important;
+        border-bottom: 1.5px solid #222222 !important;
+      }
+      .chapter-title {
+        font-size: 17px !important;
+        color: #111111 !important;
+      }
+      .chapter-kicker,
+      .sub-kicker,
+      .door-time {
+        color: #A02016 !important;
+        border-color: #A02016 !important;
+      }
+      .chapter-summary,
+      .sub-copy,
+      .guardrail-copy,
+      .brief-compression-list li,
+      .card-meta-row {
+        color: #333333 !important;
+      }
+      .sub-box,
+      .door-card,
+      .guardrail-item,
+      .brief-compression-list li {
+        background: #FAFAFA !important;
+        border: 1px solid #333333 !important;
+        padding: 8px 9px !important;
+        break-inside: avoid;
+      }
+      .guardrail-item {
+        border-top: 2.5px solid #111111 !important;
+      }
+      .guardrail-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+        gap: 7px !important;
+      }
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+      }
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+      }
+      body.printing-brief #card-hero,
+      body.printing-brief .chapter:not(#ch-00),
+      body.printing-brief footer {
+        display: none !important;
+      }
+      body.printing-brief #ch-00 {
+        gap: 8px !important;
+      }
+      body.printing-brief #ch-00 .sub-title {
+        font-size: 13.5px !important;
+      }
+      body.printing-brief #ch-00 .brief-compression-list li,
+      body.printing-brief #ch-00 .guardrail-copy,
+      body.printing-brief #ch-00 .sub-copy {
+        font-size: 10.2px !important;
+        line-height: 1.32 !important;
+      }
+      body.printing-brief #ch-00 .guardrail-title {
+        font-size: 10.8px !important;
       }
     }
   </style>
@@ -1258,12 +1827,16 @@
 
         <div class="dock-bottom">
           <nav class="jump-nav" aria-label="Compendium Chapters">
-            <a class="jump-link is-current" href="#ch-01">01 Thesis</a>
+            <a class="jump-link is-current" href="#ch-00">00 60s Brief</a>
+            <a class="jump-link" href="#ch-01">01 Thesis</a>
             <a class="jump-link" href="#ch-02">02 BD &amp; Offers</a>
             <a class="jump-link" href="#ch-03">03 4-Person Pod</a>
             <a class="jump-link" href="#ch-04">04 Spore Flywheel</a>
             <a class="jump-link" href="#ch-05">05 Unit Economics</a>
             <a class="jump-link" href="#ch-06">06 90-Day Playbook</a>
+            <a class="jump-link" href="#ch-07">07 Team Blog</a>
+            <a class="jump-link" href="#ch-08">08 Recruiting</a>
+            <a class="jump-link" href="#ch-09">09 Sales Flow</a>
           </nav>
 
           <div class="telemetry-strip kim-mono">
@@ -1276,6 +1849,10 @@
     </header>
 
     <main class="kim-stage" id="top">
+      <div class="print-masthead" aria-hidden="true">
+        <div class="print-masthead-title kim-display">LOVE IS IRONIC (L/I) // 60-Second Executive Partner Brief</div>
+        <div class="print-masthead-meta">4-Person Campus Pods | 60/25/15 Split | Zero Ad Spend | Pass 2 Hardened</div>
+      </div>
       <!-- HERO MASTHEAD -->
       <section class="kim-card" id="card-hero" data-card-id="hero" data-card-medium="sumi-ink" data-take="1">
         <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
@@ -1328,6 +1905,145 @@
             <div class="medium-ribbon" id="kim-medium-ribbon"></div>
           </div>
         </div>
+      </section>
+
+      <!-- CHAPTER 00: 60-SECOND PARTNER BRIEF -->
+      <section class="chapter" id="ch-00">
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker kim-mono">00 // 60-SECOND PARTNER BRIEF</div>
+            <h2 class="chapter-title kim-display">Shortest Path, Least Work, Maximum Clarity</h2>
+          </div>
+          <p class="chapter-summary">
+            Evaluate LOVE IS IRONIC (L/I) in 60 seconds: exact pricing, cash terms, failure-mode guardrails, and three direct entry doors.
+          </p>
+        </div>
+
+        <article class="kim-card" data-card-id="ch00-brief" data-card-medium="sumi-ink" data-take="1">
+          <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+          <div class="kim-card-inner">
+            <div class="card-meta-row kim-mono">
+              <span>Executive Compression :: Business Model + Minimum-Work Engine</span>
+              <span class="card-med-tag">005 SUMI-INK</span>
+            </div>
+
+            <div class="brief-actions">
+              <span class="kim-mono" style="font-size:10.5px;font-weight:800;color:var(--card-muted, var(--kim-muted));">SHARE OR HAND OFF THIS BRIEF IN 1 CLICK (ZERO DECK BUILDING):</span>
+              <div class="brief-action-btns">
+                <button type="button" class="kim-btn kim-btn-active" id="copy-partner-summary-btn">Copy 60-Sec Partner Summary</button>
+                <button type="button" class="kim-btn kim-btn-subtle" id="print-brief-btn">Print 1-Page Executive Brief</button>
+              </div>
+            </div>
+
+            <div class="grid-2" style="margin-bottom: 16px;">
+              <div class="sub-box">
+                <div class="sub-kicker kim-mono">BLOCK 01 // THE ONE-LINE MODEL</div>
+                <div class="sub-title kim-display" style="font-size:19px;">Local SMBs &rarr; Neighborhood Fixtures</div>
+                <p class="sub-copy" style="font-size:13.5px;">
+                  <strong>4-person campus pods turn local SMBs and venues into neighborhood fixtures</strong> via fixed-scope <strong>$950 Ignition Sprints</strong> (100% upfront) &rarr; <strong>$2,600/mo Wildfire Retainers</strong> (50% upfront + Day-15 auto-bill) &rarr; <strong>$6,800/mo Multi-Campus Syndicates</strong>.
+                </p>
+                <div class="sub-metric kim-mono">
+                  Split: 60% Pod / 25% Central Studio / 15% Gear &amp; Live Reserve | Zero Paid Ad Spend
+                </div>
+              </div>
+
+              <div class="sub-box">
+                <div class="sub-kicker kim-mono">BLOCK 02 // MINIMUM-WORK OPERATING COMPRESSION</div>
+                <div class="sub-title kim-display" style="font-size:19px;">$8k-$12k/mo per Chapter in 8-10 hrs/wk per Seat</div>
+                <ul class="brief-compression-list">
+                  <li><strong>Zero Custom Proposals</strong>Fixed 3-tier menu only; scope locks in 15 minutes with zero deck theater.</li>
+                  <li><strong>Zero Invoice Chasing</strong>100% upfront link on $950 Sprints; 50% upfront + Day-15 auto-bill on $2,600/mo Retainers.</li>
+                  <li><strong>3-Hr Batch &rarr; 12-24 Cuts</strong>One half-day shoot fractures into native vertical cuts using shared templates.</li>
+                  <li><strong>Hard 1-Revision Ceiling</strong>1 consolidated revision round inside 48h; extra re-edits billed as add-on.</li>
+                  <li><strong>Automated Day-10 ROI Recap</strong>1-page scorecard of QR redemptions &amp; local shares upgrades sprints to retainers.</li>
+                  <li><strong>1-Page Standardized Agreements</strong>Pre-written MSA/SOW templates eliminate legal drag from walk-in to signed deal.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <div class="sub-kicker kim-mono" style="margin-bottom: 8px;">BLOCK 03 // ALIGNED PARTY FAST-TRACK (3 EXACT ENTRY DOORS)</div>
+              <div class="grid-3">
+                <div class="door-card">
+                  <div class="door-head">
+                    <span class="sub-kicker kim-mono">DOOR A // STUDENT FOUNDERS</span>
+                    <span class="door-time kim-mono">START: 7 DAYS</span>
+                  </div>
+                  <div class="sub-title kim-display">Launch a Campus Chapter</div>
+                  <p class="sub-copy">
+                    Seat 4 paid roles (MD, Signal Lead, Wildfire Editor, Live Producer) at 8-10 hrs/wk, shoot 3 free proof reels along the 2-mile corridor, and collect $2,850 in paid Sprints inside 30 days to unlock your charter.
+                  </p>
+                  <div class="door-action kim-mono">
+                    <span>First Action: Audit 30 local SMBs</span>
+                    <a class="kim-btn kim-btn-subtle" href="#ch-08">Recruiting Kit &rarr;</a>
+                  </div>
+                </div>
+
+                <div class="door-card">
+                  <div class="door-head">
+                    <span class="sub-kicker kim-mono">DOOR B // LOCAL OWNERS</span>
+                    <span class="door-time kim-mono">START: 72 HOURS</span>
+                  </div>
+                  <div class="sub-title kim-display">Book a 10-Day Ignition Sprint</div>
+                  <p class="sub-copy">
+                    Flat $950 paid 100% upfront (zero retainer lock-in), host one 3-hour local shoot on Day 3, get 12 native vertical cuts + a tracked campus QR drop, and review real walk-in redemptions on Day 10.
+                  </p>
+                  <div class="door-action kim-mono">
+                    <span>First Action: Lock 15-min scope slot</span>
+                    <a class="kim-btn kim-btn-subtle" href="#ch-09">See Sales Flow &rarr;</a>
+                  </div>
+                </div>
+
+                <div class="door-card">
+                  <div class="door-head">
+                    <span class="sub-kicker kim-mono">DOOR C // REGIONAL BRANDS &amp; BACKERS</span>
+                    <span class="door-time kim-mono">START: 7 DAYS</span>
+                  </div>
+                  <div class="sub-title kim-display">Underwrite a Multi-Campus Syndicate</div>
+                  <p class="sub-copy">
+                    Deploy one unified launch across 3-6 neighboring college towns ($6,800/mo): 60-90 localized vertical cuts, simultaneous live room activations, and one weekly regional redemption leaderboard.
+                  </p>
+                  <div class="door-action kim-mono">
+                    <span>First Action: Model 3-6 campus ROI</span>
+                    <a class="kim-btn kim-btn-subtle" href="#ch-05">Run Calculator &rarr;</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- BLOCK 04: Adversarial Failure-Mode Guardrails (Pass 2 Hardening) -->
+            <div class="guardrail-strip">
+              <div class="sub-kicker kim-mono">BLOCK 04 // ADVERSARIAL FAILURE-MODE GUARDRAILS (PASS 2 HARDENING)</div>
+              <div class="guardrail-grid">
+                <div class="guardrail-item">
+                  <div class="sub-kicker kim-mono">GUARDRAIL 01</div>
+                  <div class="guardrail-title">Zero Invoice Chasing</div>
+                  <p class="guardrail-copy"><strong>100% upfront</strong> payment link on $950 Ignition Sprints (zero net-30 chasing on sub-$1k deals); <strong>50% upfront + Day-15 auto-bill</strong> on $2,600/mo Wildfire Retainers.</p>
+                </div>
+                <div class="guardrail-item">
+                  <div class="sub-kicker kim-mono">GUARDRAIL 02</div>
+                  <div class="guardrail-title">Hard Revision Ceiling</div>
+                  <p class="guardrail-copy"><strong>1 consolidated revision round</strong> within 48 hours of delivery; additional re-edits billed as a separate add-on so edit bays never clog.</p>
+                </div>
+                <div class="guardrail-item">
+                  <div class="sub-kicker kim-mono">GUARDRAIL 03</div>
+                  <div class="guardrail-title">No-Show &amp; Reschedule Lock</div>
+                  <p class="guardrail-copy"><strong>24-hour shoot confirmation</strong> + a 2-slot backup local-business queue so a canceled shoot never wastes a 3-hour camera block.</p>
+                </div>
+                <div class="guardrail-item">
+                  <div class="sub-kicker kim-mono">GUARDRAIL 04</div>
+                  <div class="guardrail-title">Finals-Week Continuity</div>
+                  <p class="guardrail-copy"><strong>Cross-trained backup editor</strong> + a 2-week pre-shot clip buffer before exam weeks so posting cadence never drops a single day.</p>
+                </div>
+                <div class="guardrail-item">
+                  <div class="sub-kicker kim-mono">GUARDRAIL 05</div>
+                  <div class="guardrail-title">Zero Outrage / Burnout Floor</div>
+                  <p class="guardrail-copy">Every pod seat capped at <strong>8-10 hrs/wk</strong>, paid cleanly on collected cash, zero unpaid "exposure" work, and zero outrage-bait stunts.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
       </section>
 
       <!-- CHAPTER 01: OPERATING THESIS & CAMPUS WEDGE -->
@@ -1456,7 +2172,7 @@
                 <div class="sub-kicker kim-mono">WHAT L/I REFUSES</div>
                 <div class="sub-title kim-display">Zero Outrage, Zero Burnout Theater</div>
                 <p class="sub-copy">
-                  No rage-bait stunts that embarrass clients, no fake vanity impression reports, no unpaid "exposure" internships, and no hustle-cult martyrdom. Every pod member works 8-12 focused hours a week, gets paid cleanly from collected revenue, and protects their craft.
+                  No rage-bait stunts that embarrass clients, no fake vanity impression reports, no unpaid "exposure" internships, and no hustle-cult martyrdom. Every pod seat is capped at 8-10 focused hours/week, paid cleanly from collected revenue, and protects its craft.
                 </p>
               </div>
             </div>
@@ -1537,7 +2253,8 @@
                 <li><strong>Zero-Lockup Conversion Path:</strong> Day-10 performance recap presents exact views, saves, and QR redemptions.</li>
               </ul>
               <div class="tier-footer kim-mono">
-                <div><strong>SLA:</strong> Shoot Day 3 / First 6 cuts Day 6 / All 12 + recap Day 10</div>
+                <div><strong>Billing:</strong> 100% upfront ($950 link) before Shoot Day 1 | Zero invoice chasing</div>
+                <div><strong>SLA &amp; Scope:</strong> Shoot Day 3 (24h confirm) / 12 cuts Day 10 / 1 rev inside 48h</div>
                 <div><strong>Target Gross Margin:</strong> ~75% ($710 net to pod &amp; studio)</div>
               </div>
             </div>
@@ -1559,7 +2276,8 @@
                 <li><strong>1 Local Event Capture + Attribution Report:</strong> Live night capture plus monthly QR redemptions, code uses, and foot-traffic lift.</li>
               </ul>
               <div class="tier-footer kim-mono">
-                <div><strong>SLA:</strong> Rolling 72-hour edit turnaround; Monday 10am content lock</div>
+                <div><strong>Billing:</strong> 50% upfront ($1,300) + Day-15 auto-bill ($1,300)</div>
+                <div><strong>SLA &amp; Scope:</strong> 72h edit turnaround; 1 consolidated rev/batch (48h); 24h shoot confirm</div>
                 <div><strong>Target Gross Margin:</strong> ~78% ($2,030 net after creator stipends)</div>
               </div>
             </div>
@@ -1581,7 +2299,8 @@
                 <li><strong>Unified Regional Attribution Deck:</strong> Side-by-side campus leaderboard of redemptions, shares, and local conversion cost.</li>
               </ul>
               <div class="tier-footer kim-mono">
-                <div><strong>SLA:</strong> 7-day spin-up from signed SOW; weekly Friday roll-up</div>
+                <div><strong>Billing:</strong> 50% upfront ($3,400) + Day-15 auto-bill ($3,400)</div>
+                <div><strong>SLA &amp; Scope:</strong> 7-day spin-up; weekly Friday roll-up; 1 rev/batch (48h)</div>
                 <div><strong>Target Gross Margin:</strong> ~72% ($4,900 net split across pods &amp; studio)</div>
               </div>
             </div>
@@ -1652,7 +2371,7 @@ Quick bump [Name] -- filmed two campus street reels near [Nearby Landmark] yeste
 5. "Who approves quick creative cuts so we can keep our 72-hour turnaround fast without stalling?"
 
 [10:00 - 15:00] CLOSE TO SPRINT:
-"Based on your average customer value of $[X], just [Y] new regulars covers our entire $950 Ignition Sprint. We shoot [Day], deliver the first 6 cuts by [Day], and put a unique QR offer code on the table so we track real bodies, not guesses. If we send the 1-page agreement today, does Tuesday 2pm work for the shoot?"</div>
+"Based on your average customer value of $[X], just [Y] new regulars covers our entire $950 Ignition Sprint. We collect the $950 payment link upfront so there is zero invoicing friction, confirm our shoot 24 hours ahead, deliver all 12 cuts + 1 consolidated 48-hour revision pass, and put a unique QR code on the counter so we track real bodies. If we send the 1-page agreement and payment link right now, does Tuesday 2pm work for the shoot?"</div>
               </div>
             </div>
 
@@ -1676,7 +2395,7 @@ Quick bump [Name] -- filmed two campus street reels near [Nearby Landmark] yeste
                     <span class="acc-icon">+</span>
                   </button>
                   <div class="acc-body">
-                    <strong>Reframe:</strong> "That is why we never sell solo freelancers. You contract with the LOVE IS IRONIC studio entity, backed by a 4-person pod with pre-trained sophomore shadows and Central Studio editing backup. We pre-batch shoots two weeks before finals week so posting never drops a single day, and our 72-hour SLA is written directly into your 1-page agreement."
+                    <strong>Reframe:</strong> "That is why we never sell solo freelancers. You contract with the LOVE IS IRONIC studio entity, backed by a 4-person pod, pre-trained sophomore shadows, and a cross-trained backup editor. We pre-batch a 2-week clip buffer before exam weeks so posting never drops a single day, and our 72-hour SLA is written directly into your 1-page agreement."
                   </div>
                 </div>
 
@@ -1713,7 +2432,7 @@ Quick bump [Name] -- filmed two campus street reels near [Nearby Landmark] yeste
             <h2 class="chapter-title kim-display">Lean Pod Roles, Hard Weekly KPIs &amp; Zero-Collapse Continuity</h2>
           </div>
           <p class="chapter-summary">
-            A chapter never needs 20 club members sitting in meetings. It runs on 4 paid operators working 8-12 focused hours/week, paired with a semester-by-semester shadow bench so graduation never breaks a client account.
+            A chapter runs on 4 paid operators capped at 8-10 focused hours/week, backed by a cross-trained shadow bench so finals or graduation never break an account.
           </p>
         </div>
 
@@ -1723,7 +2442,7 @@ Quick bump [Name] -- filmed two campus street reels near [Nearby Landmark] yeste
             <div class="kim-card-inner">
               <div class="card-meta-row kim-mono">
                 <span>SEAT 01 // BD &amp; CLOSING</span>
-                <span class="role-hours">10-12 hrs/wk</span>
+                <span class="role-hours">8-10 hrs/wk</span>
               </div>
               <h3 class="sub-title kim-display" style="font-size:18px;margin-bottom:6px;">Chapter Managing Director</h3>
               <p class="sub-copy">Owns local prospecting, off-peak walk-ins, 15-min discovery calls, closing Sprints/Retainers, client Day-10 recaps, and running the weekly standup.</p>
@@ -1759,7 +2478,7 @@ Quick bump [Name] -- filmed two campus street reels near [Nearby Landmark] yeste
             <div class="kim-card-inner">
               <div class="card-meta-row kim-mono">
                 <span>SEAT 03 // PRODUCTION</span>
-                <span class="role-hours">10-12 hrs/wk</span>
+                <span class="role-hours">8-10 hrs/wk</span>
               </div>
               <h3 class="sub-title kim-display" style="font-size:18px;margin-bottom:6px;">Wildfire Editor</h3>
               <p class="sub-copy">Owns ingest, pacing, kinetic captions, audio polish, multi-format fracture, and rapid cut turnaround using Central Studio templates and vault presets.</p>
@@ -2223,6 +2942,804 @@ Quick bump [Name] -- filmed two campus street reels near [Nearby Landmark] yeste
                   <li><label class="check-row"><input type="checkbox" data-task-id="d4-swap" /><span>Execute 1 inter-campus rival creator swap or visiting Live Room at a neighboring university within 90 miles.</span></label></li>
                   <li><label class="check-row"><input type="checkbox" data-task-id="d4-spore" /><span>Nominate and mentor the Founding MD for Campus Spore #2 (earning 5% regional seed trail on their first 90 days).</span></label></li>
                 </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- CHAPTER 07: TEAM BLOG TIMELINE (CHRONOLOGICAL MILESTONE DISPATCHES) -->
+      <section class="chapter" id="ch-07">
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker kim-mono">07 // TEAM BLOG TIMELINE (CHRONOLOGICAL MILESTONE DISPATCHES)</div>
+            <h2 class="chapter-title kim-display">Field Dispatches from Week 1 Seed to Multi-Campus Network</h2>
+          </div>
+          <p class="chapter-summary">
+            Living milestone log written for active pod operators, incoming Sophomore Shadows, and prospective partners. Filter by phase status and open any dispatch for exact field notes.
+          </p>
+        </div>
+
+        <article class="kim-card" data-card-id="ch07-controls" data-card-medium="linocut" data-take="1">
+          <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+          <div class="kim-card-inner">
+            <div class="filter-bar">
+              <div>
+                <div class="sub-kicker kim-mono">DISPATCH FILTER // CHRONOLOGICAL OPERATING LOG</div>
+                <div class="sub-copy" id="blog-filter-readout">Showing 6 of 6 chronological team dispatches (T01 - T06)</div>
+              </div>
+              <div class="filter-pills" role="group" aria-label="Filter team dispatches by status">
+                <button type="button" class="kim-btn kim-btn-active blog-filter-btn" data-filter="all" aria-pressed="true">All (6)</button>
+                <button type="button" class="kim-btn blog-filter-btn" data-filter="live" aria-pressed="false">Live Now (2)</button>
+                <button type="button" class="kim-btn blog-filter-btn" data-filter="active" aria-pressed="false">Active Build (2)</button>
+                <button type="button" class="kim-btn blog-filter-btn" data-filter="next" aria-pressed="false">Next Wave (2)</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="timeline-track" id="team-blog-timeline">
+          <!-- T01 -->
+          <div class="timeline-entry" data-status="live">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <article class="kim-card" data-card-id="blog-t01" data-card-medium="sumi-ink" data-take="1">
+              <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+              <div class="kim-card-inner">
+                <div class="card-meta-row kim-mono">
+                  <span>T01 // WEEK 1-2 :: POD ASSEMBLY &amp; WALK-IN PROOF</span>
+                  <span class="status-pill is-live">LIVE NOW</span>
+                </div>
+                <h3 class="sub-title kim-display" style="font-size:20px;margin-bottom:6px;">Zero-Overhead Pod Setup &amp; First 3 Walk-In Proof Shoots</h3>
+                <p class="sub-copy">
+                  Skip LLC debates, logo redesigns, and 40-slide agency decks. In Week 1 we lock the 4 core seats, map 30 walkable local SMBs inside two miles of campus, and film 3 zero-cost proof shoots for beloved operators to load live local wins onto the MD's phone.
+                </p>
+                <div class="deliverable-pills kim-mono">
+                  <span class="pill-chip">4 Core Seats Locked</span>
+                  <span class="pill-chip">30-SMB Corridor Map</span>
+                  <span class="pill-chip">3 Flagship Proof Reels</span>
+                  <span class="pill-chip">72h Edit QA Passed</span>
+                </div>
+                <div class="dispatch-drawer">
+                  <button type="button" class="kim-btn kim-btn-subtle dispatch-trigger" aria-expanded="false">Read Full Team Dispatch +</button>
+                  <div class="dispatch-body">
+                    <div class="script-head" style="margin-bottom:8px;">
+                      <span class="kim-mono" style="font-size:10.5px;font-weight:800;">FIELD NOTES // DISPATCH T01 :: WHAT ACTUALLY WORKED</span>
+                      <button type="button" class="kim-btn kim-btn-subtle copy-script-btn" data-copy-target="dispatch-text-t01">Copy Dispatch</button>
+                    </div>
+                    <div id="dispatch-text-t01">
+                      <p><strong>1. Never ask for a meeting before showing craft.</strong> Walk into the 3 best-loved indie spots near campus (coffee roaster, late-night taco window, vintage shop) at 2:15pm Tuesday. Offer a single free 90-minute proof shoot in exchange for raw posting rights and a 15-second owner reaction clip.</p>
+                      <p><strong>2. Shoot for 3-second local recognition.</strong> Open every proof reel with a landmark students instantly recognize (clocktower crosswalk, library steps, neon awning) plus the owner's actual voice -- never stock corporate music over B-roll.</p>
+                      <p><strong>3. Save the 3 reels offline in a dedicated phone folder.</strong> Spotty cafe Wi-Fi kills walk-in momentum. Local MP4 playback in 2 seconds converts 3x more counter conversations into discovery calls.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- T02 -->
+          <div class="timeline-entry" data-status="live">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <article class="kim-card" data-card-id="blog-t02" data-card-medium="colored-pencil" data-take="1">
+              <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+              <div class="kim-card-inner">
+                <div class="card-meta-row kim-mono">
+                  <span>T02 // WEEK 3-4 :: FIRST PAID REVENUE</span>
+                  <span class="status-pill is-live">LIVE NOW</span>
+                </div>
+                <h3 class="sub-title kim-display" style="font-size:20px;margin-bottom:6px;">Closing 3 Paid Ignition Sprints ($2,850 Cash Collected)</h3>
+                <p class="sub-copy">
+                  With 3 local proof reels in hand, the MD executes 50+ off-peak walk-ins and 4-line local DMs, books 6+ timed 15-minute scope locks, collects 100% upfront ($950) via payment link before Shoot Day 1, and clears Gate 03 ($2,850 collected cash) before Day 30.
+                </p>
+                <div class="deliverable-pills kim-mono">
+                  <span class="pill-chip">50+ Corridor Touches</span>
+                  <span class="pill-chip">3x $950 Sprints Signed</span>
+                  <span class="pill-chip">100% Upfront Paid</span>
+                  <span class="pill-chip">36 Cuts Shipped in 10d</span>
+                </div>
+                <div class="dispatch-drawer">
+                  <button type="button" class="kim-btn kim-btn-subtle dispatch-trigger" aria-expanded="false">Read Full Team Dispatch +</button>
+                  <div class="dispatch-body">
+                    <div class="script-head" style="margin-bottom:8px;">
+                      <span class="kim-mono" style="font-size:10.5px;font-weight:800;">FIELD NOTES // DISPATCH T02 :: ZERO INVOICE CHASING</span>
+                      <button type="button" class="kim-btn kim-btn-subtle copy-script-btn" data-copy-target="dispatch-text-t02">Copy Dispatch</button>
+                    </div>
+                    <div id="dispatch-text-t02">
+                      <p><strong>1. Collect 100% upfront ($950) on sub-$1k Sprints.</strong> Send the 1-page SOW and Stripe payment link while still on the 15-minute scope call. Never book gear until full payment clears, and confirm shoots 24 hours ahead with a 2-slot backup local-business queue so cancellations never waste a camera block.</p>
+                      <p><strong>2. Lock the tracked QR perk during the call.</strong> Every Sprint needs a concrete student hook ("Show this QR for a $2 espresso add-on Tue-Thu 2-5pm") so Day-10 ROI is counted at the register instead of argued over views.</p>
+                      <p><strong>3. Pay the pod net-7 after cash lands.</strong> Nothing energizes a student crew faster than seeing their first real $400+ payout hit their account inside 30 days of starting.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- T03 -->
+          <div class="timeline-entry" data-status="active">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <article class="kim-card" data-card-id="blog-t03" data-card-medium="oil" data-take="1">
+              <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+              <div class="kim-card-inner">
+                <div class="card-meta-row kim-mono">
+                  <span>T03 // MONTH 2 :: RECURRING CONVERSION</span>
+                  <span class="status-pill is-active">ACTIVE BUILD</span>
+                </div>
+                <h3 class="sub-title kim-display" style="font-size:20px;margin-bottom:6px;">Converting Sprint Buyers into $2,600/mo Wildfire Retainers</h3>
+                <p class="sub-copy">
+                  On Day 10 of every Ignition Sprint, the MD sits with the owner for 15 minutes with a 1-page scorecard: exact QR scans, register redemptions, top-performing local hooks, and a clean upgrade into a 90-day $2,600/mo Wildfire Retainer (50% upfront + Day-15 auto-bill).
+                </p>
+                <div class="deliverable-pills kim-mono">
+                  <span class="pill-chip">Day-10 Proof Scorecards</span>
+                  <span class="pill-chip">2-3 Retainers Locked</span>
+                  <span class="pill-chip">50% + Day-15 Auto-Bill</span>
+                  <span class="pill-chip">72h Rolling Edit Queue</span>
+                </div>
+                <div class="dispatch-drawer">
+                  <button type="button" class="kim-btn kim-btn-subtle dispatch-trigger" aria-expanded="false">Read Full Team Dispatch +</button>
+                  <div class="dispatch-body">
+                    <div class="script-head" style="margin-bottom:8px;">
+                      <span class="kim-mono" style="font-size:10.5px;font-weight:800;">FIELD NOTES // DISPATCH T03 :: THE DAY-10 UPGRADE SCRIPT</span>
+                      <button type="button" class="kim-btn kim-btn-subtle copy-script-btn" data-copy-target="dispatch-text-t03">Copy Dispatch</button>
+                    </div>
+                    <div id="dispatch-text-t03">
+                      <p><strong>1. Never pitch a retainer cold when you have Day-10 proof.</strong> Open the 1-page recap with two numbers: tracked student redemptions and top 2 local reels by saves/shares. Then ask: "Do you want to keep Tuesday afternoons humming for the next 90 days on 50% upfront + Day-15 auto-bill?"</p>
+                      <p><strong>2. Batch two shoots per month on fixed calendar days.</strong> Locking "1st and 3rd Tuesday, 2pm-5pm" (with 24-hour shoot confirmation + 2-slot backup queue) cuts scheduling texts to zero and keeps every seat inside 8-10 hrs/wk.</p>
+                      <p><strong>3. Enforce the hard 1-revision ceiling kindly.</strong> Share a clean review link allowing 1 consolidated revision round within 48 hours; extra re-edits bill as a separate add-on so edit bays never clog.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- T04 -->
+          <div class="timeline-entry" data-status="active">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <article class="kim-card" data-card-id="blog-t04" data-card-medium="watercolor" data-take="1">
+              <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+              <div class="kim-card-inner">
+                <div class="card-meta-row kim-mono">
+                  <span>T04 // MONTH 3 :: PHYSICAL + CREATOR AMPLIFICATION</span>
+                  <span class="status-pill is-active">ACTIVE BUILD</span>
+                </div>
+                <h3 class="sub-title kim-display" style="font-size:20px;margin-bottom:6px;">First Campus Live Room Pop-Up &amp; Creator Remix Engine</h3>
+                <p class="sub-copy">
+                  The Live Rooms Producer activates 15 vetted campus micro-creators (2k-25k local followers) and hosts the chapter's first 60+ person Live Room pop-up inside a retainer client's venue -- turning online momentum into packed physical rooms and inbound referrals.
+                </p>
+                <div class="deliverable-pills kim-mono">
+                  <span class="pill-chip">15 Vetted Micro-Creators</span>
+                  <span class="pill-chip">60+ Student Live Room</span>
+                  <span class="pill-chip">8+ Native Co-Post Collabs</span>
+                  <span class="pill-chip">15% Reserve Self-Funded</span>
+                </div>
+                <div class="dispatch-drawer">
+                  <button type="button" class="kim-btn kim-btn-subtle dispatch-trigger" aria-expanded="false">Read Full Team Dispatch +</button>
+                  <div class="dispatch-body">
+                    <div class="script-head" style="margin-bottom:8px;">
+                      <span class="kim-mono" style="font-size:10.5px;font-weight:800;">FIELD NOTES // DISPATCH T04 :: MAKING LIVE ROOMS PAY FOR THEMSELVES</span>
+                      <button type="button" class="kim-btn kim-btn-subtle copy-script-btn" data-copy-target="dispatch-text-t04">Copy Dispatch</button>
+                    </div>
+                    <div id="dispatch-text-t04">
+                      <p><strong>1. Pair two retainer clients on one Tuesday night.</strong> Example: host an acoustic set or mini-film screening inside a coffee roaster while a local bakery or beverage brand sponsors the tasting bar. Venue gets a packed off-peak night; chapter gets 18 raw vertical cuts in 2 hours.</p>
+                      <p><strong>2. Pay micro-creators cleanly ($50-$100 + perk) on a 48-hour post window.</strong> Give them a 3-bullet local hook brief instead of a stiff script so every post feels native to campus feeds.</p>
+                      <p><strong>3. Invite 3 target prospect owners as VIP guests.</strong> Seeing 70 local students packed into a competitor's shop closes Sprint #4 and #5 without a pitch deck.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- T05 -->
+          <div class="timeline-entry" data-status="next">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <article class="kim-card" data-card-id="blog-t05" data-card-medium="charcoal" data-take="1">
+              <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+              <div class="kim-card-inner">
+                <div class="card-meta-row kim-mono">
+                  <span>T05 // SEMESTER 2 :: CONTINUITY &amp; BENCH DEPTH</span>
+                  <span class="status-pill is-next">NEXT WAVE</span>
+                </div>
+                <h3 class="sub-title kim-display" style="font-size:20px;margin-bottom:6px;">Sophomore-to-Junior Succession &amp; Zero Graduation Cliff</h3>
+                <p class="sub-copy">
+                  Most student orgs collapse every May when seniors graduate. L/I pairs every active seat with paid Sophomore Shadows two semesters early, maintains a cross-trained backup editor + 2-week pre-shot clip buffer before exam weeks, and pays outgoing leads a 5% trailing handoff bonus on retained accounts.
+                </p>
+                <div class="deliverable-pills kim-mono">
+                  <span class="pill-chip">4 Paid Sophomore Shadows</span>
+                  <span class="pill-chip">100% Vault Handoff</span>
+                  <span class="pill-chip">Finals Pre-Batch Buffer</span>
+                  <span class="pill-chip">5% Retention Trail</span>
+                </div>
+                <div class="dispatch-drawer">
+                  <button type="button" class="kim-btn kim-btn-subtle dispatch-trigger" aria-expanded="false">Read Full Team Dispatch +</button>
+                  <div class="dispatch-body">
+                    <div class="script-head" style="margin-bottom:8px;">
+                      <span class="kim-mono" style="font-size:10.5px;font-weight:800;">FIELD NOTES // DISPATCH T05 :: ZERO-DROP HANDOFF CHECKLIST</span>
+                      <button type="button" class="kim-btn kim-btn-subtle copy-script-btn" data-copy-target="dispatch-text-t05">Copy Dispatch</button>
+                    </div>
+                    <div id="dispatch-text-t05">
+                      <p><strong>1. Shadows co-lead before they solo.</strong> By Week 8 of Semester 2, each Sophomore Shadow runs one full shoot, edits one full batch, or leads one Day-10 client recap with the outgoing Junior/Senior lead sitting silently in the room.</p>
+                      <p><strong>2. Client relationships belong to the chapter, not one phone.</strong> All client text threads live in the shared chapter workspace, and every owner meets their incoming MD in person 30 days before finals.</p>
+                      <p><strong>3. The 5% 90-day retention trail aligns incentives.</strong> Outgoing seniors actively protect smooth transitions because their summer trail depends on zero churn.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- T06 -->
+          <div class="timeline-entry" data-status="next">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <article class="kim-card" data-card-id="blog-t06" data-card-medium="glowing-glass" data-take="1">
+              <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+              <div class="kim-card-inner">
+                <div class="card-meta-row kim-mono">
+                  <span>T06 // QUARTER 3 :: REGIONAL REPLICATION</span>
+                  <span class="status-pill is-next">NEXT WAVE</span>
+                </div>
+                <h3 class="sub-title kim-display" style="font-size:20px;margin-bottom:6px;">Spore &amp; Studio Replication: Seeding Campuses 02-10</h3>
+                <p class="sub-copy">
+                  Once Chapter 01 holds $8k-$12k/mo with all 4 Charter Gates cleared, senior operators drive 45-90 minutes to host visiting Live Rooms, execute game-week rival creator swaps, and mentor Founding MDs for Campuses 02-10 -- unlocking $6,800/mo Multi-Campus Syndicates.
+                </p>
+                <div class="deliverable-pills kim-mono">
+                  <span class="pill-chip">Ring 1 Cluster (Ch 02-04)</span>
+                  <span class="pill-chip">5% Mentor Seed Trail</span>
+                  <span class="pill-chip">$6.8k/mo Syndicates Live</span>
+                  <span class="pill-chip">Zero Ad Recruitment</span>
+                </div>
+                <div class="dispatch-drawer">
+                  <button type="button" class="kim-btn kim-btn-subtle dispatch-trigger" aria-expanded="false">Read Full Team Dispatch +</button>
+                  <div class="dispatch-body">
+                    <div class="script-head" style="margin-bottom:8px;">
+                      <span class="kim-mono" style="font-size:10.5px;font-weight:800;">FIELD NOTES // DISPATCH T06 :: REPLICATING WITHOUT DILUTION</span>
+                      <button type="button" class="kim-btn kim-btn-subtle copy-script-btn" data-copy-target="dispatch-text-t06">Copy Dispatch</button>
+                    </div>
+                    <div id="dispatch-text-t06">
+                      <p><strong>1. Never seed a campus via cold job boards.</strong> Every new Founding MD comes from one of three trusted channels: a co-hosted Visiting Live Room, a conference-rival creator swap, or a direct hometown break referral from an existing pod operator.</p>
+                      <p><strong>2. Enforce the exact same 4-Gate Charter.</strong> Campus 02 does not join regional $6,800/mo Syndicate pools until it seats 4 leads, passes 3 proof shoots through Central Studio QA, collects $2,850 locally, and logs 4 clean Monday standups.</p>
+                      <p><strong>3. Regional housing groups and beverage brands buy clusters, not single schools.</strong> Connecting 3 neighboring campuses immediately unlocks 2.5x larger contracts with the same core operating templates.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 08: RECRUITING MATERIALS & INTERACTIVE CANDIDATE PIPELINE -->
+      <section class="chapter" id="ch-08">
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker kim-mono">08 // RECRUITING MATERIALS &amp; INTERACTIVE CANDIDATE PIPELINE</div>
+            <h2 class="chapter-title kim-display">Zero-Resume Campus Recruiting Kit, 30-Min Auditions &amp; Live Funnel</h2>
+          </div>
+          <p class="chapter-summary">
+            Recruit doers, not club collectors. Copy-paste proven campus outreach scripts, screen talent with 30-minute practical auditions, and track your live weekly recruiting funnel against target benchmarks.
+          </p>
+        </div>
+
+        <!-- Card 1: Copy-Pasteable Recruiting Kit -->
+        <article class="kim-card" data-card-id="ch08-kit" data-card-medium="clay" data-take="1">
+          <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+          <div class="kim-card-inner">
+            <div class="card-meta-row kim-mono">
+              <span>Copy-Pasteable Campus Recruiting Kit :: Paid on Collected Revenue</span>
+              <span class="card-med-tag">008 CLAY</span>
+            </div>
+
+            <div class="tab-bar" role="tablist" aria-label="Campus Recruiting Scripts">
+              <button type="button" class="kim-btn kim-btn-active recruit-tab-btn" role="tab" aria-selected="true" data-recruit-tab="flyer">1. 4-Line Group Chat / Flyer</button>
+              <button type="button" class="kim-btn recruit-tab-btn" role="tab" aria-selected="false" data-recruit-tab="directdm">2. Direct Creator / Connector DM</button>
+              <button type="button" class="kim-btn recruit-tab-btn" role="tab" aria-selected="false" data-recruit-tab="announce">3. 60-Sec Club / Class Pitch</button>
+            </div>
+
+            <div class="recruit-panel active" id="recruit-flyer">
+              <div class="script-box">
+                <div class="script-head">
+                  <span class="kim-mono" style="font-size:11px;font-weight:800;">FORMAT: GROUPME / DISCORD / CAMPUS FLYER // ZERO UNPAID "EXPOSURE" INTERNSHIPS</span>
+                  <button type="button" class="kim-btn kim-btn-subtle copy-script-btn" data-copy-target="copy-rec-flyer">Copy Kit</button>
+                </div>
+                <div class="script-text" id="copy-rec-flyer">LOVE IS IRONIC (L/I) is opening 2 paid seats on our 4-person campus media pod (Filmmaker/Editor + Local BD/Producer).
+8-10 focused hrs/week shooting and scaling real local coffee shops, venues, and brands -- 60% of collected client cash splits directly to the pod (zero unpaid "exposure" internships).
+No resumes, no cover letters, no 2-hour club meetings: just a 15-minute coffee and a paid 30-minute practical trial.
+Reply with one link to anything you have shot, edited, hosted, or sold -- we fill seats this Friday.</div>
+              </div>
+            </div>
+
+            <div class="recruit-panel" id="recruit-directdm">
+              <div class="script-box">
+                <div class="script-head">
+                  <span class="kim-mono" style="font-size:11px;font-weight:800;">FORMAT: DIRECT DM FOR FILMMAKERS, EDITORS, DESIGNERS &amp; CAMPUS CONNECTORS</span>
+                  <button type="button" class="kim-btn kim-btn-subtle copy-script-btn" data-copy-target="copy-rec-dm">Copy Script</button>
+                </div>
+                <div class="script-text" id="copy-rec-dm">Hey [Name] -- just watched your [specific reel / poster / event recap] from [campus spot or org]. The pacing and local feel are way sharper than what 90% of paid agencies put out.
+
+We run the 4-person campus pod for LOVE IS IRONIC here in town. We shoot local businesses and venues on flat $950 sprints and $2,600/mo retainers, and 60% of collected revenue pays straight to our 4 student operators (capped at 8-10 hrs/wk, zero unpaid grunt work).
+
+We are bringing on a [Wildfire Editor / Signal Lead / Live Rooms Producer / Sophomore Shadow] this month. Skip the resume -- want to grab a 15-minute coffee near [Campus Cafe] Wednesday or Thursday and see if a paid trial shoot makes sense?</div>
+              </div>
+            </div>
+
+            <div class="recruit-panel" id="recruit-announce">
+              <div class="script-box">
+                <div class="script-head">
+                  <span class="kim-mono" style="font-size:11px;font-weight:800;">FORMAT: 60-SECOND FILM CLUB, MARKETING CLASS, OR MUSIC COLLECTIVE ANNOUNCEMENT</span>
+                  <button type="button" class="kim-btn kim-btn-subtle copy-script-btn" data-copy-target="copy-rec-announce">Copy Script</button>
+                </div>
+                <div class="script-text" id="copy-rec-announce">"Quick 60-second note for anyone here who actually shoots video, edits fast, throws events, or knows every business owner within two miles of campus.
+
+Most campus marketing clubs meet for two hours to make fake case studies, and most internships pay you in 'exposure.' We run the local chapter of LOVE IS IRONIC -- a lean 4-person paid media pod that helps real local coffee shops, venues, and housing groups turn online clips into real foot traffic.
+
+Every seat is capped at 8 to 10 hours a week, and 60% of every dollar we collect from clients goes directly to the 4 people doing the work -- typically $1,000 to $1,800 a month once a chapter hits stride.
+
+We do not read resumes. If you want one of our open core or paid Sophomore Shadow spots, catch me right after class for 2 minutes or scan the QR on my phone -- you will do one 30-minute practical audition, and if you crush it, you are on a paid shoot next week."</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Role Scorecards & 30-Minute Paid/Practical Auditions -->
+        <article class="kim-card" data-card-id="ch08-auditions" data-card-medium="pixel" data-take="1">
+          <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+          <div class="kim-card-inner">
+            <div class="card-meta-row kim-mono">
+              <span>Role Scorecards &amp; 30-Minute Practical Auditions :: Zero Resumes</span>
+              <span class="card-med-tag">007 PIXEL</span>
+            </div>
+
+            <div class="grid-4">
+              <div class="sub-box">
+                <div class="sub-kicker kim-mono">SEAT 01 // MANAGING DIRECTOR (BD)</div>
+                <div class="sub-title kim-display">Walk-In Closer Audition</div>
+                <p class="sub-copy"><strong>30-Min Test:</strong> List 10 target local SMBs within 1 mile, note 1 specific social gap for each, then run two live 90-second counter role-play pitches with objection pushes.</p>
+                <div class="audition-meta">
+                  <div><strong>Pass Signal:</strong> Calm tone, listens first, asks directly for a 15-min slot or $950 Sprint without rambling.</div>
+                  <div><strong>Instant Pass-Over:</strong> Uses buzzwords ("synergy", "brand awareness") or dodges talking price.</div>
+                </div>
+                <div class="sub-metric kim-mono">Trial Payout: 15% closer fee on Sprint 1</div>
+              </div>
+
+              <div class="sub-box">
+                <div class="sub-kicker kim-mono">SEAT 02 // SIGNAL LEAD</div>
+                <div class="sub-title kim-display">3-Hook Story Audition</div>
+                <p class="sub-copy"><strong>30-Min Test:</strong> Pick one local coffee shop or barber; write 3 distinct 20-second vertical concepts with visual 3-second opening hooks, 1 witty twist, and 1 QR call-to-action.</p>
+                <div class="audition-meta">
+                  <div><strong>Pass Signal:</strong> Grounds hooks in real town landmarks &amp; human details; funny without mocking the owner.</div>
+                  <div><strong>Instant Pass-Over:</strong> Generic trending-audio lip syncs or cringe rage-bait stunts.</div>
+                </div>
+                <div class="sub-metric kim-mono">Trial Payout: $100 paid trial shoot</div>
+              </div>
+
+              <div class="sub-box">
+                <div class="sub-kicker kim-mono">SEAT 03 // WILDFIRE EDITOR</div>
+                <div class="sub-title kim-display">22-Sec Raw Cut Audition</div>
+                <p class="sub-copy"><strong>30-Min Test:</strong> Receive 4 raw phone clips + 1 owner voice memo from the vault. Deliver one crisp 22-second 9:16 vertical cut with clean audio leveling and kinetic captions.</p>
+                <div class="audition-meta">
+                  <div><strong>Pass Signal:</strong> Zero dead air in first 1.5s, punchy rhythm, readable captions clear of TikTok/Reels UI edges.</div>
+                  <div><strong>Instant Pass-Over:</strong> Over-edited template clutter, muddy dialogue audio, or misses the 30-min clock.</div>
+                </div>
+                <div class="sub-metric kim-mono">Trial Payout: $75 paid test batch</div>
+              </div>
+
+              <div class="sub-box">
+                <div class="sub-kicker kim-mono">SEAT 04 // LIVE ROOMS PRODUCER</div>
+                <div class="sub-title kim-display">Campus Graph Audition</div>
+                <p class="sub-copy"><strong>30-Min Test:</strong> Pull 10 real local campus micro-creators (2k-25k followers) with direct contact paths, plus map a 60-person Tuesday night pop-up concept for a local cafe.</p>
+                <div class="audition-meta">
+                  <div><strong>Pass Signal:</strong> Already knows DJs, club presidents, and student photographers by first name; crisp logistics.</div>
+                  <div><strong>Instant Pass-Over:</strong> Lists mega-influencers who never reply or pitches vague "$5,000 party" ideas.</div>
+                </div>
+                <div class="sub-metric kim-mono">Trial Payout: $100 per live drop</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Interactive 5-Stage Recruiting Pipeline Tracker -->
+        <article class="kim-card" data-card-id="ch08-pipeline" data-card-medium="watercolor" data-take="1">
+          <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+          <div class="kim-card-inner">
+            <div class="progress-header">
+              <div>
+                <div class="sub-kicker kim-mono">INTERACTIVE 5-STAGE RECRUITING PIPELINE (SAVED IN LOCALSTORAGE)</div>
+                <div class="sub-title kim-display" style="font-size:20px;">Weekly Recruiting Benchmark: 20 Intros &rarr; 6 Coffees &rarr; 3 Trial Shoots &rarr; 1 Core Seat</div>
+              </div>
+              <div style="display:flex;gap:7px;flex-wrap:wrap;">
+                <button type="button" class="kim-btn kim-btn-subtle" id="rec-preset-btn">Load Target Week</button>
+                <button type="button" class="kim-btn kim-btn-subtle" id="rec-reset-btn">Reset Counts</button>
+              </div>
+            </div>
+
+            <div class="pipe-grid" id="recruit-pipeline-grid">
+              <div class="pipe-stage" data-pipe-stage="sourced">
+                <div class="sub-kicker kim-mono">STAGE 01 // TARGET 20</div>
+                <div class="sub-title">Sourced Intros</div>
+                <div class="pipe-controls">
+                  <button type="button" class="pipe-btn" data-pipe-act="dec" data-stage="sourced" aria-label="Decrease Sourced">-</button>
+                  <span class="pipe-count kim-mono" id="rec-cnt-sourced">20</span>
+                  <button type="button" class="pipe-btn" data-pipe-act="inc" data-stage="sourced" aria-label="Increase Sourced">+</button>
+                </div>
+                <div class="bench-track"><div class="bench-fill" id="rec-bar-sourced" style="width:100%;"></div></div>
+                <div class="deal-sub kim-mono" id="rec-pct-sourced">100% of weekly goal</div>
+              </div>
+
+              <div class="pipe-stage" data-pipe-stage="coffee">
+                <div class="sub-kicker kim-mono">STAGE 02 // TARGET 6</div>
+                <div class="sub-title">15-Min Coffee</div>
+                <div class="pipe-controls">
+                  <button type="button" class="pipe-btn" data-pipe-act="dec" data-stage="coffee" aria-label="Decrease 15-Min Coffee">-</button>
+                  <span class="pipe-count kim-mono" id="rec-cnt-coffee">6</span>
+                  <button type="button" class="pipe-btn" data-pipe-act="inc" data-stage="coffee" aria-label="Increase 15-Min Coffee">+</button>
+                </div>
+                <div class="bench-track"><div class="bench-fill" id="rec-bar-coffee" style="width:100%;"></div></div>
+                <div class="deal-sub kim-mono" id="rec-pct-coffee">100% of weekly goal</div>
+              </div>
+
+              <div class="pipe-stage" data-pipe-stage="trial">
+                <div class="sub-kicker kim-mono">STAGE 03 // TARGET 3</div>
+                <div class="sub-title">Paid Trial Shoot</div>
+                <div class="pipe-controls">
+                  <button type="button" class="pipe-btn" data-pipe-act="dec" data-stage="trial" aria-label="Decrease Paid Trial Shoot">-</button>
+                  <span class="pipe-count kim-mono" id="rec-cnt-trial">3</span>
+                  <button type="button" class="pipe-btn" data-pipe-act="inc" data-stage="trial" aria-label="Increase Paid Trial Shoot">+</button>
+                </div>
+                <div class="bench-track"><div class="bench-fill" id="rec-bar-trial" style="width:100%;"></div></div>
+                <div class="deal-sub kim-mono" id="rec-pct-trial">100% of weekly goal</div>
+              </div>
+
+              <div class="pipe-stage" data-pipe-stage="shadow">
+                <div class="sub-kicker kim-mono">STAGE 04 // TARGET 2</div>
+                <div class="sub-title">Shadow Seat</div>
+                <div class="pipe-controls">
+                  <button type="button" class="pipe-btn" data-pipe-act="dec" data-stage="shadow" aria-label="Decrease Shadow Seat">-</button>
+                  <span class="pipe-count kim-mono" id="rec-cnt-shadow">2</span>
+                  <button type="button" class="pipe-btn" data-pipe-act="inc" data-stage="shadow" aria-label="Increase Shadow Seat">+</button>
+                </div>
+                <div class="bench-track"><div class="bench-fill" id="rec-bar-shadow" style="width:100%;"></div></div>
+                <div class="deal-sub kim-mono" id="rec-pct-shadow">100% of bench goal</div>
+              </div>
+
+              <div class="pipe-stage" data-pipe-stage="core">
+                <div class="sub-kicker kim-mono">STAGE 05 // TARGET 1</div>
+                <div class="sub-title">Full Pod Member</div>
+                <div class="pipe-controls">
+                  <button type="button" class="pipe-btn" data-pipe-act="dec" data-stage="core" aria-label="Decrease Full Pod Member">-</button>
+                  <span class="pipe-count kim-mono" id="rec-cnt-core">1</span>
+                  <button type="button" class="pipe-btn" data-pipe-act="inc" data-stage="core" aria-label="Increase Full Pod Member">+</button>
+                </div>
+                <div class="bench-track"><div class="bench-fill" id="rec-bar-core" style="width:100%;"></div></div>
+                <div class="deal-sub kim-mono" id="rec-pct-core">100% of weekly goal</div>
+              </div>
+            </div>
+
+            <div class="pipe-conv-strip">
+              <div class="kpi-card">
+                <span class="kpi-k kim-mono">Intro &rarr; Coffee Rate</span>
+                <span class="kpi-v kim-mono" id="rec-rate-1" style="font-size:20px;">30%</span>
+                <span class="kpi-sub">Benchmark: 30% (6 of 20)</span>
+              </div>
+              <div class="kpi-card">
+                <span class="kpi-k kim-mono">Coffee &rarr; Trial Rate</span>
+                <span class="kpi-v kim-mono" id="rec-rate-2" style="font-size:20px;">50%</span>
+                <span class="kpi-sub">Benchmark: 50% (3 of 6)</span>
+              </div>
+              <div class="kpi-card">
+                <span class="kpi-k kim-mono">Trial &rarr; Shadow Rate</span>
+                <span class="kpi-v kim-mono" id="rec-rate-3" style="font-size:20px;">67%</span>
+                <span class="kpi-sub">Benchmark: 67% (2 of 3)</span>
+              </div>
+              <div class="kpi-card">
+                <span class="kpi-k kim-mono">Overall Sourced &rarr; Core</span>
+                <span class="kpi-v kim-mono" id="rec-rate-4" style="font-size:20px;">5.0%</span>
+                <span class="kpi-sub">Target: 1 core seat / 20 intros</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- CHAPTER 09: END-TO-END SALES FLOW & MINIMUM-WORK CONVERSION ENGINE -->
+      <section class="chapter" id="ch-09">
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker kim-mono">09 // END-TO-END SALES FLOW &amp; MINIMUM-WORK CONVERSION ENGINE</div>
+            <h2 class="chapter-title kim-display">7-Step Revenue Path, 4-Hr/Wk BD Cadence &amp; Cash Velocity Tracker</h2>
+          </div>
+          <p class="chapter-summary">
+            Run a disciplined 4-hour/week sales rhythm that collects 100% upfront on $950 Sprints (50% upfront + Day-15 auto-bill on $2,600/mo Retainers) and upgrades proven buyers automatically.
+          </p>
+        </div>
+
+        <!-- Card 1: Crisp Inline SVG Visual Sales Flow Diagram -->
+        <article class="kim-card" data-card-id="ch09-svgflow" data-card-medium="sumi-ink" data-take="1">
+          <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+          <div class="kim-card-inner">
+            <div class="card-meta-row kim-mono">
+              <span>End-to-End Revenue Topology :: 7-Step Close Path + Syndicate Expansion</span>
+              <span class="card-med-tag">005 SUMI-INK</span>
+            </div>
+
+            <div class="svg-frame">
+              <svg viewBox="0 0 920 250" role="img" aria-label="End-to-end 7-step sales flow diagram from 2-Mile Walk-In and DM through 5-Min Hook, 15-Min Scope Lock, 1-Page SOW and 100% Upfront Payment Link, 3-Hr Batch Shoot, Day-10 Proof Recap, $2,600/mo Retainer Upgrade, and $6,800/mo Multi-Campus Syndicate">
+                <defs>
+                  <marker id="flowArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--card-accent, #D03A2B)" />
+                  </marker>
+                  <marker id="flowArrowInk" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--card-ink, #141210)" />
+                  </marker>
+                </defs>
+
+                <!-- Row 1 Connectors (Steps 1 -> 2 -> 3 -> 4) -->
+                <g fill="none" stroke="var(--card-ink, #141210)" stroke-width="2" marker-end="url(#flowArrowInk)">
+                  <line x1="202" y1="54" x2="238" y2="54" />
+                  <line x1="428" y1="54" x2="464" y2="54" />
+                  <line x1="654" y1="54" x2="690" y2="54" />
+                </g>
+
+                <!-- Turn-down connector from Step 4 (top-right) to Step 5 (bottom-left) -->
+                <path d="M 795 94 L 795 118 L 107 118 L 107 142" fill="none" stroke="var(--card-accent, #D03A2B)" stroke-width="2.2" stroke-dasharray="5 4" marker-end="url(#flowArrow)" />
+                <text x="455" y="113" text-anchor="middle" fill="var(--card-accent, #D03A2B)" font-family="monospace" font-size="9.5" font-weight="800">HARD GATE: $950 PAID 100% UPFRONT + 24H SHOOT CONFIRM (2-SLOT BACKUP QUEUE)</text>
+
+                <!-- Row 2 Connectors (Steps 5 -> 6 -> 7 -> Syndicate) -->
+                <g fill="none" stroke="var(--card-accent, #D03A2B)" stroke-width="2.2" marker-end="url(#flowArrow)">
+                  <line x1="202" y1="184" x2="238" y2="184" />
+                  <line x1="428" y1="184" x2="464" y2="184" />
+                  <line x1="654" y1="184" x2="690" y2="184" />
+                </g>
+
+                <!-- STEP 1 -->
+                <rect x="14" y="16" width="186" height="76" rx="4" fill="var(--card-well, #E9E3D5)" stroke="var(--card-ink, #141210)" stroke-width="1.8" />
+                <text x="26" y="36" fill="var(--card-accent, #D03A2B)" font-family="monospace" font-size="9.5" font-weight="800">STEP 01 // TUE 2-4PM</text>
+                <text x="26" y="55" fill="var(--card-ink, #141210)" font-family="sans-serif" font-size="13" font-weight="900">2-Mile Walk-In / DM</text>
+                <text x="26" y="73" fill="var(--card-muted, #59534B)" font-family="monospace" font-size="9.5">25+ touches/wk | $0 ads</text>
+
+                <!-- STEP 2 -->
+                <rect x="240" y="16" width="186" height="76" rx="4" fill="var(--card-well, #E9E3D5)" stroke="var(--card-ink, #141210)" stroke-width="1.8" />
+                <text x="252" y="36" fill="var(--card-accent, #D03A2B)" font-family="monospace" font-size="9.5" font-weight="800">STEP 02 // COUNTER PROOF</text>
+                <text x="252" y="55" fill="var(--card-ink, #141210)" font-family="sans-serif" font-size="13" font-weight="900">5-Min Hook</text>
+                <text x="252" y="73" fill="var(--card-muted, #59534B)" font-family="monospace" font-size="9.5">20s local reel + QR proof</text>
+
+                <!-- STEP 3 -->
+                <rect x="466" y="16" width="186" height="76" rx="4" fill="var(--card-well, #E9E3D5)" stroke="var(--card-ink, #141210)" stroke-width="1.8" />
+                <text x="478" y="36" fill="var(--card-accent, #D03A2B)" font-family="monospace" font-size="9.5" font-weight="800">STEP 03 // WED 10-11AM</text>
+                <text x="478" y="55" fill="var(--card-ink, #141210)" font-family="sans-serif" font-size="13" font-weight="900">15-Min Scope Lock</text>
+                <text x="478" y="73" fill="var(--card-muted, #59534B)" font-family="monospace" font-size="9.5">5 Qs | fixed menu only</text>
+
+                <!-- STEP 4 -->
+                <rect x="692" y="16" width="212" height="76" rx="4" fill="var(--card-well, #E9E3D5)" stroke="var(--card-accent, #D03A2B)" stroke-width="2.2" />
+                <text x="704" y="36" fill="var(--card-accent, #D03A2B)" font-family="monospace" font-size="9.5" font-weight="800">STEP 04 // LIVE ON CALL</text>
+                <text x="704" y="55" fill="var(--card-ink, #141210)" font-family="sans-serif" font-size="13" font-weight="900">1-Page SOW + $950 Link</text>
+                <text x="704" y="73" fill="var(--card-muted, #59534B)" font-family="monospace" font-size="9.5">100% upfront | zero chase</text>
+
+                <!-- STEP 5 -->
+                <rect x="14" y="146" width="186" height="78" rx="4" fill="var(--card-well, #E9E3D5)" stroke="var(--card-ink, #141210)" stroke-width="1.8" />
+                <text x="26" y="166" fill="var(--card-accent, #D03A2B)" font-family="monospace" font-size="9.5" font-weight="800">STEP 05 // DAY 3 PRODUCTION</text>
+                <text x="26" y="185" fill="var(--card-ink, #141210)" font-family="sans-serif" font-size="13" font-weight="900">3-Hr Batch Shoot</text>
+                <text x="26" y="203" fill="var(--card-muted, #59534B)" font-family="monospace" font-size="9.5">12 cuts | 72h SLA | 1 rev/48h</text>
+
+                <!-- STEP 6 -->
+                <rect x="240" y="146" width="186" height="78" rx="4" fill="var(--card-well, #E9E3D5)" stroke="var(--card-ink, #141210)" stroke-width="1.8" />
+                <text x="252" y="166" fill="var(--card-accent, #D03A2B)" font-family="monospace" font-size="9.5" font-weight="800">STEP 06 // FRI 11AM RECAP</text>
+                <text x="252" y="185" fill="var(--card-ink, #141210)" font-family="sans-serif" font-size="13" font-weight="900">Day-10 Proof Recap</text>
+                <text x="252" y="203" fill="var(--card-muted, #59534B)" font-family="monospace" font-size="9.5">1-page QR + walk-in ROI</text>
+
+                <!-- STEP 7 -->
+                <rect x="466" y="146" width="186" height="78" rx="4" fill="var(--card-accent, #D03A2B)" stroke="var(--card-ink, #141210)" stroke-width="2" />
+                <text x="478" y="166" fill="var(--card-accent-fg, #FFFDF8)" font-family="monospace" font-size="9.5" font-weight="800">STEP 07 // CORE RECURRING</text>
+                <text x="478" y="185" fill="var(--card-accent-fg, #FFFDF8)" font-family="sans-serif" font-size="13" font-weight="900">$2,600/mo Retainer</text>
+                <text x="478" y="203" fill="var(--card-accent-fg, #FFFDF8)" font-family="monospace" font-size="9.5">50% + Day-15 auto | 24 cuts</text>
+
+                <!-- EXPANSION: SYNDICATE -->
+                <rect x="692" y="146" width="212" height="78" rx="4" fill="var(--card-ink, #141210)" stroke="var(--card-accent, #D03A2B)" stroke-width="2.2" />
+                <text x="704" y="166" fill="var(--card-accent, #D03A2B)" font-family="monospace" font-size="9.5" font-weight="800">EXPANSION // 3-6 CAMPUSES</text>
+                <text x="704" y="185" fill="var(--card-well, #F8F4EA)" font-family="sans-serif" font-size="13" font-weight="900">$6,800/mo Syndicate</text>
+                <text x="704" y="203" fill="var(--card-well, #F8F4EA)" font-family="monospace" font-size="9.5">60-90 cuts | regional roll-up</text>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Minimum-Work Sales Cadence Table -->
+        <article class="kim-card" data-card-id="ch09-cadence" data-card-medium="charcoal" data-take="1">
+          <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+          <div class="kim-card-inner">
+            <div class="card-meta-row kim-mono">
+              <span>Minimum-Work Sales Cadence :: Exact 4-Hour/Week BD Schedule</span>
+              <span class="card-med-tag">002 CHARCOAL</span>
+            </div>
+
+            <table class="standup-table">
+              <thead>
+                <tr>
+                  <th>Weekly Window</th>
+                  <th>Duration</th>
+                  <th>Exact BD Action</th>
+                  <th>Target Output</th>
+                  <th>Zero-Bloat Guardrail</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="kim-mono"><strong>Tue 2:00pm-4:00pm</strong></td>
+                  <td class="kim-mono">2.0 hrs</td>
+                  <td>Off-peak 2-mile corridor walk-ins (12-15 doors) + 10 hyper-local DMs with 20-sec proof reel.</td>
+                  <td class="kim-mono">25+ touches / 5+ replies</td>
+                  <td>Show muted phone clip in 10s; never pitch during lunch rush.</td>
+                </tr>
+                <tr>
+                  <td class="kim-mono"><strong>Wed 10:00am-11:00am</strong></td>
+                  <td class="kim-mono">1.0 hr</td>
+                  <td>Timed 15-minute discovery &amp; scope-lock calls (up to 4 slots) using the 5 qualifying questions.</td>
+                  <td class="kim-mono">2-3 SOWs + $950 links</td>
+                  <td>Fixed 3-tier menu only; send 1-page SOW + pay link live on call.</td>
+                </tr>
+                <tr>
+                  <td class="kim-mono"><strong>Thu 3:00pm-3:30pm</strong></td>
+                  <td class="kim-mono">0.5 hr</td>
+                  <td>48-hour bump texts on open quotes, lock Shoot Day 1 for settled $950 Sprints, and queue 24h shoot confirmations + 2 backup slots.</td>
+                  <td class="kim-mono">1-2 Sprints cash-settled</td>
+                  <td>Zero gear booked until 100% Sprint cash lands; max 2 polite bumps.</td>
+                </tr>
+                <tr>
+                  <td class="kim-mono"><strong>Fri 11:00am-11:30am</strong></td>
+                  <td class="kim-mono">0.5 hr</td>
+                  <td>Day-10 Proof Recap calls reviewing QR redemptions &amp; local shares to close $2,600/mo upgrades (50% upfront + Day-15 auto-bill).</td>
+                  <td class="kim-mono">1+ Retainer upgrade / mo</td>
+                  <td>1-page automated scorecard; no 30-slide vanity analytics decks.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="funnel-callout" style="margin-top: 14px;">
+              <strong>4.0 Hours / Week Total BD Load:</strong> Zero CRM busywork, zero invoice chasing, zero unpaid spec shoots. Every prospect fits inside 5 clean columns (Walk-In/DM &rarr; Scope Lock &rarr; SOW/$950 Link &rarr; Active Sprint &rarr; Retainer/Syndicate).
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Interactive Deal Pipeline & Cash Velocity Tracker -->
+        <article class="kim-card" data-card-id="ch09-velocity" data-card-medium="oil" data-take="1">
+          <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+          <div class="kim-card-inner">
+            <div class="progress-header">
+              <div>
+                <div class="sub-kicker kim-mono">INTERACTIVE DEAL PIPELINE &amp; CASH VELOCITY TRACKER (SAVED IN LOCALSTORAGE)</div>
+                <div class="sub-title kim-display" style="font-size:20px;">Adjust Active Deals per Stage to Project 30-Day Cash &amp; Upfront Coverage</div>
+              </div>
+              <div style="display:flex;gap:7px;flex-wrap:wrap;">
+                <button type="button" class="kim-btn kim-btn-subtle" id="sales-preset-btn">Healthy Chapter Preset</button>
+                <button type="button" class="kim-btn kim-btn-subtle" id="sales-reset-btn">Reset Pipeline</button>
+              </div>
+            </div>
+
+            <div class="sales-pipe-layout">
+              <!-- Stage Steppers -->
+              <div class="deal-stage-list" id="sales-pipeline-list">
+                <div class="deal-row">
+                  <div class="deal-info">
+                    <div class="deal-name">01. Walk-In / DM Active Leads</div>
+                    <div class="deal-sub">Corridor doors touched this week (expected 2.1% net Sprint close)</div>
+                  </div>
+                  <div class="deal-stepper">
+                    <button type="button" class="pipe-btn" data-deal-act="dec" data-deal="walkins" aria-label="Decrease Walk-Ins">-</button>
+                    <span class="deal-val kim-mono" id="deal-cnt-walkins">25</span>
+                    <button type="button" class="pipe-btn" data-deal-act="inc" data-deal="walkins" aria-label="Increase Walk-Ins">+</button>
+                  </div>
+                </div>
+
+                <div class="deal-row">
+                  <div class="deal-info">
+                    <div class="deal-name">02. 15-Min Scope Locks Booked</div>
+                    <div class="deal-sub">Wed discovery slots on calendar (30% close to $950 Sprint)</div>
+                  </div>
+                  <div class="deal-stepper">
+                    <button type="button" class="pipe-btn" data-deal-act="dec" data-deal="scopes" aria-label="Decrease Scope Locks">-</button>
+                    <span class="deal-val kim-mono" id="deal-cnt-scopes">5</span>
+                    <button type="button" class="pipe-btn" data-deal-act="inc" data-deal="scopes" aria-label="Increase Scope Locks">+</button>
+                  </div>
+                </div>
+
+                <div class="deal-row">
+                  <div class="deal-info">
+                    <div class="deal-name">03. 1-Page SOW + $950 Pay Link Sent</div>
+                    <div class="deal-sub">Out for signature &amp; 100% upfront Sprint payment (65% settle within 48h)</div>
+                  </div>
+                  <div class="deal-stepper">
+                    <button type="button" class="pipe-btn" data-deal-act="dec" data-deal="sows" aria-label="Decrease SOWs Sent">-</button>
+                    <span class="deal-val kim-mono" id="deal-cnt-sows">3</span>
+                    <button type="button" class="pipe-btn" data-deal-act="inc" data-deal="sows" aria-label="Increase SOWs Sent">+</button>
+                  </div>
+                </div>
+
+                <div class="deal-row">
+                  <div class="deal-info">
+                    <div class="deal-name">04. Active $950 Ignition Sprints</div>
+                    <div class="deal-sub">100% paid upfront before Shoot Day 1 ($950 collected, zero invoice chasing)</div>
+                  </div>
+                  <div class="deal-stepper">
+                    <button type="button" class="pipe-btn" data-deal-act="dec" data-deal="sprints" aria-label="Decrease Active Sprints">-</button>
+                    <span class="deal-val kim-mono" id="deal-cnt-sprints">2</span>
+                    <button type="button" class="pipe-btn" data-deal-act="inc" data-deal="sprints" aria-label="Increase Active Sprints">+</button>
+                  </div>
+                </div>
+
+                <div class="deal-row">
+                  <div class="deal-info">
+                    <div class="deal-name">05. Day-10 Retainer Upgrade Recaps</div>
+                    <div class="deal-sub">Fri upgrade calls booked (55% convert to $2,600/mo Retainer)</div>
+                  </div>
+                  <div class="deal-stepper">
+                    <button type="button" class="pipe-btn" data-deal-act="dec" data-deal="recaps" aria-label="Decrease Day-10 Recaps">-</button>
+                    <span class="deal-val kim-mono" id="deal-cnt-recaps">2</span>
+                    <button type="button" class="pipe-btn" data-deal-act="inc" data-deal="recaps" aria-label="Increase Day-10 Recaps">+</button>
+                  </div>
+                </div>
+
+                <div class="deal-row">
+                  <div class="deal-info">
+                    <div class="deal-name">06. Active $2,600/mo Wildfire Retainers</div>
+                    <div class="deal-sub">Locked 90-day recurring base (50% Day-1 upfront + 50% Day-15 auto-bill)</div>
+                  </div>
+                  <div class="deal-stepper">
+                    <button type="button" class="pipe-btn" data-deal-act="dec" data-deal="retainers" aria-label="Decrease Active Retainers">-</button>
+                    <span class="deal-val kim-mono" id="deal-cnt-retainers">3</span>
+                    <button type="button" class="pipe-btn" data-deal-act="inc" data-deal="retainers" aria-label="Increase Active Retainers">+</button>
+                  </div>
+                </div>
+
+                <div class="deal-row">
+                  <div class="deal-info">
+                    <div class="deal-name">07. Regional Syndicate Prospects ($6,800/mo)</div>
+                    <div class="deal-sub">3-6 campus regional opps (25% 30-day weighted close)</div>
+                  </div>
+                  <div class="deal-stepper">
+                    <button type="button" class="pipe-btn" data-deal-act="dec" data-deal="syndicates" aria-label="Decrease Syndicate Prospects">-</button>
+                    <span class="deal-val kim-mono" id="deal-cnt-syndicates">1</span>
+                    <button type="button" class="pipe-btn" data-deal-act="inc" data-deal="syndicates" aria-label="Increase Syndicate Prospects">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Live Velocity Outputs -->
+              <div>
+                <div class="calc-results">
+                  <div class="kpi-card is-primary">
+                    <span class="kpi-k kim-mono">Projected 30-Day Collected Cash</span>
+                    <span class="kpi-v kim-mono" id="sales-out-cash">$17,333</span>
+                    <span class="kpi-sub kim-mono" id="sales-out-breakdown">Locked $9,700 + Weighted Pipeline $7,633</span>
+                  </div>
+
+                  <div class="kpi-card">
+                    <span class="kpi-k kim-mono">Day-1 Upfront Cash Coverage</span>
+                    <span class="kpi-v kim-mono" id="sales-out-deposit">$7,653</span>
+                    <span class="kpi-sub kim-mono" id="sales-out-cov-pct">319% of lean ops burn + $3,900 Day-15 auto-bill</span>
+                  </div>
+
+                  <div class="kpi-card">
+                    <span class="kpi-k kim-mono">Est. Pod Member Payout (60% / 4)</span>
+                    <span class="kpi-v kim-mono" id="sales-out-seat">$2,600</span>
+                    <span class="kpi-sub">Avg / active operator this 30d cycle</span>
+                  </div>
+
+                  <div class="kpi-card">
+                    <span class="kpi-k kim-mono">Active Contracted Base (Zero Risk)</span>
+                    <span class="kpi-v kim-mono" id="sales-out-locked">$9,700</span>
+                    <span class="kpi-sub">Current retainers + active sprints</span>
+                  </div>
+
+                  <div class="kpi-card">
+                    <span class="kpi-k kim-mono">Weighted Expansion Upside</span>
+                    <span class="kpi-v kim-mono" id="sales-out-upside">$7,633</span>
+                    <span class="kpi-sub">SOWs, scopes, Day-10 recaps &amp; syndicates</span>
+                  </div>
+                </div>
+
+                <div class="funnel-callout" id="sales-bottleneck-note" style="margin-top:12px;">
+                  <strong>Live Cash Velocity Readout:</strong> Pipeline is balanced across walk-ins, 100% upfront Sprint links, and Day-10 retainer upgrades. Priority: settle open $950 pay links Thursday 3pm before locking Tuesday shoot slots.
+                </div>
               </div>
             </div>
           </div>
@@ -3011,6 +4528,23 @@ Quick bump [Name] -- filmed two campus street reels near [Nearby Landmark] yeste
       STATE.cards.forEach((st) => drawCardMedium(st));
     }
 
+    function resizeSheetCanvases(targetCardEl) {
+      cachedWordRectsAt = 0;
+      requestAnimationFrame(() => {
+        cachedWordRectsAt = 0;
+        if (targetCardEl) {
+          const st = STATE.cards.get(targetCardEl.getAttribute("data-card-id"));
+          if (st) drawCardMedium(st);
+          return;
+        }
+        STATE.cards.forEach((st) => {
+          if (st.el.offsetWidth > 4 && st.el.offsetHeight > 4) {
+            drawCardMedium(st);
+          }
+        });
+      });
+    }
+
     function renderDarkroomLamps(nowMs) {
       const ctx = lampsCanvas.getContext("2d");
       const w = lampsCanvas.width;
@@ -3152,8 +4686,96 @@ Quick bump [Name] -- filmed two campus street reels near [Nearby Landmark] yeste
       }
     }
 
-    // Interactive Business Features: Script Tabs, Copy, Objection Accordion, Unit Economics, 90-Day Checklist
+    // Interactive Business Features: Sharing, Script Tabs, Copy, Objection Accordion, Unit Economics, 90-Day Checklist
+    function copyTextToClipboard(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(text).catch(() => {
+          fallbackCopyText(text);
+        });
+      }
+      fallbackCopyText(text);
+      return Promise.resolve();
+    }
+
+    function fallbackCopyText(text) {
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.top = "-9999px";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+      } catch (e) {}
+    }
+
+    function flashCopied(btn) {
+      if (!btn.dataset.origLabel) {
+        btn.dataset.origLabel = btn.textContent;
+      }
+      if (btn._copyTimer) clearTimeout(btn._copyTimer);
+      btn.textContent = "Copied!";
+      btn._copyTimer = setTimeout(() => {
+        btn.textContent = btn.dataset.origLabel;
+        btn._copyTimer = null;
+      }, 1500);
+    }
+
     function initInteractiveCompendium() {
+      // 0. 60-Second Partner Brief Sharing Controls (Copy Summary & Print 1-Page Brief)
+      const copySummaryBtn = document.getElementById("copy-partner-summary-btn");
+      if (copySummaryBtn) {
+        copySummaryBtn.addEventListener("click", () => {
+          const summaryText = [
+            "LOVE IS IRONIC (L/I) // 60-SECOND PARTNER SUMMARY",
+            "",
+            "MODEL: 4-person campus media pods turn local SMBs and venues into neighborhood fixtures ($8k-$12k/mo per chapter, zero paid ad spend).",
+            "",
+            "FIXED 3-TIER MENU:",
+            "- $950 Campus Ignition Sprint (10 days): 1 half-day shoot, 12 native vertical cuts, 1 tracked QR street drop. 100% upfront via payment link.",
+            "- $2,600/mo Local Wildfire Retainer (90-day min): 2 shoots/mo, 24 cuts/mo, 4 local micro-creator collabs, 1 live capture + attribution report. 50% upfront + Day-15 auto-bill.",
+            "- $6,800/mo Multi-Campus Syndicate (3-6 campuses): 60-90 localized cuts, coordinated live activations, weekly regional leaderboard.",
+            "",
+            "TRANSPARENT SPLIT: 60% Pod / 25% Central Studio / 15% Chapter Gear & Live Reserve.",
+            "",
+            "5 HARDENED OPERATING GUARDRAILS:",
+            "1. Zero Invoice Chasing: 100% upfront on $950 Sprints; 50% upfront + Day-15 auto-bill on $2,600/mo Retainers.",
+            "2. Hard Revision Ceiling: 1 consolidated revision round within 48h; extra re-edits billed as add-on.",
+            "3. No-Show Lock: 24h shoot confirmation + 2-slot backup local-business queue.",
+            "4. Finals Continuity: Cross-trained backup editor + 2-week pre-shot clip buffer before exam weeks.",
+            "5. Zero Outrage / Burnout Floor: Every pod seat capped at 8-10 hrs/wk, paid on collected cash, zero unpaid exposure work.",
+            "",
+            "3 DIRECT ENTRY DOORS:",
+            "- Student Founders: Seat 4 roles, shoot 3 free proof reels, close $2,850 in Sprints within 30 days.",
+            "- Local Owners: Lock a 15-min scope call and book a flat $950 10-day Ignition Sprint.",
+            "- Regional Brands: Launch a 3-6 campus $6,800/mo Syndicate in 7 days."
+          ].join("\n");
+          copyTextToClipboard(summaryText);
+          flashCopied(copySummaryBtn);
+        });
+      }
+
+      const printBriefBtn = document.getElementById("print-brief-btn");
+      if (printBriefBtn) {
+        let printCleanupTimer = null;
+        const cleanupPrintBrief = () => {
+          document.body.classList.remove("printing-brief");
+          if (printCleanupTimer) {
+            clearTimeout(printCleanupTimer);
+            printCleanupTimer = null;
+          }
+        };
+        window.addEventListener("afterprint", cleanupPrintBrief);
+        printBriefBtn.addEventListener("click", () => {
+          document.body.classList.add("printing-brief");
+          printCleanupTimer = setTimeout(cleanupPrintBrief, 4000);
+          window.print();
+        });
+      }
+
       // 1. Script Tabs
       const tabBtns = document.querySelectorAll(".script-tab-btn");
       const panels = document.querySelectorAll(".script-panel");
@@ -3166,7 +4788,7 @@ Quick bump [Name] -- filmed two campus street reels near [Nearby Landmark] yeste
             b.setAttribute("aria-selected", String(on));
           });
           panels.forEach((p) => p.classList.toggle("active", p.id === "script-" + target));
-          cachedWordRectsAt = 0;
+          resizeSheetCanvases(btn.closest(".kim-card"));
         });
       });
 
@@ -3176,13 +4798,8 @@ Quick bump [Name] -- filmed two campus street reels near [Nearby Landmark] yeste
           const id = btn.getAttribute("data-copy-target");
           const el = document.getElementById(id);
           if (!el) return;
-          const text = el.textContent || "";
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(text).catch(() => {});
-          }
-          const orig = btn.textContent;
-          btn.textContent = "Copied!";
-          setTimeout(() => { btn.textContent = orig; }, 1400);
+          copyTextToClipboard(el.textContent || "");
+          flashCopied(btn);
         });
       });
 
@@ -3196,7 +4813,7 @@ Quick bump [Name] -- filmed two campus street reels near [Nearby Landmark] yeste
           trig.setAttribute("aria-expanded", String(willOpen));
           const icon = trig.querySelector(".acc-icon");
           if (icon) icon.textContent = willOpen ? "-" : "+";
-          cachedWordRectsAt = 0;
+          resizeSheetCanvases(trig.closest(".kim-card"));
         });
       });
 
@@ -3369,7 +4986,7 @@ Quick bump [Name] -- filmed two campus street reels near [Nearby Landmark] yeste
       const jumpLinks = Array.from(document.querySelectorAll(".jump-link"));
       function updateActiveJump() {
         const y = window.scrollY + 170;
-        let currentId = chapters[0]?.id || "ch-01";
+        let currentId = chapters[0]?.id || "ch-00";
         for (let i = 0; i < chapters.length; i += 1) {
           if (chapters[i].offsetTop <= y) currentId = chapters[i].id;
         }
@@ -3382,6 +4999,241 @@ Quick bump [Name] -- filmed two campus street reels near [Nearby Landmark] yeste
         updateActiveJump();
       }, { passive: true });
       updateActiveJump();
+
+      // 7. Team Blog Timeline Filters & Expandable Dispatch Drawers
+      const blogFilterBtns = document.querySelectorAll(".blog-filter-btn");
+      const timelineEntries = Array.from(document.querySelectorAll("#team-blog-timeline .timeline-entry"));
+      const blogReadout = document.getElementById("blog-filter-readout");
+
+      blogFilterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const filter = btn.getAttribute("data-filter") || "all";
+          blogFilterBtns.forEach((b) => {
+            const on = b === btn;
+            b.classList.toggle("kim-btn-active", on);
+            b.setAttribute("aria-pressed", String(on));
+          });
+          let shown = 0;
+          timelineEntries.forEach((entry) => {
+            const match = filter === "all" || entry.getAttribute("data-status") === filter;
+            entry.classList.toggle("is-hidden", !match);
+            if (match) shown += 1;
+          });
+          if (blogReadout) {
+            const lbl = filter === "all" ? "all statuses" : filter.toUpperCase();
+            blogReadout.textContent = "Showing " + shown + " of " + timelineEntries.length + " chronological team dispatches (" + lbl + ")";
+          }
+          resizeSheetCanvases();
+        });
+      });
+
+      document.querySelectorAll(".dispatch-trigger").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const drawer = btn.closest(".dispatch-drawer");
+          if (!drawer) return;
+          const willOpen = !drawer.classList.contains("open");
+          drawer.classList.toggle("open", willOpen);
+          btn.setAttribute("aria-expanded", String(willOpen));
+          btn.textContent = willOpen ? "Hide Full Team Dispatch -" : "Read Full Team Dispatch +";
+          resizeSheetCanvases(btn.closest(".kim-card"));
+        });
+      });
+
+      // 8. Recruiting Kit Tabs
+      const recTabBtns = document.querySelectorAll(".recruit-tab-btn");
+      const recPanels = document.querySelectorAll(".recruit-panel");
+      recTabBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const target = btn.getAttribute("data-recruit-tab");
+          recTabBtns.forEach((b) => {
+            const on = b === btn;
+            b.classList.toggle("kim-btn-active", on);
+            b.setAttribute("aria-selected", String(on));
+          });
+          recPanels.forEach((p) => p.classList.toggle("active", p.id === "recruit-" + target));
+          resizeSheetCanvases(btn.closest(".kim-card"));
+        });
+      });
+
+      // 9. Interactive 5-Stage Recruiting Pipeline Tracker (localStorage: lii-recruit-pipe-v1)
+      const REC_KEY = "lii-recruit-pipe-v1";
+      const REC_TARGETS = { sourced: 20, coffee: 6, trial: 3, shadow: 2, core: 1 };
+      let recState = { sourced: 20, coffee: 6, trial: 3, shadow: 2, core: 1 };
+
+      try {
+        const rawRec = localStorage.getItem(REC_KEY);
+        if (rawRec) {
+          const parsed = JSON.parse(rawRec);
+          Object.keys(REC_TARGETS).forEach((k) => {
+            if (typeof parsed[k] === "number" && parsed[k] >= 0) recState[k] = Math.min(200, Math.floor(parsed[k]));
+          });
+        }
+      } catch (e) {}
+
+      function saveRecruitPipe() {
+        try { localStorage.setItem(REC_KEY, JSON.stringify(recState)); } catch (e) {}
+      }
+
+      function renderRecruitPipe() {
+        Object.keys(REC_TARGETS).forEach((k) => {
+          const val = recState[k];
+          const tgt = REC_TARGETS[k];
+          const pct = Math.min(100, Math.round((val / tgt) * 100));
+          const cntEl = document.getElementById("rec-cnt-" + k);
+          const barEl = document.getElementById("rec-bar-" + k);
+          const pctEl = document.getElementById("rec-pct-" + k);
+          if (cntEl) cntEl.textContent = String(val);
+          if (barEl) barEl.style.width = pct + "%";
+          if (pctEl) pctEl.textContent = Math.round((val / tgt) * 100) + "% of goal (" + val + "/" + tgt + ")";
+        });
+
+        const r1 = recState.sourced > 0 ? Math.round((recState.coffee / recState.sourced) * 100) : 0;
+        const r2 = recState.coffee > 0 ? Math.round((recState.trial / recState.coffee) * 100) : 0;
+        const r3 = recState.trial > 0 ? Math.round((recState.shadow / recState.trial) * 100) : 0;
+        const r4 = recState.sourced > 0 ? ((recState.core / recState.sourced) * 100).toFixed(1) : "0.0";
+
+        const e1 = document.getElementById("rec-rate-1");
+        const e2 = document.getElementById("rec-rate-2");
+        const e3 = document.getElementById("rec-rate-3");
+        const e4 = document.getElementById("rec-rate-4");
+        if (e1) e1.textContent = r1 + "%";
+        if (e2) e2.textContent = r2 + "%";
+        if (e3) e3.textContent = r3 + "%";
+        if (e4) e4.textContent = r4 + "%";
+      }
+
+      document.querySelectorAll("[data-pipe-act]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const stKey = btn.getAttribute("data-stage");
+          const act = btn.getAttribute("data-pipe-act");
+          if (!stKey || typeof recState[stKey] !== "number") return;
+          recState[stKey] = act === "inc" ? Math.min(200, recState[stKey] + 1) : Math.max(0, recState[stKey] - 1);
+          saveRecruitPipe();
+          renderRecruitPipe();
+        });
+      });
+
+      const recPresetBtn = document.getElementById("rec-preset-btn");
+      if (recPresetBtn) {
+        recPresetBtn.addEventListener("click", () => {
+          recState = { sourced: 20, coffee: 6, trial: 3, shadow: 2, core: 1 };
+          saveRecruitPipe();
+          renderRecruitPipe();
+        });
+      }
+
+      const recResetBtn = document.getElementById("rec-reset-btn");
+      if (recResetBtn) {
+        recResetBtn.addEventListener("click", () => {
+          recState = { sourced: 0, coffee: 0, trial: 0, shadow: 0, core: 0 };
+          saveRecruitPipe();
+          renderRecruitPipe();
+        });
+      }
+      renderRecruitPipe();
+
+      // 10. Interactive Deal Pipeline & Cash Velocity Tracker (localStorage: lii-sales-pipe-v1)
+      const SALES_KEY = "lii-sales-pipe-v1";
+      const SALES_DEFAULTS = { walkins: 25, scopes: 5, sows: 3, sprints: 2, recaps: 2, retainers: 3, syndicates: 1 };
+      let salesState = Object.assign({}, SALES_DEFAULTS);
+
+      try {
+        const rawSales = localStorage.getItem(SALES_KEY);
+        if (rawSales) {
+          const parsed = JSON.parse(rawSales);
+          Object.keys(SALES_DEFAULTS).forEach((k) => {
+            if (typeof parsed[k] === "number" && parsed[k] >= 0) salesState[k] = Math.min(200, Math.floor(parsed[k]));
+          });
+        }
+      } catch (e) {}
+
+      function saveSalesPipe() {
+        try { localStorage.setItem(SALES_KEY, JSON.stringify(salesState)); } catch (e) {}
+      }
+
+      function renderSalesPipe() {
+        Object.keys(SALES_DEFAULTS).forEach((k) => {
+          const el = document.getElementById("deal-cnt-" + k);
+          if (el) el.textContent = String(salesState[k]);
+        });
+
+        const lockedCash = salesState.retainers * 2600 + salesState.sprints * 950;
+        const fromWalkins = salesState.walkins * 0.021 * 950;
+        const fromScopes = salesState.scopes * 0.30 * 950;
+        const fromSows = salesState.sows * 0.65 * 950;
+        const fromRecaps = salesState.recaps * 0.55 * 2600;
+        const fromSyndicates = salesState.syndicates * 0.25 * 6800;
+        const weightedUpside = fromWalkins + fromScopes + fromSows + fromRecaps + fromSyndicates;
+        const total30d = lockedCash + weightedUpside;
+
+        // Day-1 upfront cash: 50% upfront on Retainers ($1,300; remaining $1,300 Day-15 auto-bill) + 100% upfront on Sprints ($950) + weighted 100% upfront SOWs
+        const upfrontCash = salesState.retainers * 1300 + salesState.sprints * 950 + salesState.sows * 0.65 * 950;
+        const day15AutoBill = salesState.retainers * 1300;
+        const monthlyOpsBaseline = 2400; // lean chapter stipends + gear baseline
+        const covPct = Math.round((upfrontCash / monthlyOpsBaseline) * 100);
+        const perSeat = (total30d * 0.60) / 4;
+
+        const elCash = document.getElementById("sales-out-cash");
+        const elBreak = document.getElementById("sales-out-breakdown");
+        const elDep = document.getElementById("sales-out-deposit");
+        const elCov = document.getElementById("sales-out-cov-pct");
+        const elSeat = document.getElementById("sales-out-seat");
+        const elLock = document.getElementById("sales-out-locked");
+        const elUp = document.getElementById("sales-out-upside");
+        const elNote = document.getElementById("sales-bottleneck-note");
+
+        if (elCash) elCash.textContent = fmtUSD(total30d);
+        if (elBreak) elBreak.textContent = "Locked " + fmtUSD(lockedCash) + " + Weighted Pipeline " + fmtUSD(weightedUpside);
+        if (elDep) elDep.textContent = fmtUSD(upfrontCash);
+        if (elCov) elCov.textContent = covPct + "% of lean ops burn + " + fmtUSD(day15AutoBill) + " Day-15 auto-bill";
+        if (elSeat) elSeat.textContent = fmtUSD(perSeat);
+        if (elLock) elLock.textContent = fmtUSD(lockedCash);
+        if (elUp) elUp.textContent = fmtUSD(weightedUpside);
+
+        if (elNote) {
+          let advice = "Pipeline is balanced across walk-ins, 100% upfront Sprint links, and Day-10 retainer upgrades. Priority: settle open $950 pay links Thursday 3pm before locking Shoot Day 1.";
+          if (salesState.sows >= 3) {
+            advice = "Immediate Cash Lever: You have " + salesState.sows + " open 1-page SOWs out. Run your 30-min Thursday 3pm follow-up block to settle " + fmtUSD(salesState.sows * 950) + " in 100% upfront Sprint payments before booking camera days.";
+          } else if (salesState.recaps >= 2) {
+            advice = "Highest-Margin Lever: You have " + salesState.recaps + " Day-10 Proof Recaps ready. Lead Friday 11am calls with tracked QR redemptions to convert into $2,600/mo Wildfire Retainers (50% upfront + Day-15 auto-bill).";
+          } else if (salesState.walkins < 15) {
+            advice = "Top-of-Funnel Alert: Active corridor touches (" + salesState.walkins + ") are below the 25/wk floor. Block Tuesday 2pm-4pm for 15 off-peak walk-ins + 10 local DMs with your 20-sec proof reel.";
+          } else if (salesState.scopes < 3) {
+            advice = "Conversion Gap: High outreach (" + salesState.walkins + ") but only " + salesState.scopes + " Scope Locks booked. Lead walk-ins with 10-second muted proof video and ask directly for a Wed 10am 15-min slot.";
+          }
+          elNote.innerHTML = "<strong>Live Cash Velocity Readout:</strong> " + advice;
+        }
+      }
+
+      document.querySelectorAll("[data-deal-act]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const dKey = btn.getAttribute("data-deal");
+          const act = btn.getAttribute("data-deal-act");
+          if (!dKey || typeof salesState[dKey] !== "number") return;
+          salesState[dKey] = act === "inc" ? Math.min(200, salesState[dKey] + 1) : Math.max(0, salesState[dKey] - 1);
+          saveSalesPipe();
+          renderSalesPipe();
+        });
+      });
+
+      const salesPresetBtn = document.getElementById("sales-preset-btn");
+      if (salesPresetBtn) {
+        salesPresetBtn.addEventListener("click", () => {
+          salesState = Object.assign({}, SALES_DEFAULTS);
+          saveSalesPipe();
+          renderSalesPipe();
+        });
+      }
+
+      const salesResetBtn = document.getElementById("sales-reset-btn");
+      if (salesResetBtn) {
+        salesResetBtn.addEventListener("click", () => {
+          salesState = { walkins: 0, scopes: 0, sows: 0, sprints: 0, recaps: 0, retainers: 0, syndicates: 0 };
+          saveSalesPipe();
+          renderSalesPipe();
+        });
+      }
+      renderSalesPipe();
     }
 
     // Wire R4 Dock Controls
@@ -3443,6 +5295,7 @@ Quick bump [Name] -- filmed two campus street reels near [Nearby Landmark] yeste
       STATE,
       SPEC,
       replotAllCards,
+      resizeSheetCanvases,
       verifyWordProtection() {
         const words = collectViewportWordRects(true);
         const colliding = STATE.particles.filter((pt) => circleHitsWords(pt.x, pt.y, 0, words));

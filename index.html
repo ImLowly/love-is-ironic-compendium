@@ -1,0 +1,3498 @@
+<!DOCTYPE html>
+<html lang="en" data-ed="day" data-theme="day" data-medium="sumi-ink">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LOVE IS IRONIC (L/I) :: Campus Business Development &amp; Chapter Scaling Compendium</title>
+  <meta name="description" content="Publication-grade operating compendium for LOVE IS IRONIC (L/I): local college chapter business development, offer ladder, 4-person pod operations, organic multi-campus replication, unit economics, and 90-day launch playbook." />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --kim-ground: #F3EEE2;
+      --kim-paper2: #F8F4EA;
+      --kim-well: #E9E3D5;
+      --kim-ink: #141210;
+      --kim-ink2: #3A3631;
+      --kim-muted: #59534B;
+      --kim-rule: #D6D0C2;
+      --kim-plate: #3A3631;
+      --kim-accent: #D03A2B;
+      --kim-accent2: #3C5A78;
+      --kim-accent3: #C9A13B;
+      --kim-accent-fg: #FFFDF8;
+      --kim-dock-bg: rgba(243, 238, 226, 0.94);
+      --kim-focus: #D03A2B;
+      --font-sans: "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+      --radius: 4px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--kim-ground);
+      color: var(--kim-ink);
+    }
+
+    body {
+      background-color: var(--kim-ground);
+      color: var(--kim-ink);
+      font-family: var(--font-sans);
+      font-size: 15.5px;
+      line-height: 1.58;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 220ms ease, color 220ms ease;
+      overflow-x: hidden;
+    }
+
+    /* Outer Kinesis Media Sheet */
+    .kim-sheet {
+      position: relative;
+      width: 100%;
+      min-height: 100%;
+      background-color: var(--kim-ground);
+      color: var(--kim-ink);
+      transition: background-color 220ms ease, color 220ms ease;
+    }
+
+    /* Subtle Xuan rice paper fibre grain in Sumi Ink Day mode (inline SVG data URI, zero CDN) */
+    .kim-sheet[data-font-medium="sumi-ink"] {
+      background-image:
+        radial-gradient(circle at 86% 6%, color-mix(in srgb, var(--kim-accent) 7%, transparent), transparent 42%),
+        radial-gradient(circle at 12% 72%, color-mix(in srgb, var(--kim-accent3) 8%, transparent), transparent 46%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%235A4A30' stroke-opacity='0.06' stroke-width='0.7'%3E%3Cpath d='M12 24 C30 22, 46 28, 66 25'/%3E%3Cpath d='M95 14 C112 18, 134 11, 160 16'/%3E%3Cpath d='M24 88 C52 84, 72 93, 108 87'/%3E%3Cpath d='M118 112 C136 108, 152 117, 174 114'/%3E%3Cpath d='M8 148 C34 152, 62 144, 92 151'/%3E%3Cpath d='M104 166 C128 162, 146 168, 170 164'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* Typography per active medium (media-spec.json) */
+    .kim-sheet[data-font-medium="sumi-ink"] .kim-display {
+      font-family: "Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+      letter-spacing: -0.01em;
+    }
+    .kim-sheet[data-font-medium="pixel"] .kim-display {
+      font-family: "Archivo Black", ui-monospace, "SFMono-Regular", Menlo, monospace;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .kim-sheet[data-font-medium="colored-pencil"] .kim-display {
+      font-family: "Cabin Sketch", "Bradley Hand", "Archivo Black", cursive, sans-serif;
+    }
+    .kim-sheet[data-font-medium="charcoal"] .kim-display {
+      font-family: "Anton", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .kim-sheet[data-font-medium="oil"] .kim-display {
+      font-family: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    }
+    .kim-sheet[data-font-medium="watercolor"] .kim-display {
+      font-family: "Instrument Serif", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      font-style: italic;
+    }
+    .kim-sheet[data-font-medium="linocut"] .kim-display {
+      font-family: "Ultra", "Rockwell Extra Bold", "Archivo Black", Georgia, serif;
+      text-transform: uppercase;
+    }
+    .kim-sheet[data-font-medium="clay"] .kim-display {
+      font-family: "Fraunces", "Cinzel", "Iowan Old Style", Georgia, serif;
+      letter-spacing: 0.025em;
+    }
+    .kim-sheet[data-font-medium="glowing-glass"] .kim-display {
+      font-family: "Archivo Black", "Space Grotesk", system-ui, sans-serif;
+      letter-spacing: 0.015em;
+    }
+
+    .kim-mono {
+      font-family: var(--font-mono);
+    }
+
+    /* Viewport Procedural Layers (R1.9 Contract: fixed to viewport for 60fps across full compendium) */
+    #kim-lamps-canvas,
+    #kim-particle-canvas,
+    #kim-tool-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    #kim-lamps-canvas { z-index: 1; }
+    #kim-particle-canvas { z-index: 80; }
+    #kim-tool-canvas { z-index: 85; }
+
+    /* Focus visibility */
+    :focus-visible {
+      outline: 2.5px solid var(--kim-focus);
+      outline-offset: 2px;
+    }
+
+    /* R4 Controls Dock */
+    .kim-dock {
+      position: sticky;
+      top: 0;
+      z-index: 70;
+      background-color: var(--kim-dock-bg);
+      border-bottom: 2.5px solid var(--kim-ink);
+      backdrop-filter: blur(12px) saturate(1.35);
+      -webkit-backdrop-filter: blur(12px) saturate(1.35);
+      transition: background-color 200ms ease, border-color 200ms ease;
+    }
+
+    .dock-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 10px 18px 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .dock-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .hanko-seal {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      font-size: 11.5px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      border: 2.5px solid var(--kim-accent);
+      background-color: var(--kim-accent);
+      color: var(--kim-accent-fg);
+      box-shadow: 2.5px 2.5px 0 var(--kim-plate);
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .brand-title {
+      font-size: 15px;
+      font-weight: 900;
+      line-height: 1.15;
+      color: var(--kim-ink);
+    }
+
+    .brand-sub {
+      font-size: 10px;
+      color: var(--kim-muted);
+      line-height: 1.25;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 340px;
+    }
+
+    .dock-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .kim-btn {
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 5px 10px;
+      border: 2px solid var(--kim-ink);
+      background-color: var(--kim-paper2);
+      color: var(--kim-ink);
+      box-shadow: 2.5px 2.5px 0 var(--kim-plate);
+      transition: transform 110ms ease, box-shadow 110ms ease, background-color 140ms ease;
+      line-height: 1.2;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .kim-btn:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 3.5px 3.5px 0 var(--kim-plate);
+    }
+
+    .kim-btn:active {
+      transform: translate(1px, 1px);
+      box-shadow: 1px 1px 0 var(--kim-plate);
+    }
+
+    .kim-btn-active {
+      background-color: var(--kim-accent);
+      color: var(--kim-accent-fg);
+      border-color: var(--kim-ink);
+    }
+
+    .kim-btn-subtle {
+      background-color: var(--kim-well);
+      font-size: 10.5px;
+    }
+
+    .kim-select {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4.5px 8px;
+      border: 2px solid var(--kim-ink);
+      background-color: var(--kim-paper2);
+      color: var(--kim-ink);
+      box-shadow: 2.5px 2.5px 0 var(--kim-plate);
+      max-width: 215px;
+      cursor: pointer;
+    }
+
+    .brush-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3.5px 8px;
+      border: 2px solid var(--kim-ink);
+      background-color: var(--kim-paper2);
+      color: var(--kim-ink);
+      font-size: 10.5px;
+      font-weight: 700;
+    }
+
+    .brush-wrap input[type="range"] {
+      width: 66px;
+      accent-color: var(--kim-accent);
+      cursor: pointer;
+    }
+
+    .dock-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding-top: 6px;
+      border-top: 1px solid color-mix(in srgb, var(--kim-ink) 20%, transparent);
+    }
+
+    /* Section Navigation Jump Bar */
+    .jump-nav {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+
+    .jump-link {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--kim-muted);
+      text-decoration: none;
+      padding: 3px 7px;
+      border: 1.5px solid transparent;
+      transition: color 120ms ease, border-color 120ms ease, background-color 120ms ease;
+    }
+
+    .jump-link:hover,
+    .jump-link.is-current {
+      color: var(--kim-ink);
+      border-color: var(--kim-accent);
+      background-color: color-mix(in srgb, var(--kim-accent) 12%, transparent);
+    }
+
+    .telemetry-strip {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 10px;
+      color: var(--kim-muted);
+    }
+
+    .sibling-link {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 800;
+      color: var(--kim-accent);
+      text-decoration: none;
+      border-bottom: 1.5px solid currentColor;
+      padding-bottom: 1px;
+    }
+
+    .sibling-link:hover {
+      opacity: 0.8;
+    }
+
+    /* Main Compendium Stage */
+    .kim-stage {
+      position: relative;
+      z-index: 10;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 26px 18px 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    .chapter {
+      scroll-margin-top: 126px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .chapter-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding-bottom: 10px;
+      border-bottom: 2px solid color-mix(in srgb, var(--kim-ink) 28%, transparent);
+    }
+
+    .chapter-kicker {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--kim-accent);
+      margin-bottom: 4px;
+    }
+
+    .chapter-title {
+      font-size: clamp(22px, 3.2vw, 31px);
+      font-weight: 900;
+      line-height: 1.12;
+      color: var(--kim-ink);
+    }
+
+    .chapter-summary {
+      font-size: 13.5px;
+      color: var(--kim-muted);
+      max-width: 58ch;
+    }
+
+    /* Procedural Card Shell */
+    .kim-card {
+      position: relative;
+      transition: transform 150ms ease;
+    }
+
+    .kim-card:hover {
+      transform: translate(-1.5px, -1.5px);
+    }
+
+    .kim-card-canvas {
+      position: absolute;
+      inset: -12px;
+      width: calc(100% + 24px);
+      height: calc(100% + 24px);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .kim-card-inner {
+      position: relative;
+      z-index: 5;
+      padding: 22px 24px;
+      color: var(--card-ink, var(--kim-ink));
+    }
+
+    .kim-card.is-glass .kim-card-inner {
+      backdrop-filter: blur(14px) saturate(1.6);
+      -webkit-backdrop-filter: blur(14px) saturate(1.6);
+    }
+
+    .kim-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border: 1.8px solid currentColor;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      line-height: 1.2;
+    }
+
+    .kim-badge-seal {
+      background-color: var(--card-accent, var(--kim-accent));
+      color: var(--card-accent-fg, var(--kim-accent-fg));
+      border-color: var(--card-ink, var(--kim-ink));
+    }
+
+    /* Hero Masthead */
+    .hero-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.95fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .hero-title {
+      font-size: clamp(28px, 4.4vw, 44px);
+      font-weight: 900;
+      line-height: 1.07;
+      margin-bottom: 12px;
+      max-width: 19ch;
+    }
+
+    .hero-accent {
+      color: var(--card-accent, var(--kim-accent));
+    }
+
+    .hero-lead {
+      font-size: 15px;
+      color: var(--card-muted, var(--kim-muted));
+      max-width: 60ch;
+      margin-bottom: 18px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      padding: 14px 0;
+      border-top: 2px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 22%, transparent);
+      border-bottom: 2px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 22%, transparent);
+    }
+
+    .stat-num {
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1.15;
+      color: var(--card-ink, var(--kim-ink));
+    }
+
+    .stat-lbl {
+      font-size: 11px;
+      color: var(--card-muted, var(--kim-muted));
+      margin-top: 2px;
+    }
+
+    .hero-manifesto-box {
+      padding: 16px;
+      border: 2px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 28%, transparent);
+      background-color: color-mix(in srgb, var(--card-well, var(--kim-well)) 72%, transparent);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hero-manifesto-box h2 {
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--card-accent, var(--kim-accent));
+    }
+
+    .hero-manifesto-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--card-muted, var(--kim-muted));
+    }
+
+    .hero-manifesto-list strong {
+      color: var(--card-ink, var(--kim-ink));
+    }
+
+    /* 9-Medium Swatch Ribbon */
+    .ribbon-section {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1.5px dashed color-mix(in srgb, var(--card-ink, var(--kim-ink)) 28%, transparent);
+    }
+
+    .ribbon-label {
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--card-muted, var(--kim-muted));
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .medium-ribbon {
+      display: grid;
+      grid-template-columns: repeat(9, minmax(0, 1fr));
+      gap: 7px;
+    }
+
+    .swatch-btn {
+      text-align: left;
+      padding: 7px 6px;
+      border: 2px solid;
+      cursor: pointer;
+      transition: transform 110ms ease, box-shadow 110ms ease;
+      min-width: 0;
+    }
+
+    .swatch-btn:hover {
+      transform: translate(-1px, -1px);
+    }
+
+    .swatch-num {
+      font-size: 9px;
+      font-weight: 800;
+      opacity: 0.85;
+      line-height: 1.1;
+    }
+
+    .swatch-id {
+      font-size: 10px;
+      font-weight: 800;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 2px;
+    }
+
+    /* Reusable Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .grid-5 {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    /* Inner framed sub-boxes */
+    .sub-box {
+      padding: 14px;
+      border: 1.8px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 25%, transparent);
+      background-color: color-mix(in srgb, var(--card-well, var(--kim-well)) 55%, transparent);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .sub-kicker {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--card-accent, var(--kim-accent));
+    }
+
+    .sub-title {
+      font-size: 15px;
+      font-weight: 900;
+      line-height: 1.2;
+      color: var(--card-ink, var(--kim-ink));
+    }
+
+    .sub-copy {
+      font-size: 13px;
+      color: var(--card-muted, var(--kim-muted));
+      line-height: 1.48;
+    }
+
+    .sub-metric {
+      margin-top: auto;
+      padding-top: 8px;
+      border-top: 1px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 16%, transparent);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--card-ink, var(--kim-ink));
+    }
+
+    /* Force Cards */
+    .card-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--card-muted, var(--kim-muted));
+      margin-bottom: 8px;
+    }
+
+    .force-h3 {
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .force-role {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--card-accent, var(--kim-accent));
+      margin-bottom: 8px;
+    }
+
+    .force-body {
+      font-size: 13.5px;
+      color: var(--card-muted, var(--kim-muted));
+      line-height: 1.52;
+    }
+
+    /* Offer Ladder Cards */
+    .tier-card-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      height: 100%;
+    }
+
+    .tier-price {
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1.05;
+      color: var(--card-ink, var(--kim-ink));
+    }
+
+    .tier-price span {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--card-muted, var(--kim-muted));
+    }
+
+    .tier-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      font-size: 13px;
+      color: var(--card-muted, var(--kim-muted));
+    }
+
+    .tier-list li {
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .tier-list li::before {
+      content: "+";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-family: var(--font-mono);
+      font-weight: 900;
+      color: var(--card-accent, var(--kim-accent));
+    }
+
+    .tier-list strong {
+      color: var(--card-ink, var(--kim-ink));
+    }
+
+    .tier-footer {
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1.5px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 20%, transparent);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 11.5px;
+      color: var(--card-muted, var(--kim-muted));
+    }
+
+    .tier-footer strong {
+      color: var(--card-ink, var(--kim-ink));
+    }
+
+    /* Outreach Scripts Tabs */
+    .tab-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .script-panel {
+      display: none;
+    }
+
+    .script-panel.active {
+      display: block;
+    }
+
+    .script-box {
+      padding: 16px;
+      border: 2px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 30%, transparent);
+      background-color: var(--card-well, var(--kim-well));
+      position: relative;
+    }
+
+    .script-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 18%, transparent);
+    }
+
+    .script-text {
+      white-space: pre-wrap;
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      line-height: 1.62;
+      color: var(--card-ink, var(--kim-ink));
+    }
+
+    /* Objection Accordion */
+    .accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .acc-item {
+      border: 1.8px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 26%, transparent);
+      background-color: color-mix(in srgb, var(--card-well, var(--kim-well)) 50%, transparent);
+    }
+
+    .acc-trigger {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: 0;
+      padding: 12px 14px;
+      color: var(--card-ink, var(--kim-ink));
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .acc-trigger:hover {
+      background-color: color-mix(in srgb, var(--card-accent, var(--kim-accent)) 8%, transparent);
+    }
+
+    .acc-icon {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 900;
+      color: var(--card-accent, var(--kim-accent));
+      flex-shrink: 0;
+    }
+
+    .acc-body {
+      display: none;
+      padding: 0 14px 14px;
+      font-size: 13px;
+      color: var(--card-muted, var(--kim-muted));
+      border-top: 1px dashed color-mix(in srgb, var(--card-ink, var(--kim-ink)) 20%, transparent);
+      padding-top: 10px;
+    }
+
+    .acc-item.open .acc-body {
+      display: block;
+    }
+
+    .acc-body strong {
+      color: var(--card-ink, var(--kim-ink));
+    }
+
+    /* Pod Role Cards */
+    .role-hours {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--card-accent, var(--kim-accent));
+    }
+
+    .kpi-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 18%, transparent);
+      font-size: 12px;
+      color: var(--card-ink, var(--kim-ink));
+    }
+
+    /* SVG Diagram Container */
+    .svg-frame {
+      width: 100%;
+      margin-top: 8px;
+      border: 1.8px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 22%, transparent);
+      background-color: color-mix(in srgb, var(--card-well, var(--kim-well)) 65%, transparent);
+      padding: 10px;
+    }
+
+    .svg-frame svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Revenue Split Stacked Bar */
+    .split-bar {
+      display: flex;
+      width: 100%;
+      height: 28px;
+      border: 2px solid var(--card-ink, var(--kim-ink));
+      overflow: hidden;
+      margin: 12px 0;
+    }
+
+    .split-seg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 800;
+      white-space: nowrap;
+      overflow: hidden;
+      transition: width 180ms ease;
+    }
+
+    /* Unit Economics Calculator */
+    .calc-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.25fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .slider-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .slider-row {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 10px 12px;
+      border: 1.5px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 22%, transparent);
+      background-color: color-mix(in srgb, var(--card-well, var(--kim-well)) 55%, transparent);
+    }
+
+    .slider-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .slider-label {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--card-ink, var(--kim-ink));
+    }
+
+    .slider-val {
+      font-size: 14px;
+      font-weight: 900;
+      color: var(--card-accent, var(--kim-accent));
+    }
+
+    .slider-row input[type="range"] {
+      width: 100%;
+      accent-color: var(--card-accent, var(--kim-accent));
+      cursor: pointer;
+    }
+
+    .slider-hint {
+      font-size: 11px;
+      color: var(--card-muted, var(--kim-muted));
+    }
+
+    .preset-row {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .calc-results {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .kpi-card {
+      padding: 14px;
+      border: 2px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 28%, transparent);
+      background-color: color-mix(in srgb, var(--card-well, var(--kim-well)) 60%, transparent);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .kpi-card.is-primary {
+      grid-column: span 2;
+      border-color: var(--card-accent, var(--kim-accent));
+      background-color: color-mix(in srgb, var(--card-accent, var(--kim-accent)) 10%, var(--card-well, var(--kim-well)));
+    }
+
+    .kpi-k {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--card-muted, var(--kim-muted));
+    }
+
+    .kpi-v {
+      font-size: 24px;
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--card-ink, var(--kim-ink));
+    }
+
+    .kpi-card.is-primary .kpi-v {
+      font-size: 30px;
+      color: var(--card-accent, var(--kim-accent));
+    }
+
+    .kpi-sub {
+      font-size: 11.5px;
+      color: var(--card-muted, var(--kim-muted));
+    }
+
+    .funnel-callout {
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-left: 4px solid var(--card-accent, var(--kim-accent));
+      background-color: color-mix(in srgb, var(--card-well, var(--kim-well)) 72%, transparent);
+      font-size: 12px;
+      color: var(--card-muted, var(--kim-muted));
+    }
+
+    .funnel-callout strong {
+      color: var(--card-ink, var(--kim-ink));
+    }
+
+    /* 90-Day Interactive Checklist */
+    .progress-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 16px;
+      border: 2px solid var(--card-ink, var(--kim-ink));
+      background-color: var(--card-well, var(--kim-well));
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background-color: var(--card-accent, var(--kim-accent));
+      transition: width 220ms ease;
+    }
+
+    .phase-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .phase-box {
+      padding: 16px;
+      border: 2px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 25%, transparent);
+      background-color: color-mix(in srgb, var(--card-well, var(--kim-well)) 48%, transparent);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .phase-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1.5px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 18%, transparent);
+    }
+
+    .phase-days {
+      font-size: 10.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--card-accent, var(--kim-accent));
+    }
+
+    .phase-name {
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--card-ink, var(--kim-ink));
+    }
+
+    .check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .check-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      cursor: pointer;
+      font-size: 13px;
+      line-height: 1.44;
+      color: var(--card-ink, var(--kim-ink));
+      padding: 4px 6px;
+      border-radius: 3px;
+      transition: background-color 120ms ease;
+    }
+
+    .check-row:hover {
+      background-color: color-mix(in srgb, var(--card-accent, var(--kim-accent)) 8%, transparent);
+    }
+
+    .check-row input[type="checkbox"] {
+      margin-top: 3px;
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+      accent-color: var(--card-accent, var(--kim-accent));
+      cursor: pointer;
+    }
+
+    .check-row.is-done span {
+      text-decoration: line-through;
+      opacity: 0.62;
+    }
+
+    /* Standup Table */
+    .standup-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      margin-top: 8px;
+    }
+
+    .standup-table th,
+    .standup-table td {
+      text-align: left;
+      padding: 8px 10px;
+      border-bottom: 1px solid color-mix(in srgb, var(--card-ink, var(--kim-ink)) 20%, transparent);
+    }
+
+    .standup-table th {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--card-accent, var(--kim-accent));
+    }
+
+    /* Footer */
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-quote {
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--card-ink, var(--kim-ink));
+      max-width: 56ch;
+    }
+
+    .footer-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 5px;
+      font-size: 11px;
+      color: var(--card-muted, var(--kim-muted));
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .calc-layout {
+        grid-template-columns: 1fr;
+      }
+      .grid-5 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .medium-ribbon {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .grid-2,
+      .grid-4,
+      .grid-5,
+      .phase-grid,
+      .hero-stats,
+      .calc-results {
+        grid-template-columns: 1fr;
+      }
+      .kpi-card.is-primary {
+        grid-column: span 1;
+      }
+      .kim-card-inner {
+        padding: 18px 16px;
+      }
+      .footer-meta {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="kim-sheet" id="kim-sheet" data-font-medium="sumi-ink">
+    <!-- Procedural Viewport Canvases (Kinesis in Media R1.9 Contract) -->
+    <canvas id="kim-lamps-canvas" aria-hidden="true"></canvas>
+    <canvas id="kim-particle-canvas" aria-hidden="true"></canvas>
+    <canvas id="kim-tool-canvas" aria-hidden="true"></canvas>
+
+    <!-- Sticky R4 Controls Dock & Chapter Navigation -->
+    <header class="kim-dock" id="kim-dock">
+      <div class="dock-inner">
+        <div class="dock-top">
+          <div class="brand-lockup">
+            <a href="#top" class="hanko-seal kim-mono" aria-label="LOVE IS IRONIC Home">L/I</a>
+            <div>
+              <div class="brand-title kim-display">LOVE IS IRONIC :: Campus Growth Compendium</div>
+              <div class="brand-sub kim-mono" id="kim-active-tool-readout">Medium: 005 // Sumi Ink &amp; Vermilion Seal | Tool: Bamboo Wolf-Hair Fude Brush</div>
+            </div>
+          </div>
+
+          <div class="dock-controls" role="toolbar" aria-label="Kinesis in Media Renderer Controls">
+            <select id="kim-medium-select" class="kim-select kim-mono" aria-label="Select Drawing Medium">
+              <option value="sumi-ink" selected>005 // Sumi Ink &amp; Seal</option>
+              <option value="cycle">Cycle (All 9 Media)</option>
+              <option value="pixel">007 // 16-Bit Pixel Art</option>
+              <option value="linocut">006 // Hand-Pulled Linocut</option>
+              <option value="charcoal">002 // Willow Charcoal</option>
+              <option value="watercolor">004 // Watercolor</option>
+              <option value="oil">003 // Impasto Oil</option>
+              <option value="clay">008 // 3D Clay Tablet</option>
+              <option value="glowing-glass">009 // Glowing VerseGlass</option>
+              <option value="colored-pencil">001 // Colored Pencil</option>
+            </select>
+
+            <button type="button" id="kim-edition-btn" class="kim-btn" aria-pressed="false">Day Paper</button>
+            <button type="button" id="kim-tool-btn" class="kim-btn" aria-pressed="true">Tool: ON</button>
+
+            <label class="brush-wrap kim-mono" for="kim-brush-slider">
+              <span>Brush</span>
+              <input id="kim-brush-slider" type="range" min="0.5" max="2.5" step="0.1" value="1.0" />
+              <span id="kim-brush-val">1.0x</span>
+            </label>
+
+            <button type="button" id="kim-replot-btn" class="kim-btn kim-btn-active">Re-Plot Sheet</button>
+          </div>
+        </div>
+
+        <div class="dock-bottom">
+          <nav class="jump-nav" aria-label="Compendium Chapters">
+            <a class="jump-link is-current" href="#ch-01">01 Thesis</a>
+            <a class="jump-link" href="#ch-02">02 BD &amp; Offers</a>
+            <a class="jump-link" href="#ch-03">03 4-Person Pod</a>
+            <a class="jump-link" href="#ch-04">04 Spore Flywheel</a>
+            <a class="jump-link" href="#ch-05">05 Unit Economics</a>
+            <a class="jump-link" href="#ch-06">06 90-Day Playbook</a>
+          </nav>
+
+          <div class="telemetry-strip kim-mono">
+            <span id="kim-guard-telemetry">Word Guards: active (0 collisions)</span>
+            <span id="kim-particle-telemetry">Particles: 0 / 150</span>
+            <a class="sibling-link" href="https://imlowly.github.io/aurora-agency-compendium/" target="_blank" rel="noopener noreferrer">Companion: Aurora Compendium &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="kim-stage" id="top">
+      <!-- HERO MASTHEAD -->
+      <section class="kim-card" id="card-hero" data-card-id="hero" data-card-medium="sumi-ink" data-take="1">
+        <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+        <div class="kim-card-inner">
+          <div class="hero-top">
+            <span class="kim-badge kim-badge-seal kim-mono">EXPANSIVE MEDIA AGENCY // FIELD OPERATING MANUAL</span>
+            <span class="kim-badge kim-mono" id="hero-med-badge">005 // SUMI-INK</span>
+          </div>
+
+          <div class="hero-grid">
+            <div>
+              <h1 class="hero-title kim-display">
+                Scale local media like <span class="hero-accent">wildfire</span>, one college town at a time.
+              </h1>
+              <p class="hero-lead">
+                LOVE IS IRONIC (L/I) is an expansive media agency built for real local business development and organic campus-by-campus replication. No bloated downtown retainer overhead, no paid-ad hamster wheel, and no outrage addiction -- just tight 4-person campus pods turning local businesses into neighborhood fixtures.
+              </p>
+              <div class="hero-stats">
+                <div>
+                  <div class="stat-num kim-mono">$950 &rarr; $6.8k</div>
+                  <div class="stat-lbl">3-tier local-to-regional ladder</div>
+                </div>
+                <div>
+                  <div class="stat-num kim-mono">4-Person Pod</div>
+                  <div class="stat-lbl">60% pod / 25% studio / 15% reserve</div>
+                </div>
+                <div>
+                  <div class="stat-num kim-mono">90 Days</div>
+                  <div class="stat-lbl">Zero to $8k-$12k/mo per chapter</div>
+                </div>
+              </div>
+            </div>
+
+            <aside class="hero-manifesto-box">
+              <h2 class="kim-mono">Operating Standard :: Built for the Living</h2>
+              <ul class="hero-manifesto-list">
+                <li><strong>Real cash before hype:</strong> Every chapter earns its charter by closing paying local operators inside 30 days.</li>
+                <li><strong>Zero outrage addiction:</strong> Wit opens the door; real affection for local owners and neighborhoods builds repeat customers.</li>
+                <li><strong>Zero graduation cliff:</strong> Every seat trains a sophomore shadow two semesters before handoff.</li>
+                <li><strong>Zero paid acquisition:</strong> Chapters replicate through visiting live rooms, rival creator swaps, and break referrals.</li>
+              </ul>
+            </aside>
+          </div>
+
+          <div class="ribbon-section">
+            <div class="ribbon-label kim-mono">
+              <span>Interactive 9-Medium Kinesis Renderer (Click any swatch to re-plot all sheets; click active swatch for 9-medium cycle):</span>
+              <span id="kim-active-mode-pill">Active: 005 Sumi Ink</span>
+            </div>
+            <div class="medium-ribbon" id="kim-medium-ribbon"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 01: OPERATING THESIS & CAMPUS WEDGE -->
+      <section class="chapter" id="ch-01">
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker kim-mono">01 // OPERATING THESIS &amp; CAMPUS WEDGE</div>
+            <h2 class="chapter-title kim-display">Why College Towns Are the Highest-Density Organic Acquisition Engine</h2>
+          </div>
+          <p class="chapter-summary">
+            Most agencies fight over saturated metro ad accounts at $10k/mo retainers. L/I enters where physical density, local SMB spend, and young creative hunger already intersect inside a two-mile radius.
+          </p>
+        </div>
+
+        <article class="kim-card" data-card-id="ch01-wedge" data-card-medium="pixel" data-take="1">
+          <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+          <div class="kim-card-inner">
+            <div class="card-meta-row kim-mono">
+              <span>Structural Market Advantage :: 2-Mile Radius Economics</span>
+              <span class="card-med-tag">005 SUMI-INK</span>
+            </div>
+            <div class="grid-4">
+              <div class="sub-box">
+                <div class="sub-kicker kim-mono">01 // CAPTIVE DENSITY</div>
+                <div class="sub-title kim-display">15k-50k Buyers on Foot</div>
+                <p class="sub-copy">
+                  Dorms, dining corridors, apartment blocks, and campus transit concentrate an entire target market into walkable blocks. One strong reel plus 30 table-tent QR cards saturates a town in 72 hours.
+                </p>
+                <div class="sub-metric kim-mono">CAC: $0 paid media spend</div>
+              </div>
+
+              <div class="sub-box">
+                <div class="sub-kicker kim-mono">02 // WALK-IN ACCESS</div>
+                <div class="sub-title kim-display">Owners Behind the Counter</div>
+                <p class="sub-copy">
+                  Local decision-makers do not hide behind enterprise procurement committees. Walking into a coffee roaster or leasing office at 2:30pm Tuesday gets a real 5-minute conversation 4x faster than cold email.
+                </p>
+                <div class="sub-metric kim-mono">Reply Rate: 20%-32% local</div>
+              </div>
+
+              <div class="sub-box">
+                <div class="sub-kicker kim-mono">03 // CREATOR BENCH</div>
+                <div class="sub-title kim-display">Built-In Film &amp; Social Graph</div>
+                <p class="sub-copy">
+                  Every campus already holds student cinematographers, editors, DJs, and club presidents who own cameras and know what students actually send in group chats -- without $120k/yr salaried agency bloat.
+                </p>
+                <div class="sub-metric kim-mono">Margin: 72%-78% gross</div>
+              </div>
+
+              <div class="sub-box">
+                <div class="sub-kicker kim-mono">04 // STARVED SMB SPEND</div>
+                <div class="sub-title kim-display">Real Budgets, Weak Options</div>
+                <p class="sub-copy">
+                  Local hospitality, housing, and fitness operators already spend $1,500-$5,000/mo on stale print flyers, boosted posts, or flaky solo freelancers because traditional agencies price them out.
+                </p>
+                <div class="sub-metric kim-mono">Payback: 2 leases or 45 tickets</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Three Forces Translated to Real Agency Positioning -->
+        <div class="grid-3">
+          <article class="kim-card" data-card-id="force-tao" data-card-medium="sumi-ink" data-take="1">
+            <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+            <div class="kim-card-inner">
+              <div class="card-meta-row kim-mono">
+                <span>FORCE 01 // SHARP CORE SIGNAL</span>
+                <span class="card-med-tag">005 SUMI-INK</span>
+              </div>
+              <h3 class="force-h3 kim-display">Tao</h3>
+              <div class="force-role kim-mono">Unmistakable Local Spine</div>
+              <p class="force-body">
+                Before filming a single frame, strip away stock corporate polish and find the one honest detail everyone in town recognizes in three seconds: the 5am sourdough oven, the landlord who fixes leaks in four hours, or the late-night taco window next to the library. Clarity beats budget every time.
+              </p>
+            </div>
+          </article>
+
+          <article class="kim-card" data-card-id="force-entropy" data-card-medium="linocut" data-take="1">
+            <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+            <div class="kim-card-inner">
+              <div class="card-meta-row kim-mono">
+                <span>FORCE 02 // WILDFIRE DISTRIBUTION</span>
+                <span class="card-med-tag">006 LINOCUT</span>
+              </div>
+              <h3 class="force-h3 kim-display">Entropy</h3>
+              <div class="force-role kim-mono">Multi-Format Sideways Spread</div>
+              <p class="force-body">
+                One 3-hour shoot never dies as a single post. It fractures into 12-24 native vertical cuts, student creator stitches, group-chat meme stills, QR counter drops, and live pop-up rooms. The campaign moves sideways through campus social graphs instead of praying for one lucky algorithm spike.
+              </p>
+            </div>
+          </article>
+
+          <article class="kim-card" data-card-id="force-irony" data-card-medium="oil" data-take="1">
+            <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+            <div class="kim-card-inner">
+              <div class="card-meta-row kim-mono">
+                <span>FORCE 03 // SHARP WIT + REAL WARMTH</span>
+                <span class="card-med-tag">003 OIL</span>
+              </div>
+              <h3 class="force-h3 kim-display">Irony &amp; Love</h3>
+              <div class="force-role kim-mono">Disarm Cynicism, Keep People Alive</div>
+              <p class="force-body">
+                Students smell fake corporate enthusiasm a mile away. Self-aware wit breaks ad blindness in the first two seconds; genuine warmth for the local founder and neighborhood earns real foot traffic. Built for the living, zero outrage addiction, zero hollow cynicism.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <article class="kim-card" data-card-id="ch01-positioning" data-card-medium="charcoal" data-take="1">
+          <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+          <div class="kim-card-inner">
+            <div class="card-meta-row kim-mono">
+              <span>Agency Positioning Statement :: Built for the Living</span>
+              <span class="card-med-tag">002 CHARCOAL</span>
+            </div>
+            <div class="grid-2">
+              <div class="sub-box">
+                <div class="sub-kicker kim-mono">WHAT L/I SHIPS</div>
+                <div class="sub-title kim-display">Human-First Local Proof</div>
+                <p class="sub-copy">
+                  Short, high-retention documentaries of real operators, witty campus street interviews tied to concrete offers, micro-creator collaborations with tracked QR codes, and real-world pop-up nights that turn online views into packed Tuesday rooms.
+                </p>
+              </div>
+              <div class="sub-box">
+                <div class="sub-kicker kim-mono">WHAT L/I REFUSES</div>
+                <div class="sub-title kim-display">Zero Outrage, Zero Burnout Theater</div>
+                <p class="sub-copy">
+                  No rage-bait stunts that embarrass clients, no fake vanity impression reports, no unpaid "exposure" internships, and no hustle-cult martyrdom. Every pod member works 8-12 focused hours a week, gets paid cleanly from collected revenue, and protects their craft.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- CHAPTER 02: LOCAL BUSINESS DEVELOPMENT ENGINE & OFFER LADDER -->
+      <section class="chapter" id="ch-02">
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker kim-mono">02 // LOCAL BUSINESS DEVELOPMENT ENGINE &amp; OFFER LADDER</div>
+            <h2 class="chapter-title kim-display">5 High-Yield Campus Verticals, 3-Tier Pricing &amp; Field Scripts</h2>
+          </div>
+          <p class="chapter-summary">
+            Every chapter sells a disciplined 3-step ladder: a low-friction 10-day proof sprint, a predictable 90-day local retainer, and a synchronized multi-campus syndicate for regional operators.
+          </p>
+        </div>
+
+        <!-- 5 Local ICP Verticals -->
+        <article class="kim-card" data-card-id="ch02-icps" data-card-medium="watercolor" data-take="1">
+          <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+          <div class="kim-card-inner">
+            <div class="card-meta-row kim-mono">
+              <span>Target Market Matrix :: 5 Proven Local &amp; Regional ICP Verticals</span>
+              <span class="card-med-tag">004 WATERCOLOR</span>
+            </div>
+            <div class="grid-5">
+              <div class="sub-box">
+                <div class="sub-kicker kim-mono">ICP 01</div>
+                <div class="sub-title">Independent Hospitality &amp; Coffee</div>
+                <p class="sub-copy"><strong>Buyer:</strong> Owner / GM. Empty Tue-Thu 2pm-6pm tables. Fast visual story + $2 QR study-hour perk proves ROI in week one.</p>
+                <div class="sub-metric kim-mono">Entry: $950 Sprint &rarr; $2.6k/mo</div>
+              </div>
+              <div class="sub-box">
+                <div class="sub-kicker kim-mono">ICP 02</div>
+                <div class="sub-title">Student Housing &amp; Property Groups</div>
+                <p class="sub-copy"><strong>Buyer:</strong> Regional Leasing Director. High LTV ($9k-$14k/lease). Signing just 2 extra leases pays for an entire 90-day retainer.</p>
+                <div class="sub-metric kim-mono">Entry: $2.6k/mo or $6.8k Multi</div>
+              </div>
+              <div class="sub-box">
+                <div class="sub-kicker kim-mono">ICP 03</div>
+                <div class="sub-title">Fitness, Wellness &amp; Boutiques</div>
+                <p class="sub-copy"><strong>Buyer:</strong> Studio Founder. Semester churn forces constant member refill. Student ambassador drops + class takeovers fill morning slots.</p>
+                <div class="sub-metric kim-mono">Entry: $950 Sprint &rarr; $2.6k/mo</div>
+              </div>
+              <div class="sub-box">
+                <div class="sub-kicker kim-mono">ICP 04</div>
+                <div class="sub-title">Regional Consumer Brands &amp; Venues</div>
+                <p class="sub-copy"><strong>Buyer:</strong> Field Marketing Lead / Talent Buyer. Launching a beverage, app, festival, or tour across 3-6 schools simultaneously.</p>
+                <div class="sub-metric kim-mono">Entry: $6,800/mo Syndicate</div>
+              </div>
+              <div class="sub-box">
+                <div class="sub-kicker kim-mono">ICP 05</div>
+                <div class="sub-title">Local Founder-Led SMBs</div>
+                <p class="sub-copy"><strong>Buyer:</strong> Principal Owner (barbers, dentists, auto shops, vintage stores, outfitters). Zero creative competition; one sharp story owns the town.</p>
+                <div class="sub-metric kim-mono">Entry: $950 Sprint &rarr; $2.6k/mo</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3-Tier Offer Ladder -->
+        <div class="grid-3">
+          <article class="kim-card" data-card-id="tier-1" data-card-medium="colored-pencil" data-take="1">
+            <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+            <div class="kim-card-inner tier-card-inner">
+              <div class="card-meta-row kim-mono">
+                <span>TIER 01 // FRICTIONLESS FIRST CLOSE</span>
+                <span class="card-med-tag">001 PENCIL</span>
+              </div>
+              <h3 class="force-h3 kim-display">Campus Ignition Sprint</h3>
+              <div class="tier-price kim-mono">$950 <span>one-time / 10-day delivery</span></div>
+              <ul class="tier-list">
+                <li><strong>1 Flagship Story Shoot:</strong> Half-day on-site capture (3 hours) spotlighting the owner, craft, and neighborhood vibe.</li>
+                <li><strong>12 Native Vertical Cuts:</strong> Hook-tested Reels, TikToks, and Shorts edited with clean captions and local cues.</li>
+                <li><strong>1 Campus Street Activation:</strong> Tracked QR tasting card, student interview reel, or rush-hour pop-up drop.</li>
+                <li><strong>Zero-Lockup Conversion Path:</strong> Day-10 performance recap presents exact views, saves, and QR redemptions.</li>
+              </ul>
+              <div class="tier-footer kim-mono">
+                <div><strong>SLA:</strong> Shoot Day 3 / First 6 cuts Day 6 / All 12 + recap Day 10</div>
+                <div><strong>Target Gross Margin:</strong> ~75% ($710 net to pod &amp; studio)</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="kim-card" data-card-id="tier-2" data-card-medium="sumi-ink" data-take="1">
+            <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+            <div class="kim-card-inner tier-card-inner">
+              <div class="card-meta-row kim-mono">
+                <span>TIER 02 // CORE RECURRING ENGINE</span>
+                <span class="kim-badge kim-badge-seal">PRIMARY OFFER</span>
+              </div>
+              <h3 class="force-h3 kim-display">Local Wildfire Retainer</h3>
+              <div class="tier-price kim-mono">$2,600<span>/mo (90-day minimum)</span></div>
+              <ul class="tier-list">
+                <li><strong>2 Monthly Shoot Days:</strong> Two half-day productions capturing seasonal drops, regulars, staff personality, and offers.</li>
+                <li><strong>24 Native Vertical Cuts / Mo:</strong> Six posts/week cadence across Reels, TikTok, and Shorts with rapid hook iteration.</li>
+                <li><strong>4 Vetted Creator Collabs:</strong> Local student micro-creators (2k-25k campus followers) shooting native co-posts.</li>
+                <li><strong>1 Local Event Capture + Attribution Report:</strong> Live night capture plus monthly QR redemptions, code uses, and foot-traffic lift.</li>
+              </ul>
+              <div class="tier-footer kim-mono">
+                <div><strong>SLA:</strong> Rolling 72-hour edit turnaround; Monday 10am content lock</div>
+                <div><strong>Target Gross Margin:</strong> ~78% ($2,030 net after creator stipends)</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="kim-card" data-card-id="tier-3" data-card-medium="glowing-glass" data-take="1">
+            <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+            <div class="kim-card-inner tier-card-inner">
+              <div class="card-meta-row kim-mono">
+                <span>TIER 03 // REGIONAL EXPANSION</span>
+                <span class="card-med-tag">009 GLASS</span>
+              </div>
+              <h3 class="force-h3 kim-display">Multi-Campus Syndicate</h3>
+              <div class="tier-price kim-mono">$6,800<span>/mo across 3-6 chapters</span></div>
+              <ul class="tier-list">
+                <li><strong>Synchronized Regional Launch:</strong> One unified campaign brief localized natively across 3 to 6 neighboring college towns.</li>
+                <li><strong>60-90 Localized Vertical Cuts / Mo:</strong> Campus-specific references, slang, landmarks, and local creator cameos per town.</li>
+                <li><strong>Coordinated Live Activations:</strong> Simultaneous tasting tables, ticket drops, or pop-up rooms during game weeks or launches.</li>
+                <li><strong>Unified Regional Attribution Deck:</strong> Side-by-side campus leaderboard of redemptions, shares, and local conversion cost.</li>
+              </ul>
+              <div class="tier-footer kim-mono">
+                <div><strong>SLA:</strong> 7-day spin-up from signed SOW; weekly Friday roll-up</div>
+                <div><strong>Target Gross Margin:</strong> ~72% ($4,900 net split across pods &amp; studio)</div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Copy-Pasteable Outreach Scripts & Objection Accordion -->
+        <article class="kim-card" data-card-id="ch02-scripts" data-card-medium="clay" data-take="1">
+          <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+          <div class="kim-card-inner">
+            <div class="card-meta-row kim-mono">
+              <span>Field Acquisition Kit :: Copy-Pasteable Scripts &amp; Objection Handling</span>
+              <span class="card-med-tag">008 CLAY</span>
+            </div>
+
+            <div class="tab-bar" role="tablist" aria-label="Outreach Scripts">
+              <button type="button" class="kim-btn kim-btn-active script-tab-btn" role="tab" aria-selected="true" data-script-tab="walkin">1. In-Person Walk-In</button>
+              <button type="button" class="kim-btn script-tab-btn" role="tab" aria-selected="false" data-script-tab="dm">2. Cold DM / Message</button>
+              <button type="button" class="kim-btn script-tab-btn" role="tab" aria-selected="false" data-script-tab="discovery">3. 15-Min Discovery Call</button>
+            </div>
+
+            <div class="script-panel active" id="script-walkin">
+              <div class="script-box">
+                <div class="script-head">
+                  <span class="kim-mono" style="font-size:11px;font-weight:800;">WINDOW: TUE-THU 2:00PM-4:00PM (OFF-PEAK) // GOAL: BOOK 15-MIN DISCOVERY OR CLOSE $950 SPRINT</span>
+                  <button type="button" class="kim-btn kim-btn-subtle copy-script-btn" data-copy-target="copy-walkin">Copy Script</button>
+                </div>
+                <div class="script-text" id="copy-walkin">"Hey [Name], I am a regular from over on campus -- love your [specific menu item or product]. Do you have 90 seconds while it is quiet?
+
+We run the campus chapter of LOVE IS IRONIC, a 4-person student media pod right here in town. We noticed [honest observation: e.g., your Instagram has not posted since finals week, and Tuesday afternoons are quiet even though students walk right past this corner].
+
+Here is a 20-second reel we shot last week for [Local Proof Business] -- it drove [X] tracked QR redemptions in 6 days with zero ad spend. [Show muted phone playback for 10 seconds.]
+
+We do not pitch bloated annual contracts. We start with a flat $950 10-day Campus Ignition Sprint: one 3-hour shoot, 12 vertical cuts built for local students, and one tracked street drop. If it moves real foot traffic, we talk monthly. Want to grab 15 minutes Thursday morning to map what a slow-afternoon spike would look like?"</div>
+              </div>
+            </div>
+
+            <div class="script-panel" id="script-dm">
+              <div class="script-box">
+                <div class="script-head">
+                  <span class="kim-mono" style="font-size:11px;font-weight:800;">CHANNEL: INSTAGRAM DM OR LOCAL OWNER TEXT // 4-LINE OBSERVATION + 72H FOLLOW-UP</span>
+                  <button type="button" class="kim-btn kim-btn-subtle copy-script-btn" data-copy-target="copy-dm">Copy Script</button>
+                </div>
+                <div class="script-text" id="copy-dm">[INITIAL DM]
+Hey [Name] -- walked past [Business Name] after class today and saw the new [specific item/sign/space].
+We run the local 4-person L/I campus media pod here and just helped [Local Proof Business] turn one 3-hour shoot into 12 local vertical cuts and [X] tracked student walk-ins in 10 days.
+We have two open $950 10-day Ignition Sprint slots left this month -- flat fee, no retainer lock-in, everything shot and edited locally.
+Want me to swing by for 10 minutes Tuesday afternoon or send a 2-reel sample link?
+
+[72-HOUR BUMP]
+Quick bump [Name] -- filmed two campus street reels near [Nearby Landmark] yesterday and had a quick idea for your [slow day / upcoming promo]. Happy to drop by for 5 minutes tomorrow if you are around.</div>
+              </div>
+            </div>
+
+            <div class="script-panel" id="script-discovery">
+              <div class="script-box">
+                <div class="script-head">
+                  <span class="kim-mono" style="font-size:11px;font-weight:800;">15-MINUTE DISCOVERY AGENDA + 5 QUALIFYING QUESTIONS</span>
+                  <button type="button" class="kim-btn kim-btn-subtle copy-script-btn" data-copy-target="copy-discovery">Copy Script</button>
+                </div>
+                <div class="script-text" id="copy-discovery">[00:00 - 02:00] FRAME: "I will keep this to 15 minutes. I want to understand where slow hours or empty seats cost you money, see if our 10-day Sprint fits, and give you a straight yes or no."
+
+[02:00 - 10:00] FIVE QUALIFYING QUESTIONS:
+1. "Which exact days, hours, or leasing windows feel quieter than they should right now?"
+2. "What is a repeat student customer, membership, or signed lease worth to you over a semester?"
+3. "What have you tried for marketing in the last 6 months, and what annoyed you most about it?"
+4. "If we bring 40-80 new local students through your door in the next 30 days, what single offer or hook should they come in for?"
+5. "Who approves quick creative cuts so we can keep our 72-hour turnaround fast without stalling?"
+
+[10:00 - 15:00] CLOSE TO SPRINT:
+"Based on your average customer value of $[X], just [Y] new regulars covers our entire $950 Ignition Sprint. We shoot [Day], deliver the first 6 cuts by [Day], and put a unique QR offer code on the table so we track real bodies, not guesses. If we send the 1-page agreement today, does Tuesday 2pm work for the shoot?"</div>
+              </div>
+            </div>
+
+            <!-- Interactive Objection-Handling Accordion -->
+            <div style="margin-top: 18px;">
+              <div class="sub-kicker kim-mono" style="margin-bottom: 6px;">OBJECTION-HANDLING PLAYBOOK (CLICK TO EXPAND EXACT REBUTTAL)</div>
+              <div class="accordion" id="objection-accordion">
+                <div class="acc-item open">
+                  <button type="button" class="acc-trigger" aria-expanded="true">
+                    <span>01. "We already do our social media in-house."</span>
+                    <span class="acc-icon">-</span>
+                  </button>
+                  <div class="acc-body">
+                    <strong>Reframe:</strong> "That is actually great -- we are not here to take over your daily story updates or reply to comments. Most owners and managers already run out of hours before they can film, edit 12 hook-tested cuts, and coordinate 4 campus micro-creators. Think of the $950 Sprint as handing your in-house person a full month of raw local ammo plus student distribution they cannot build alone behind the counter."
+                  </div>
+                </div>
+
+                <div class="acc-item">
+                  <button type="button" class="acc-trigger" aria-expanded="false">
+                    <span>02. "College students are flaky -- what happens during finals or summer?"</span>
+                    <span class="acc-icon">+</span>
+                  </button>
+                  <div class="acc-body">
+                    <strong>Reframe:</strong> "That is why we never sell solo freelancers. You contract with the LOVE IS IRONIC studio entity, backed by a 4-person pod with pre-trained sophomore shadows and Central Studio editing backup. We pre-batch shoots two weeks before finals week so posting never drops a single day, and our 72-hour SLA is written directly into your 1-page agreement."
+                  </div>
+                </div>
+
+                <div class="acc-item">
+                  <button type="button" class="acc-trigger" aria-expanded="false">
+                    <span>03. "How do we actually measure ROI instead of vanity views?"</span>
+                    <span class="acc-icon">+</span>
+                  </button>
+                  <div class="acc-body">
+                    <strong>Reframe:</strong> "Views do not pay rent, so we do not bill on impressions. Every campaign ships with a tracked redemption mechanism: a unique secret-menu phrase, a dedicated QR card, a leasing referral code, or a POS promo button. On Day 10 of your Sprint and the 1st of every retainer month, you get a 1-page scorecard showing exact redemptions, local shares per 1,000 views, and cost per tracked customer."
+                  </div>
+                </div>
+
+                <div class="acc-item">
+                  <button type="button" class="acc-trigger" aria-expanded="false">
+                    <span>04. "That is too expensive for a local business."</span>
+                    <span class="acc-icon">+</span>
+                  </button>
+                  <div class="acc-body">
+                    <strong>Reframe:</strong> "Totally fair if you compare it to a $300 boosted post. Compare it to what a quiet Tuesday or two empty units already costs you. One signed student lease is $10,000+ in annual rent; 35 repeat coffee customers over a semester is $3,500+ in gross margin. That is why we never ask for $2,600/mo on day one -- start with the flat $950 10-day Sprint, verify the tracked walk-ins yourself, and only upgrade when the math pays for itself."
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- CHAPTER 03: THE 4-PERSON CAMPUS CHAPTER POD & SUCCESSION -->
+      <section class="chapter" id="ch-03">
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker kim-mono">03 // THE 4-PERSON CAMPUS CHAPTER POD &amp; SUCCESSION</div>
+            <h2 class="chapter-title kim-display">Lean Pod Roles, Hard Weekly KPIs &amp; Zero-Collapse Continuity</h2>
+          </div>
+          <p class="chapter-summary">
+            A chapter never needs 20 club members sitting in meetings. It runs on 4 paid operators working 8-12 focused hours/week, paired with a semester-by-semester shadow bench so graduation never breaks a client account.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <article class="kim-card" data-card-id="role-md" data-card-medium="sumi-ink" data-take="1">
+            <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+            <div class="kim-card-inner">
+              <div class="card-meta-row kim-mono">
+                <span>SEAT 01 // BD &amp; CLOSING</span>
+                <span class="role-hours">10-12 hrs/wk</span>
+              </div>
+              <h3 class="sub-title kim-display" style="font-size:18px;margin-bottom:6px;">Chapter Managing Director</h3>
+              <p class="sub-copy">Owns local prospecting, off-peak walk-ins, 15-min discovery calls, closing Sprints/Retainers, client Day-10 recaps, and running the weekly standup.</p>
+              <ul class="kpi-list kim-mono">
+                <li>KPI: 25+ local touches / wk</li>
+                <li>KPI: 3+ discovery calls / wk</li>
+                <li>KPI: >= 85% 90-day retention</li>
+                <li>Split: 28% pod pool + 15% closer fee</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="kim-card" data-card-id="role-signal" data-card-medium="oil" data-take="1">
+            <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+            <div class="kim-card-inner">
+              <div class="card-meta-row kim-mono">
+                <span>SEAT 02 // CREATIVE</span>
+                <span class="role-hours">8-10 hrs/wk</span>
+              </div>
+              <h3 class="sub-title kim-display" style="font-size:18px;margin-bottom:6px;">Signal Lead</h3>
+              <p class="sub-copy">Owns shoot pre-production, 3-second opening hooks, on-site directing, interviewing owners/students, and maintaining crisp L/I wit + warmth tone.</p>
+              <ul class="kpi-list kim-mono">
+                <li>KPI: Briefs locked 48h pre-shoot</li>
+                <li>KPI: >= 38% 3-sec hold rate</li>
+                <li>KPI: 2 clean shoots / client / mo</li>
+                <li>Split: 24% of pod pool</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="kim-card" data-card-id="role-editor" data-card-medium="pixel" data-take="1">
+            <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+            <div class="kim-card-inner">
+              <div class="card-meta-row kim-mono">
+                <span>SEAT 03 // PRODUCTION</span>
+                <span class="role-hours">10-12 hrs/wk</span>
+              </div>
+              <h3 class="sub-title kim-display" style="font-size:18px;margin-bottom:6px;">Wildfire Editor</h3>
+              <p class="sub-copy">Owns ingest, pacing, kinetic captions, audio polish, multi-format fracture, and rapid cut turnaround using Central Studio templates and vault presets.</p>
+              <ul class="kpi-list kim-mono">
+                <li>KPI: 12-24 cuts shipped / wk</li>
+                <li>KPI: 100% inside 72h edit SLA</li>
+                <li>KPI: Asset vault tagged daily</li>
+                <li>Split: 26% of pod pool</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="kim-card" data-card-id="role-live" data-card-medium="linocut" data-take="1">
+            <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+            <div class="kim-card-inner">
+              <div class="card-meta-row kim-mono">
+                <span>SEAT 04 // DISTRIBUTION</span>
+                <span class="role-hours">8-10 hrs/wk</span>
+              </div>
+              <h3 class="sub-title kim-display" style="font-size:18px;margin-bottom:6px;">Live Rooms Producer</h3>
+              <p class="sub-copy">Owns vetted roster of 15-30 local campus micro-creators, club partnerships, street-level QR activations, and monthly Live Room pop-up events.</p>
+              <ul class="kpi-list kim-mono">
+                <li>KPI: 4 creator collabs / client / mo</li>
+                <li>KPI: 1 Live Room or pop-up / mo</li>
+                <li>KPI: 50+ tracked QR scans / drop</li>
+                <li>Split: 22% of pod pool</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <!-- Semester Continuity Protocol & Weekly 25-Min Standup -->
+        <article class="kim-card" data-card-id="ch03-continuity" data-card-medium="charcoal" data-take="1">
+          <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+          <div class="kim-card-inner">
+            <div class="card-meta-row kim-mono">
+              <span>Semester Continuity Protocol :: Anti-Graduation-Cliff Architecture</span>
+              <span class="card-med-tag">002 CHARCOAL</span>
+            </div>
+
+            <div class="grid-3" style="margin-bottom: 16px;">
+              <div class="sub-box">
+                <div class="sub-kicker kim-mono">STAGE 01 // SOPHOMORE SHADOW</div>
+                <div class="sub-title kim-display">Paid Per-Shoot Apprentice</div>
+                <p class="sub-copy">Every chapter keeps 2-4 Sophomore Shadows on deck. Shadows attend 2 shoots, 2 discovery calls, and edit 4 backup cuts per semester (paid $75-$150/project from pod reserve) so they know the playbook cold before taking a seat.</p>
+              </div>
+              <div class="sub-box">
+                <div class="sub-kicker kim-mono">STAGE 02 // JUNIOR LEAD</div>
+                <div class="sub-title kim-display">Active 4-Seat Operator</div>
+                <p class="sub-copy">Holds one of the 4 core pod seats for two consecutive semesters. Owns full client SLA, earns core pod revenue share, and begins mentoring their own Sophomore Shadow by Week 6 of their second term.</p>
+              </div>
+              <div class="sub-box">
+                <div class="sub-kicker kim-mono">STAGE 03 // SENIOR ADVISOR</div>
+                <div class="sub-title kim-display">Clean Handoff + Regional Seed</div>
+                <p class="sub-copy">Hands over day-to-day seat by Week 10 of spring semester, earns a 5% trailing handoff bonus for 90 days when accounts stay retained, and focuses on regional $6.8k Syndicate deals or seeding neighboring campuses.</p>
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div class="sub-box">
+                <div class="sub-kicker kim-mono">SHARED OPERATING BACKBONE</div>
+                <div class="sub-title">Centralized CRM + Asset Vault</div>
+                <p class="sub-copy"><strong>No chapter stores client history in personal DMs or laptops.</strong> Every lead lives in the Central CRM (Stages: Prospect &rarr; Walk-In/DM &rarr; Discovery &rarr; Sprint &rarr; Retainer &rarr; Renewal). Every shoot uploads raw footage, caption templates, and QR analytics into the Shared Asset Vault within 12 hours of wrap so any editor or incoming Junior Lead can step in seamlessly.</p>
+              </div>
+              <div class="sub-box">
+                <div class="sub-kicker kim-mono">OPERATING RHYTHM</div>
+                <div class="sub-title">Weekly 25-Minute Pipeline Standup (Mondays)</div>
+                <table class="standup-table">
+                  <thead>
+                    <tr><th>Block</th><th>Owner</th><th>Exact Output</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="kim-mono">00-05m</td><td>Chapter MD</td><td>Cash collected, renewals due in 30d, Sprint &rarr; Retainer upgrades</td></tr>
+                    <tr><td class="kim-mono">05-13m</td><td>Chapter MD</td><td>Last week's 25 touches, reply rate, discovery calls booked</td></tr>
+                    <tr><td class="kim-mono">13-20m</td><td>Signal + Editor</td><td>Shoots locked this week, 72h edit queue, bottleneck clear</td></tr>
+                    <tr><td class="kim-mono">20-25m</td><td>Live Producer</td><td>Creator collabs confirmed, QR scan tallies, next Live Room</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- CHAPTER 04: ORGANIC MULTI-CAMPUS REPLICATION ("SPORE & STUDIO" FLYWHEEL) -->
+      <section class="chapter" id="ch-04">
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker kim-mono">04 // ORGANIC MULTI-CAMPUS REPLICATION ("SPORE &amp; STUDIO" FLYWHEEL)</div>
+            <h2 class="chapter-title kim-display">Zero-Ad Network Propagation, Revenue Split &amp; 4-Gate Charter</h2>
+          </div>
+          <p class="chapter-summary">
+            Do not buy ads to recruit campus directors. One thriving chapter naturally seeds Chapters 2 through 10 through physical overlap, athletic rivalries, holiday breaks, and paid promotion tracks.
+          </p>
+        </div>
+
+        <!-- Inline SVG Network Propagation Diagram -->
+        <article class="kim-card" data-card-id="ch04-diagram" data-card-medium="watercolor" data-take="1">
+          <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+          <div class="kim-card-inner">
+            <div class="card-meta-row kim-mono">
+              <span>Network Topology :: Chapter 01 Organic Spore Propagation (Zero Paid Ads)</span>
+              <span class="card-med-tag">004 WATERCOLOR</span>
+            </div>
+
+            <div class="svg-frame">
+              <svg viewBox="0 0 860 270" role="img" aria-label="Spore and Studio organic multi-campus propagation diagram showing Chapter 01 seeding Chapters 02 through 10 through four organic vectors">
+                <defs>
+                  <linearGradient id="sporeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="var(--card-accent, #D03A2B)" />
+                    <stop offset="55%" stop-color="var(--card-accent2, #3C5A78)" />
+                    <stop offset="100%" stop-color="var(--card-ink, #141210)" />
+                  </linearGradient>
+                </defs>
+
+                <!-- Flow Lines: Chapter 01 -> 4 Organic Vectors -->
+                <g fill="none" stroke="url(#sporeGrad)" stroke-width="2.2" stroke-linecap="round">
+                  <path d="M168 135 C215 135, 222 42, 272 42" />
+                  <path d="M168 135 C215 135, 222 104, 272 104" />
+                  <path d="M168 135 C215 135, 222 166, 272 166" />
+                  <path d="M168 135 C215 135, 222 228, 272 228" />
+
+                  <!-- Vectors -> Seeded Chapters -->
+                  <path d="M518 42 C568 42, 574 58, 620 58" stroke-opacity="0.82" />
+                  <path d="M518 104 C568 104, 574 114, 620 114" stroke-opacity="0.82" />
+                  <path d="M518 166 C568 166, 574 170, 620 170" stroke-opacity="0.82" />
+                  <path d="M518 228 C568 228, 574 222, 620 222" stroke-opacity="0.82" />
+                </g>
+
+                <!-- Feedback Loop Arc: Chapters 2-10 back to Syndicate Pool -->
+                <path d="M735 248 C735 266, 92 266, 92 184" fill="none" stroke="var(--card-accent, #D03A2B)" stroke-width="1.6" stroke-dasharray="5 5" />
+                <text x="415" y="262" text-anchor="middle" fill="var(--card-accent, #D03A2B)" font-family="monospace" font-size="10" font-weight="800">MULTI-CAMPUS SYNDICATE ($6,800/MO) &amp; SHARED PROOF FEEDBACK LOOP</text>
+
+                <!-- Origin Node: Chapter 01 -->
+                <rect x="14" y="88" width="154" height="94" rx="4" fill="var(--card-well, #E9E3D5)" stroke="var(--card-accent, #D03A2B)" stroke-width="2.4" />
+                <text x="91" y="114" text-anchor="middle" fill="var(--card-accent, #D03A2B)" font-family="monospace" font-size="10" font-weight="800">ORIGIN // CHAPTER 01</text>
+                <text x="91" y="135" text-anchor="middle" fill="var(--card-ink, #141210)" font-family="sans-serif" font-size="13.5" font-weight="900">Flagship Pod</text>
+                <text x="91" y="153" text-anchor="middle" fill="var(--card-muted, #59534B)" font-family="monospace" font-size="9.5">$8k-$12k/mo live proof</text>
+                <text x="91" y="168" text-anchor="middle" fill="var(--card-muted, #59534B)" font-family="monospace" font-size="9.5">4 Charter Gates passed</text>
+
+                <!-- 4 Organic Replication Vectors -->
+                <g font-family="sans-serif">
+                  <rect x="272" y="16" width="246" height="50" rx="4" fill="var(--card-well, #E9E3D5)" stroke="var(--card-ink, #141210)" stroke-width="1.6" />
+                  <text x="284" y="36" fill="var(--card-ink, #141210)" font-size="12" font-weight="800">1. Inter-Campus Visiting Live Rooms</text>
+                  <text x="284" y="53" fill="var(--card-muted, #59534B)" font-size="10">Co-host pop-up 45-90m away; recruit local host</text>
+
+                  <rect x="272" y="78" width="246" height="50" rx="4" fill="var(--card-well, #E9E3D5)" stroke="var(--card-ink, #141210)" stroke-width="1.6" />
+                  <text x="284" y="98" fill="var(--card-ink, #141210)" font-size="12" font-weight="800">2. Conference-Rival Creator Swaps</text>
+                  <text x="284" y="115" fill="var(--card-muted, #59534B)" font-size="10">Game-week collab reels seed rival school audience</text>
+
+                  <rect x="272" y="140" width="246" height="50" rx="4" fill="var(--card-well, #E9E3D5)" stroke="var(--card-ink, #141210)" stroke-width="1.6" />
+                  <text x="284" y="160" fill="var(--card-ink, #141210)" font-size="12" font-weight="800">3. Hometown-Break Referrals</text>
+                  <text x="284" y="177" fill="var(--card-muted, #59534B)" font-size="10">Members refer high-school peers at sister campuses</text>
+
+                  <rect x="272" y="202" width="246" height="50" rx="4" fill="var(--card-well, #E9E3D5)" stroke="var(--card-ink, #141210)" stroke-width="1.6" />
+                  <text x="284" y="222" fill="var(--card-ink, #141210)" font-size="12" font-weight="800">4. Founding-Lead Promotion Tracks</text>
+                  <text x="284" y="239" fill="var(--card-muted, #59534B)" font-size="10">Top operators mentor Ch. 02-10 for 5% seed trail</text>
+                </g>
+
+                <!-- Seeded Chapters Column -->
+                <g font-family="sans-serif">
+                  <rect x="620" y="32" width="224" height="48" rx="4" fill="var(--card-well, #E9E3D5)" stroke="var(--card-accent, #D03A2B)" stroke-width="1.8" />
+                  <text x="634" y="52" fill="var(--card-accent, #D03A2B)" font-family="monospace" font-size="9.5" font-weight="800">RING 1 // 45-90 MIN DRIVE</text>
+                  <text x="634" y="69" fill="var(--card-ink, #141210)" font-size="12" font-weight="800">Chapters 02 - 04 (Regional Cluster)</text>
+
+                  <rect x="620" y="92" width="224" height="48" rx="4" fill="var(--card-well, #E9E3D5)" stroke="var(--card-accent2, #3C5A78)" stroke-width="1.8" />
+                  <text x="634" y="112" fill="var(--card-accent2, #3C5A78)" font-family="monospace" font-size="9.5" font-weight="800">RING 2 // CONFERENCE CORRIDOR</text>
+                  <text x="634" y="129" fill="var(--card-ink, #141210)" font-size="12" font-weight="800">Chapters 05 - 07 (Rival Network)</text>
+
+                  <rect x="620" y="152" width="224" height="48" rx="4" fill="var(--card-well, #E9E3D5)" stroke="var(--card-ink, #141210)" stroke-width="1.8" />
+                  <text x="634" y="172" fill="var(--card-ink, #141210)" font-family="monospace" font-size="9.5" font-weight="800">RING 3 // STATE &amp; NATIONAL</text>
+                  <text x="634" y="189" fill="var(--card-ink, #141210)" font-size="12" font-weight="800">Chapters 08 - 10+ (Syndicate Scale)</text>
+
+                  <rect x="620" y="210" width="224" height="36" rx="4" fill="var(--card-accent, #D03A2B)" stroke="var(--card-ink, #141210)" stroke-width="1.6" />
+                  <text x="732" y="232" text-anchor="middle" fill="var(--card-accent-fg, #FFFDF8)" font-family="monospace" font-size="10.5" font-weight="900">ZERO AD SPEND // SELF-FUNDED</text>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+        <!-- Transparent Revenue Split & 4-Gate Charter -->
+        <div class="grid-2">
+          <article class="kim-card" data-card-id="ch04-split" data-card-medium="linocut" data-take="1">
+            <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+            <div class="kim-card-inner">
+              <div class="card-meta-row kim-mono">
+                <span>Transparent Economics :: Every Collected Dollar</span>
+                <span class="card-med-tag">006 LINOCUT</span>
+              </div>
+              <h3 class="sub-title kim-display" style="font-size:20px;">60 / 25 / 15 Revenue Split</h3>
+
+              <div class="split-bar" aria-label="60 percent Chapter Pod, 25 percent Central Studio, 15 percent Chapter Reserve">
+                <div class="split-seg" style="width:60%;background:var(--card-accent, #D03A2B);color:var(--card-accent-fg, #FFFDF8);">60% POD</div>
+                <div class="split-seg" style="width:25%;background:var(--card-ink, #141210);color:var(--card-well, #F8F4EA);">25% STUDIO</div>
+                <div class="split-seg" style="width:15%;background:var(--card-accent2, #3C5A78);color:#FFFDF8;">15% RES</div>
+              </div>
+
+              <ul class="tier-list">
+                <li><strong>60% Chapter Pod Payout:</strong> Paid net-7 from collected client invoices. First, a <strong>15% BD Closer Commission</strong> pays directly to the pod member who sourced and closed the deal (on Sprints and months 1-3 of Retainers); the remaining pod pool splits cleanly by seat weight (MD 28% / Editor 26% / Signal 24% / Live 22%).</li>
+                <li><strong>25% Central Studio Infrastructure:</strong> Funds standardized MSAs/SOWs, automated Stripe billing, shared motion/caption kits, CRM &amp; Asset Vault hosting, creative QA review, and regional Syndicate business development.</li>
+                <li><strong>15% Chapter Equipment &amp; Live-Event Reserve:</strong> Ring-fenced per chapter for camera/audio gear upgrades, vetted creator stipends, Sophomore Shadow stipends, and Live Room pop-up venue deposits.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="kim-card" data-card-id="ch04-charter" data-card-medium="sumi-ink" data-take="1">
+            <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+            <div class="kim-card-inner">
+              <div class="card-meta-row kim-mono">
+                <span>Quality Firewall :: Unlock Official Chapter Status</span>
+                <span class="card-med-tag">005 SUMI-INK</span>
+              </div>
+              <h3 class="sub-title kim-display" style="font-size:20px;margin-bottom:10px;">The 4-Gate Chapter Charter</h3>
+              <div class="grid-2" style="gap:10px;">
+                <div class="sub-box">
+                  <div class="sub-kicker kim-mono">GATE 01 // POD SEATED</div>
+                  <div class="sub-title">4 Leads + 2 Shadows</div>
+                  <p class="sub-copy">All four operating roles assigned with written weekly hour commitments and two Sophomore Shadows enrolled.</p>
+                </div>
+                <div class="sub-box">
+                  <div class="sub-kicker kim-mono">GATE 02 // PROOF QUALITY</div>
+                  <div class="sub-title">3 QA-Passed Proof Shoots</div>
+                  <p class="sub-copy">Three local proof reels published and approved by Central Studio for crisp audio, hook pacing, and zero cringe.</p>
+                </div>
+                <div class="sub-box">
+                  <div class="sub-kicker kim-mono">GATE 03 // REAL REVENUE</div>
+                  <div class="sub-title">$2,850+ Collected Cash</div>
+                  <p class="sub-copy">Three paid $950 Ignition Sprints or one signed 90-day Wildfire Retainer billed and settled through Central Studio.</p>
+                </div>
+                <div class="sub-box">
+                  <div class="sub-kicker kim-mono">GATE 04 // SLA DISCIPLINE</div>
+                  <div class="sub-title">4 Clean Standup Weeks</div>
+                  <p class="sub-copy">Four consecutive Monday standups logged in CRM, asset vault updated on time, and zero missed 72h edit turnarounds.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CHAPTER 05: INTERACTIVE UNIT ECONOMICS & PIPELINE CALCULATOR -->
+      <section class="chapter" id="ch-05">
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker kim-mono">05 // INTERACTIVE UNIT ECONOMICS &amp; PIPELINE CALCULATOR</div>
+            <h2 class="chapter-title kim-display">Model Chapter Revenue, Pod Payouts &amp; Weekly BD Touches</h2>
+          </div>
+          <p class="chapter-summary">
+            Adjust active chapters, monthly client mix, and payout share to stress-test cash flow and reverse-engineer exact weekly outreach volume from real conversion rates (20% reply &rarr; 35% discovery &rarr; 30% close).
+          </p>
+        </div>
+
+        <article class="kim-card" data-card-id="ch05-calculator" data-card-medium="glowing-glass" data-take="1">
+          <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+          <div class="kim-card-inner">
+            <div class="card-meta-row kim-mono">
+              <span>Live Financial Simulator :: Real-Time Unit Economics</span>
+              <span class="card-med-tag">009 GLASS</span>
+            </div>
+
+            <div class="preset-row" aria-label="Quick scenario presets">
+              <button type="button" class="kim-btn kim-btn-subtle calc-preset-btn" data-preset="seed">Preset: 1 Launch Chapter</button>
+              <button type="button" class="kim-btn kim-btn-subtle calc-preset-btn" data-preset="cluster">Preset: 5-Campus Cluster</button>
+              <button type="button" class="kim-btn kim-btn-subtle calc-preset-btn" data-preset="network">Preset: 15-Campus Network</button>
+            </div>
+
+            <div class="calc-layout">
+              <!-- Controls -->
+              <div class="slider-stack">
+                <label class="slider-row" for="calc-chapters">
+                  <div class="slider-top">
+                    <span class="slider-label">Active Chapters</span>
+                    <span class="slider-val kim-mono" id="val-chapters">3</span>
+                  </div>
+                  <input id="calc-chapters" type="range" min="1" max="25" step="1" value="3" />
+                  <span class="slider-hint">Chartered 4-person campus pods operating concurrently (1-25)</span>
+                </label>
+
+                <label class="slider-row" for="calc-retainers">
+                  <div class="slider-top">
+                    <span class="slider-label">Monthly Retainer Clients / Chapter ($2,600/mo)</span>
+                    <span class="slider-val kim-mono" id="val-retainers">3</span>
+                  </div>
+                  <input id="calc-retainers" type="range" min="1" max="8" step="1" value="3" />
+                  <span class="slider-hint">Active Local Wildfire Retainers per campus pod (1-8)</span>
+                </label>
+
+                <label class="slider-row" for="calc-sprints">
+                  <div class="slider-top">
+                    <span class="slider-label">Ignition Sprints / Chapter / Mo ($950)</span>
+                    <span class="slider-val kim-mono" id="val-sprints">2</span>
+                  </div>
+                  <input id="calc-sprints" type="range" min="0" max="6" step="1" value="2" />
+                  <span class="slider-hint">10-day entry sprints feeding future retainer conversions (0-6)</span>
+                </label>
+
+                <label class="slider-row" for="calc-syndicates">
+                  <div class="slider-top">
+                    <span class="slider-label">Multi-Campus Syndicate Deals ($6,800/mo)</span>
+                    <span class="slider-val kim-mono" id="val-syndicates">1</span>
+                  </div>
+                  <input id="calc-syndicates" type="range" min="0" max="6" step="1" value="1" />
+                  <span class="slider-hint">Regional 3-6 campus brand/venue retainers across network (0-6)</span>
+                </label>
+
+                <label class="slider-row" for="calc-share">
+                  <div class="slider-top">
+                    <span class="slider-label">Chapter Pod Payout Share (%)</span>
+                    <span class="slider-val kim-mono" id="val-share">60%</span>
+                  </div>
+                  <input id="calc-share" type="range" min="50" max="70" step="1" value="60" />
+                  <span class="slider-hint">Pod share (50%-70%). Chapter Reserve fixed at 15%; Central Studio takes remainder (<span id="val-studio-pct">25%</span>).</span>
+                </label>
+              </div>
+
+              <!-- Live Computed Metrics -->
+              <div>
+                <div class="calc-results">
+                  <div class="kpi-card is-primary">
+                    <span class="kpi-k kim-mono">Monthly Gross Revenue (Network)</span>
+                    <span class="kpi-v kim-mono" id="out-gross">$35,900</span>
+                    <span class="kpi-sub kim-mono" id="out-mix-line">Retainers $23,400 + Sprints $5,700 + Syndicates $6,800</span>
+                  </div>
+
+                  <div class="kpi-card">
+                    <span class="kpi-k kim-mono">Annualized Run Rate (ARR)</span>
+                    <span class="kpi-v kim-mono" id="out-arr">$430,800</span>
+                    <span class="kpi-sub">12-month forward gross run rate</span>
+                  </div>
+
+                  <div class="kpi-card">
+                    <span class="kpi-k kim-mono">Per-Chapter Monthly Payout</span>
+                    <span class="kpi-v kim-mono" id="out-pod">$7,180</span>
+                    <span class="kpi-sub kim-mono" id="out-per-member">~$1,795 avg / pod member / mo</span>
+                  </div>
+
+                  <div class="kpi-card">
+                    <span class="kpi-k kim-mono">Central Studio Monthly Margin</span>
+                    <span class="kpi-v kim-mono" id="out-studio">$8,975</span>
+                    <span class="kpi-sub kim-mono" id="out-reserve">Plus $5,385/mo equipment &amp; live reserve (15%)</span>
+                  </div>
+
+                  <div class="kpi-card">
+                    <span class="kpi-k kim-mono">Required Weekly Outreach / Chapter</span>
+                    <span class="kpi-v kim-mono" id="out-touches">33 touches</span>
+                    <span class="kpi-sub kim-mono" id="out-funnel-mini">~7 replies &rarr; 2.3 calls &rarr; 0.7 closes/wk</span>
+                  </div>
+                </div>
+
+                <!-- Dynamic Revenue Mix Split Bar -->
+                <div style="margin-top:14px;">
+                  <div class="sub-kicker kim-mono" style="margin-bottom:4px;">LIVE ALLOCATION SPLIT (POD / CENTRAL STUDIO / CHAPTER RESERVE)</div>
+                  <div class="split-bar" id="calc-split-bar">
+                    <div class="split-seg" id="bar-pod" style="width:60%;background:var(--card-accent, #D03A2B);color:var(--card-accent-fg, #FFFDF8);">60% POD</div>
+                    <div class="split-seg" id="bar-studio" style="width:25%;background:var(--card-ink, #141210);color:var(--card-well, #F8F4EA);">25% STUDIO</div>
+                    <div class="split-seg" id="bar-reserve" style="width:15%;background:var(--card-accent2, #3C5A78);color:#FFFDF8;">15% RES</div>
+                  </div>
+                </div>
+
+                <div class="funnel-callout" id="out-funnel-explain">
+                  <strong>Reverse-Engineered BD Funnel Math:</strong> Sustaining 2 sprints/mo + ~1 retainer refill/mo requires ~3.0 new closes/month per chapter (0.69 closes/wk). At <strong>20% reply &rarr; 35% discovery &rarr; 30% close</strong> (2.1% end-to-end), each chapter needs <strong>33 targeted walk-ins/DMs per week</strong> (99 network-wide).
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- CHAPTER 06: 90-DAY CAMPUS LAUNCH PLAYBOOK & INTERACTIVE CHECKLIST -->
+      <section class="chapter" id="ch-06">
+        <div class="chapter-header">
+          <div>
+            <div class="chapter-kicker kim-mono">06 // 90-DAY CAMPUS LAUNCH PLAYBOOK &amp; INTERACTIVE CHECKLIST</div>
+            <h2 class="chapter-title kim-display">Week-by-Week Execution from Day 1 Seed to $10k/mo Chapter</h2>
+          </div>
+          <p class="chapter-summary">
+            Every checkbox persists automatically in your browser. Follow the exact sequence -- proof before pitching, cash before branding, retention before expansion.
+          </p>
+        </div>
+
+        <article class="kim-card" data-card-id="ch06-playbook" data-card-medium="colored-pencil" data-take="1">
+          <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+          <div class="kim-card-inner">
+            <div class="progress-header">
+              <div>
+                <div class="sub-kicker kim-mono">90-DAY EXECUTION TRACKER (SAVED IN LOCALSTORAGE)</div>
+                <div class="sub-title kim-display" id="check-progress-title" style="font-size:20px;">0 of 16 Milestones Complete (0%)</div>
+              </div>
+              <button type="button" class="kim-btn kim-btn-subtle" id="reset-checklist-btn">Reset Checklist</button>
+            </div>
+
+            <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="check-progress-bar">
+              <div class="progress-fill" id="check-progress-fill"></div>
+            </div>
+
+            <div class="phase-grid" id="playbook-checklist">
+              <!-- Phase 1 -->
+              <div class="phase-box">
+                <div class="phase-top">
+                  <div>
+                    <div class="phase-days kim-mono">PHASE 01 // DAYS 1 - 14</div>
+                    <div class="phase-name kim-display">Seed Pod &amp; 3 Free Proof Shoots</div>
+                  </div>
+                  <span class="kim-badge kim-mono">PROOF</span>
+                </div>
+                <ul class="check-list">
+                  <li><label class="check-row"><input type="checkbox" data-task-id="d1-pod" /><span>Lock the founding 4-person pod (MD, Signal Lead, Wildfire Editor, Live Producer) and set Monday 25-min standup.</span></label></li>
+                  <li><label class="check-row"><input type="checkbox" data-task-id="d1-list" /><span>Walk the 2-mile campus corridor and log 30 target local SMBs in the Central CRM (coffee, housing, fitness, food).</span></label></li>
+                  <li><label class="check-row"><input type="checkbox" data-task-id="d1-shoots" /><span>Film 3 high-visibility free proof shoots for beloved local spots in exchange for raw posting rights and a tagged testimonial.</span></label></li>
+                  <li><label class="check-row"><input type="checkbox" data-task-id="d1-qa" /><span>Deliver 3 flagship reels + 9 bonus cuts inside 72 hours, pass Central Studio QA, and load proof reels onto MD's phone.</span></label></li>
+                </ul>
+              </div>
+
+              <!-- Phase 2 -->
+              <div class="phase-box">
+                <div class="phase-top">
+                  <div>
+                    <div class="phase-days kim-mono">PHASE 02 // DAYS 15 - 30</div>
+                    <div class="phase-name kim-display">Close First 3 Paid Sprints ($2,850)</div>
+                  </div>
+                  <span class="kim-badge kim-mono">CASH</span>
+                </div>
+                <ul class="check-list">
+                  <li><label class="check-row"><input type="checkbox" data-task-id="d2-outreach" /><span>Execute 50+ off-peak walk-ins and local DMs showing the 3 proof reels and tracked local results.</span></label></li>
+                  <li><label class="check-row"><input type="checkbox" data-task-id="d2-discovery" /><span>Run at least 6 timed 15-minute discovery calls using the 5 qualifying questions (empty hours + customer LTV).</span></label></li>
+                  <li><label class="check-row"><input type="checkbox" data-task-id="d2-close" /><span>Close and collect payment for first 3 paid $950 Campus Ignition Sprints ($2,850 gross via Central Studio Stripe).</span></label></li>
+                  <li><label class="check-row"><input type="checkbox" data-task-id="d2-deliver" /><span>Ship all 36 vertical cuts plus 3 tracked QR street drops inside the strict 10-day Sprint SLA.</span></label></li>
+                </ul>
+              </div>
+
+              <!-- Phase 3 -->
+              <div class="phase-box">
+                <div class="phase-top">
+                  <div>
+                    <div class="phase-days kim-mono">PHASE 03 // DAYS 31 - 60</div>
+                    <div class="phase-name kim-display">Convert 2 Retainers &amp; First Live Room</div>
+                  </div>
+                  <span class="kim-badge kim-mono">RECURRING</span>
+                </div>
+                <ul class="check-list">
+                  <li><label class="check-row"><input type="checkbox" data-task-id="d3-recap" /><span>Present Day-10 attribution scorecards (QR redemptions, shares/1k, local comments) to all 3 Sprint owners.</span></label></li>
+                  <li><label class="check-row"><input type="checkbox" data-task-id="d3-retainer" /><span>Convert at least 2 Sprint clients onto $2,600/mo 90-day Local Wildfire Retainers ($5,200/mo recurring base).</span></label></li>
+                  <li><label class="check-row"><input type="checkbox" data-task-id="d3-creators" /><span>Onboard 15 vetted campus micro-creators (2k-25k local followers) and ship 8 tracked creator collabs.</span></label></li>
+                  <li><label class="check-row"><input type="checkbox" data-task-id="d3-liveroom" /><span>Host first L/I Live Room pop-up (screening, acoustic night, or tasting drop) with 60+ students and onboard 2 Sophomore Shadows.</span></label></li>
+                </ul>
+              </div>
+
+              <!-- Phase 4 -->
+              <div class="phase-box">
+                <div class="phase-top">
+                  <div>
+                    <div class="phase-days kim-mono">PHASE 04 // DAYS 61 - 90</div>
+                    <div class="phase-name kim-display">Hit $8k-$12k/mo &amp; Seed Campus Spore #2</div>
+                  </div>
+                  <span class="kim-badge kim-badge-seal kim-mono">SCALE</span>
+                </div>
+                <ul class="check-list">
+                  <li><label class="check-row"><input type="checkbox" data-task-id="d4-revenue" /><span>Scale chapter roster to 3-4 active Retainers + 2 monthly Sprints ($9,700-$12,300/mo gross run rate).</span></label></li>
+                  <li><label class="check-row"><input type="checkbox" data-task-id="d4-charter" /><span>Clear all 4 Chapter Charter Gates and unlock eligibility for regional $6,800/mo Multi-Campus Syndicate deals.</span></label></li>
+                  <li><label class="check-row"><input type="checkbox" data-task-id="d4-swap" /><span>Execute 1 inter-campus rival creator swap or visiting Live Room at a neighboring university within 90 miles.</span></label></li>
+                  <li><label class="check-row"><input type="checkbox" data-task-id="d4-spore" /><span>Nominate and mentor the Founding MD for Campus Spore #2 (earning 5% regional seed trail on their first 90 days).</span></label></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- FOOTER MANIFESTO & SIBLING LINK -->
+      <footer class="kim-card" data-card-id="footer-manifesto" data-card-medium="sumi-ink" data-take="1">
+        <canvas class="kim-card-canvas" aria-hidden="true"></canvas>
+        <div class="kim-card-inner footer-inner">
+          <div>
+            <div class="footer-quote kim-display">"Love is ironic -- build local media sharp enough to spread, honest enough to close, and human enough to live inside."</div>
+            <div class="kim-mono" style="font-size:10.5px;color:var(--card-muted, var(--kim-muted));margin-top:4px;">
+              LOVE IS IRONIC (L/I) :: Campus Business Development &amp; Chapter Scaling Compendium :: 9-Medium Procedural Engine
+            </div>
+          </div>
+          <div class="footer-meta kim-mono">
+            <a class="sibling-link" href="https://imlowly.github.io/aurora-agency-compendium/" target="_blank" rel="noopener noreferrer">Read Companion: Aurora Agency Compendium &rarr;</a>
+            <span>100% Self-Contained Offline Edition // Zero Tracking // Zero CDN</span>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+  (function() {
+    "use strict";
+
+    // Canonical 9-Medium Procedural Specification (Kinesis in Media Contract)
+    const SPEC = {
+      darkroomLamps: [
+        { hex: "#F13BFF", period: 17, radius: 0.56, alphaNight: 0.36, alphaDay: 0.08, anchor: [0.16, 0.22], drift: [0.06, 0.04] },
+        { hex: "#8A5CFF", period: 23, radius: 0.62, alphaNight: 0.32, alphaDay: 0.06, anchor: [0.54, 0.18], drift: [-0.05, 0.06] },
+        { hex: "#2FE3FF", period: 29, radius: 0.54, alphaNight: 0.30, alphaDay: 0.07, anchor: [0.86, 0.30], drift: [-0.07, 0.05] },
+        { hex: "#B6FF3B", period: 31, radius: 0.50, alphaNight: 0.20, alphaDay: 0.05, anchor: [0.76, 0.82], drift: [-0.05, -0.06] },
+        { hex: "#FF5A44", period: 41, radius: 0.48, alphaNight: 0.22, alphaDay: 0.05, anchor: [0.46, 0.52], drift: [0.04, -0.03] }
+      ],
+      order: ["sumi-ink", "pixel", "linocut", "charcoal", "watercolor", "oil", "clay", "glowing-glass", "colored-pencil"],
+      media: {
+        "sumi-ink": {
+          id: "sumi-ink", number: "005", name: "Sumi Ink & Vermilion Seal", group: "Painted",
+          tool: "Bamboo Wolf-Hair Fude Brush",
+          guard: "Calligraphic 4px breath exclusion",
+          erase: "Capillary absorption reversal",
+          gravity: 110, drag: 0.93,
+          day: { ground: "#F3EEE2", paper2: "#F8F4EA", well: "#E9E3D5", ink: "#141210", muted: "#59534B", rule: "#D6D0C2", plate: "#3A3631", accents: ["#D03A2B", "#3C5A78", "#C9A13B"], sealRed: "#D03A2B" },
+          night: { ground: "#0E0D0C", paper2: "#171513", well: "#080706", ink: "#ECE8DF", muted: "#A9A397", rule: "#2A2926", plate: "#96299E", accents: ["#FF5A44", "#2FE3FF", "#E8C46A"], sealRed: "#FF5A44" }
+        },
+        "pixel": {
+          id: "pixel", number: "007", name: "16-Bit Pixel Art", group: "Digital",
+          tool: "Pixel Stylus & Reticle",
+          guard: "Grid-snapped 1-cell exclusion (S px)",
+          erase: "Ordered-dither cell dissolve",
+          gravity: 180, drag: 0.96,
+          day: { ground: "#F6F2E7", paper2: "#FFFDF6", well: "#EFEAE0", ink: "#1B1A22", muted: "#58566A", rule: "#D3CFC2", plate: "#1B1A22", accents: ["#D43C8C", "#1FA3C9", "#F2D21B", "#6B47D6"] },
+          night: { ground: "#07060D", paper2: "#14101F", well: "#08060F", ink: "#F7F2FF", muted: "#B9AEDA", rule: "#3A3552", plate: "#F13BFF", accents: ["#F13BFF", "#2FE3FF", "#FFE94A", "#B6FF3B"] }
+        },
+        "colored-pencil": {
+          id: "colored-pencil", number: "001", name: "Colored Pencil on Bristol", group: "Drawn",
+          tool: "Hexagonal Cedar Pencil & Eraser",
+          guard: "Pencil-lift 4px bristol reserve",
+          erase: "Pink rubber eraser sweep",
+          gravity: 115, drag: 0.94,
+          day: { ground: "#FBFAF6", paper2: "#F3F0E6", well: "#EAE5D8", ink: "#2B2A28", muted: "#5C574E", rule: "#2B2A28", plate: "#2B2A28", accents: ["#D9442F", "#1E9FD0", "#F2C200", "#D6338A"] },
+          night: { ground: "#121014", paper2: "#1B1820", well: "#0D0B10", ink: "#F7F2FF", muted: "#B9AEDA", rule: "#4A3F66", plate: "#F13BFF", accents: ["#FF5A5A", "#2FE3FF", "#FFE94A", "#F13BFF"] }
+        },
+        "charcoal": {
+          id: "charcoal", number: "002", name: "Willow & Vine Charcoal", group: "Drawn",
+          tool: "Willow Charcoal Stick & Tortillon",
+          guard: "Kneaded-eraser 4px lifted halo",
+          erase: "Chamois cloth directional wipe",
+          gravity: 95, drag: 0.92,
+          day: { ground: "#E9E6DF", paper2: "#F2EFE9", well: "#DFDBD2", ink: "#0B0B0A", muted: "#4A453C", rule: "#0B0B0A", plate: "#0B0B0A", accents: ["#A6452E", "#5B574E", "#C89D54"] },
+          night: { ground: "#141313", paper2: "#1D1B1C", well: "#0E0D0D", ink: "#F7F2FF", muted: "#CFC6EA", rule: "#464148", plate: "#F13BFF", accents: ["#FF6B57", "#2FE3FF", "#FFE94A"] }
+        },
+        "oil": {
+          id: "oil", number: "003", name: "Impasto Oil on Linen", group: "Painted",
+          tool: "Hog-Bristle Filbert & Palette Knife",
+          guard: "Scraped smooth 4px linen reserve",
+          erase: "Steel palette-knife scrape",
+          gravity: 140, drag: 0.93,
+          day: { ground: "#EFE9DC", paper2: "#FAF8F2", well: "#E4DFD1", ink: "#1C1A19", muted: "#4A453A", rule: "#1C1A19", plate: "#1C1A19", accents: ["#B5246F", "#1B4F8F", "#F2C12E"] },
+          night: { ground: "#1A1310", paper2: "#2B2040", well: "#0B0915", ink: "#F3EEE4", muted: "#A99DC9", rule: "#5D4B7A", plate: "#C02BC8", accents: ["#F13BFF", "#2FE3FF", "#FFE94A"] }
+        },
+        "watercolor": {
+          id: "watercolor", number: "004", name: "Transparent Watercolor", group: "Painted",
+          tool: "Kolinsky Sable Mop Brush",
+          guard: "Masking-fluid 6px wax resist",
+          erase: "Clean water bloom & blot",
+          gravity: 65, drag: 0.90,
+          day: { ground: "#FAF7F0", paper2: "#FFFDF6", well: "#EFEAE0", ink: "#2E3440", muted: "#565E70", rule: "#2E3440", plate: "#2C9AD1", accents: ["#D9468A", "#2C9AD1", "#F2B705"] },
+          night: { ground: "#101626", paper2: "#1A2140", well: "#0A0E1A", ink: "#F4F1EA", muted: "#B5B0CC", rule: "#3E4A78", plate: "#F13BFF", accents: ["#F13BFF", "#2FE3FF", "#FFC23D"] }
+        },
+        "linocut": {
+          id: "linocut", number: "006", name: "Hand-Pulled Linocut", group: "Printed",
+          tool: "Steel V-Gouge & Rubber Brayer",
+          guard: "Carved 3px relief clearing pocket",
+          erase: "Reverse brayer un-roll",
+          gravity: 165, drag: 0.94,
+          day: { ground: "#F5F1E6", paper2: "#FAF7EE", well: "#E9E2CE", ink: "#151314", muted: "#4A453A", rule: "#151314", plate: "#1E9FD6", accents: ["#D9362B", "#1E9FD6", "#D8A23A"] },
+          night: { ground: "#121112", paper2: "#1C1A1F", well: "#0A090A", ink: "#F4F1EA", muted: "#BDB7A9", rule: "#524C57", plate: "#FF3EC8", accents: ["#FF3EC8", "#35E6FF", "#B6FF3B"] }
+        },
+        "clay": {
+          id: "clay", number: "008", name: "3D Inscribed Clay Tablet", group: "Sculpted",
+          tool: "Boxwood Wedge Stylus & Rib",
+          guard: "Rib-troweled 5px cartouche plane",
+          erase: "Wooden potter's rib smooth-over",
+          gravity: 190, drag: 0.95,
+          day: { ground: "#EDE3D2", paper2: "#F5EDE0", well: "#E2D5C1", ink: "#261E18", muted: "#6B5849", rule: "#261E18", plate: "#8C4A2B", trench: "#261E18", highlight: "#FFFDF7", accents: ["#C85A32", "#2E5A78", "#D49B35"] },
+          night: { ground: "#14110F", paper2: "#1F1A17", well: "#191512", ink: "#F2EAE0", muted: "#A89887", rule: "#4A3E36", plate: "#F13BFF", trench: "#060504", highlight: "rgba(255, 224, 196, 0.42)", accents: ["#FF6A3D", "#2FE3FF", "#FFE94A"] }
+        },
+        "glowing-glass": {
+          id: "glowing-glass", number: "009", name: "Glowing Etched VerseGlass", group: "Luminous",
+          tool: "Photonic Etch Beam Stylus",
+          guard: "Smoked-acetate 4px optical cavity",
+          erase: "Refractive shutter de-energize",
+          gravity: -25, drag: 0.94,
+          day: { ground: "#F6F2E7", paper2: "rgba(255, 253, 246, 0.88)", well: "rgba(239, 234, 224, 0.86)", ink: "#131313", muted: "#59544A", rule: "#131313", plate: "#131313", accents: ["#EC008C", "#00AEEF", "#7C3AED"] },
+          night: { ground: "#07060D", paper2: "rgba(26, 20, 46, 0.86)", well: "rgba(12, 9, 24, 0.88)", ink: "#F7F2FF", muted: "#B9AEDA", rule: "rgba(247, 242, 255, 0.34)", plate: "#F13BFF", accents: ["#F13BFF", "#2FE3FF", "#FFE94A"] }
+        }
+      }
+    };
+
+    const sheet = document.getElementById("kim-sheet");
+    const lampsCanvas = document.getElementById("kim-lamps-canvas");
+    const particleCanvas = document.getElementById("kim-particle-canvas");
+    const toolCanvas = document.getElementById("kim-tool-canvas");
+
+    const FNV_OFFSET = 2166136261;
+    const FNV_PRIME = 16777619;
+    function fnv1a(str) {
+      let h = FNV_OFFSET >>> 0;
+      const s = String(str || "");
+      for (let i = 0; i < s.length; i += 1) {
+        h ^= s.charCodeAt(i);
+        h = Math.imul(h, FNV_PRIME) >>> 0;
+      }
+      return h >>> 0;
+    }
+
+    function seededRandom(seed) {
+      let s = (seed >>> 0) || 1;
+      return function() {
+        s ^= s << 13;
+        s ^= s >>> 17;
+        s ^= s << 5;
+        return ((s >>> 0) % 10000) / 10000;
+      };
+    }
+
+    function contrastInk(hex) {
+      if (!hex || hex.charAt(0) !== "#" || hex.length < 7) return "#FFFDF8";
+      const r = parseInt(hex.slice(1, 3), 16) / 255;
+      const g = parseInt(hex.slice(3, 5), 16) / 255;
+      const b = parseInt(hex.slice(5, 7), 16) / 255;
+      const lum = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+      return lum > 0.56 ? "#141210" : "#FFFDF8";
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const savedEd = params.get("ed") || (function() { try { return localStorage.getItem("kim-edition"); } catch (e) { return null; } })();
+    const savedMed = params.get("medium") || (function() { try { return localStorage.getItem("kim-medium"); } catch (e) { return null; } })();
+    const savedBrush = params.get("brush") || (function() { try { return localStorage.getItem("kim-brush"); } catch (e) { return null; } })();
+    const prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const initialMed = (savedMed && (savedMed === "cycle" || SPEC.media[savedMed])) ? savedMed : "sumi-ink";
+    const initialEd = (savedEd === "night" || savedEd === "day") ? savedEd : "day";
+    const initialBrush = savedBrush ? Math.max(0.5, Math.min(2.5, parseFloat(savedBrush) || 1.0)) : 1.0;
+
+    const STATE = {
+      mediumMode: initialMed,
+      edition: initialEd,
+      showTool: true,
+      brushMultiplier: initialBrush,
+      reducedMotion: prefersReduced,
+      pointerX: 360,
+      pointerY: 220,
+      pointerInside: false,
+      activeHoverMedium: "sumi-ink",
+      cards: new Map(),
+      particles: [],
+      wordGuardCount: 0,
+      deflectedTotal: 0
+    };
+
+    function artPixelSize() {
+      return Math.max(4, Math.min(8, Math.round(3 + 2 * STATE.brushMultiplier)));
+    }
+
+    function effectiveMediumForCard(cardMed) {
+      if (STATE.mediumMode !== "cycle" && SPEC.media[STATE.mediumMode]) {
+        return STATE.mediumMode;
+      }
+      return SPEC.media[cardMed] ? cardMed : "sumi-ink";
+    }
+
+    function activeGlobalMediumId() {
+      if (STATE.mediumMode !== "cycle" && SPEC.media[STATE.mediumMode]) {
+        return STATE.mediumMode;
+      }
+      return STATE.activeHoverMedium || "sumi-ink";
+    }
+
+    function getPal(medId) {
+      const m = SPEC.media[medId] || SPEC.media["sumi-ink"];
+      return STATE.edition === "night" ? m.night : m.day;
+    }
+
+    function applyThemeTokens() {
+      const medId = activeGlobalMediumId();
+      const med = SPEC.media[medId] || SPEC.media["sumi-ink"];
+      const isNight = STATE.edition === "night";
+      const pal = getPal(medId);
+      const primaryAccent = pal.accents[0] || pal.plate;
+      const accentFg = contrastInk(primaryAccent);
+
+      document.documentElement.setAttribute("data-ed", STATE.edition);
+      document.documentElement.setAttribute("data-theme", STATE.edition);
+      document.documentElement.setAttribute("data-medium", STATE.mediumMode);
+      sheet.setAttribute("data-font-medium", medId);
+
+      const targets = [document.documentElement, sheet];
+      for (let i = 0; i < targets.length; i += 1) {
+        const el = targets[i];
+        el.style.setProperty("--kim-ground", pal.ground);
+        el.style.setProperty("--kim-paper2", pal.paper2 || pal.ground);
+        el.style.setProperty("--kim-well", pal.well || pal.ground);
+        el.style.setProperty("--kim-ink", pal.ink);
+        el.style.setProperty("--kim-muted", pal.muted || pal.ink);
+        el.style.setProperty("--kim-rule", pal.rule || pal.ink);
+        el.style.setProperty("--kim-plate", pal.plate || pal.ink);
+        el.style.setProperty("--kim-dock-bg", isNight ? "rgba(14, 13, 12, 0.92)" : "rgba(243, 238, 226, 0.94)");
+        el.style.setProperty("--kim-accent", primaryAccent);
+        el.style.setProperty("--kim-accent2", pal.accents[1] || primaryAccent);
+        el.style.setProperty("--kim-accent3", pal.accents[2] || primaryAccent);
+        el.style.setProperty("--kim-accent-fg", accentFg);
+        el.style.setProperty("--kim-focus", primaryAccent);
+      }
+
+      document.querySelectorAll(".kim-card").forEach((cardEl) => {
+        const cMedId = effectiveMediumForCard(cardEl.getAttribute("data-card-medium"));
+        const cMed = SPEC.media[cMedId] || SPEC.media["sumi-ink"];
+        const cPal = getPal(cMedId);
+        const cAcc = cPal.accents[0] || cPal.plate;
+        cardEl.style.setProperty("--card-ink", cPal.ink);
+        cardEl.style.setProperty("--card-muted", cPal.muted);
+        cardEl.style.setProperty("--card-well", cPal.well || cPal.ground);
+        cardEl.style.setProperty("--card-accent", cAcc);
+        cardEl.style.setProperty("--card-accent2", cPal.accents[1] || cAcc);
+        cardEl.style.setProperty("--card-accent-fg", contrastInk(cAcc));
+        cardEl.classList.toggle("is-glass", cMedId === "glowing-glass");
+        const tag = cardEl.querySelector(".card-med-tag");
+        if (tag) tag.textContent = cMed.number + " " + cMed.id.toUpperCase();
+      });
+
+      const heroBadge = document.getElementById("hero-med-badge");
+      if (heroBadge) {
+        const hm = SPEC.media[effectiveMediumForCard("sumi-ink")];
+        heroBadge.textContent = hm.number + " // " + hm.id.toUpperCase();
+      }
+
+      const edBtn = document.getElementById("kim-edition-btn");
+      if (edBtn) {
+        edBtn.textContent = isNight ? "Darkroom Night" : "Day Paper";
+        edBtn.setAttribute("aria-pressed", String(isNight));
+      }
+
+      const toolBtn = document.getElementById("kim-tool-btn");
+      if (toolBtn) {
+        toolBtn.textContent = STATE.showTool ? "Tool: ON" : "Tool: OFF";
+        toolBtn.setAttribute("aria-pressed", String(STATE.showTool));
+      }
+
+      const brushVal = document.getElementById("kim-brush-val");
+      if (brushVal) {
+        brushVal.textContent = medId === "pixel" ? artPixelSize() + "px" : STATE.brushMultiplier.toFixed(1) + "x";
+      }
+
+      const readout = document.getElementById("kim-active-tool-readout");
+      if (readout) {
+        const modeTxt = STATE.mediumMode === "cycle"
+          ? "9-Medium Cycle (" + med.name + ")"
+          : med.number + " // " + med.name;
+        readout.textContent = "Medium: " + modeTxt + " | Tool: " + med.tool;
+      }
+
+      const modePill = document.getElementById("kim-active-mode-pill");
+      if (modePill) {
+        modePill.textContent = STATE.mediumMode === "cycle"
+          ? "Active: 9-Medium Cycle"
+          : "Active: " + med.number + " " + med.name;
+      }
+    }
+
+    function renderMediumRibbon() {
+      const wrap = document.getElementById("kim-medium-ribbon");
+      if (!wrap) return;
+      wrap.innerHTML = SPEC.order.map((id) => {
+        const m = SPEC.media[id];
+        const pal = getPal(id);
+        const active = STATE.mediumMode === id;
+        const bg = pal.paper2 || pal.ground;
+        return '<button type="button" class="swatch-btn" data-pick="' + id + '" aria-pressed="' + String(active) + '" style="background:' + bg + ';color:' + pal.ink + ';border-color:' + (active ? pal.accents[0] : pal.ink) + ';box-shadow:' + (active ? "3px 3px 0 " + pal.accents[0] : "2px 2px 0 " + pal.plate) + ';">' +
+          '<div class="swatch-num kim-mono">' + m.number + '</div>' +
+          '<div class="swatch-id">' + m.id + '</div>' +
+        '</button>';
+      }).join("");
+
+      wrap.querySelectorAll("[data-pick]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const picked = btn.getAttribute("data-pick");
+          STATE.mediumMode = STATE.mediumMode === picked ? "cycle" : picked;
+          try { localStorage.setItem("kim-medium", STATE.mediumMode); } catch (e) {}
+          const sel = document.getElementById("kim-medium-select");
+          if (sel) sel.value = STATE.mediumMode;
+          applyThemeTokens();
+          renderMediumRibbon();
+          replotAllCards(true);
+        });
+      });
+    }
+
+    // Live TreeWalker Word-Guard Collection (R1.9 & R1.9d -- exact /\S+/g regex)
+    let cachedWordRects = [];
+    let cachedWordRectsAt = 0;
+
+    function collectViewportWordRects(force) {
+      const now = performance.now();
+      if (!force && now - cachedWordRectsAt < 110 && cachedWordRects.length > 0) {
+        return cachedWordRects;
+      }
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      const rects = [];
+      const walker = document.createTreeWalker(sheet, NodeFilter.SHOW_TEXT);
+      let node;
+      while ((node = walker.nextNode())) {
+        const parent = node.parentElement;
+        if (!parent) continue;
+        const tag = parent.tagName;
+        if (tag === "SCRIPT" || tag === "STYLE" || tag === "CANVAS" || tag === "OPTION") continue;
+        const pRect = parent.getBoundingClientRect();
+        if (pRect.bottom < -20 || pRect.top > vh + 20 || pRect.width < 1 || pRect.height < 1) continue;
+        const cs = window.getComputedStyle(parent);
+        if (cs.display === "none" || cs.visibility === "hidden" || cs.opacity === "0") continue;
+        const text = node.textContent || "";
+        const re = /\S+/g;
+        let m;
+        while ((m = re.exec(text))) {
+          const rg = document.createRange();
+          rg.setStart(node, m.index);
+          rg.setEnd(node, m.index + m[0].length);
+          const crs = rg.getClientRects();
+          for (let i = 0; i < crs.length; i += 1) {
+            const b = crs[i];
+            if (b.width > 1 && b.height > 1 && b.bottom >= 0 && b.top <= vh && b.right >= 0 && b.left <= vw) {
+              rects.push({
+                left: b.left,
+                top: b.top,
+                right: b.right,
+                bottom: b.bottom,
+                width: b.width,
+                height: b.height
+              });
+            }
+          }
+        }
+      }
+      cachedWordRects = rects;
+      cachedWordRectsAt = now;
+      STATE.wordGuardCount = rects.length;
+      return rects;
+    }
+
+    function measureCardWordGuards(cardEl, canvasEl) {
+      const cRect = canvasEl.getBoundingClientRect();
+      const medId = effectiveMediumForCard(cardEl.getAttribute("data-card-medium"));
+      const pad = medId === "pixel" ? artPixelSize() : (medId === "watercolor" ? 6 : 4);
+      const guards = [];
+      const walker = document.createTreeWalker(cardEl, NodeFilter.SHOW_TEXT);
+      let node;
+      while ((node = walker.nextNode())) {
+        const parent = node.parentElement;
+        if (!parent) continue;
+        const tag = parent.tagName;
+        if (tag === "SCRIPT" || tag === "STYLE" || tag === "CANVAS" || tag === "OPTION") continue;
+        const cs = window.getComputedStyle(parent);
+        if (cs.display === "none" || cs.visibility === "hidden" || cs.opacity === "0") continue;
+        const text = node.textContent || "";
+        const re = /\S+/g;
+        let m;
+        while ((m = re.exec(text))) {
+          const rg = document.createRange();
+          rg.setStart(node, m.index);
+          rg.setEnd(node, m.index + m[0].length);
+          const crs = rg.getClientRects();
+          for (let i = 0; i < crs.length; i += 1) {
+            const b = crs[i];
+            if (b.width > 1 && b.height > 1) {
+              guards.push({
+                x: b.left - cRect.left - pad,
+                y: b.top - cRect.top - pad,
+                w: b.width + pad * 2,
+                h: b.height + pad * 2
+              });
+            }
+          }
+        }
+      }
+      return guards;
+    }
+
+    function circleHitsWords(x, y, pad, wordRects) {
+      for (let i = 0; i < wordRects.length; i += 1) {
+        const b = wordRects[i];
+        if (x + pad >= b.left && x - pad <= b.right && y + pad >= b.top && y - pad <= b.bottom) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    function pointInGuards(x, y, guards) {
+      for (let i = 0; i < guards.length; i += 1) {
+        const g = guards[i];
+        if (x >= g.x && x <= g.x + g.w && y >= g.y && y <= g.y + g.h) return true;
+      }
+      return false;
+    }
+
+    function spawnParticles(medId, vx, vy, count) {
+      if (STATE.reducedMotion) return;
+      const med = SPEC.media[medId] || SPEC.media["sumi-ink"];
+      const pal = getPal(medId);
+      const words = collectViewportWordRects(false);
+      const dockH = (document.getElementById("kim-dock")?.offsetHeight || 88) + 6;
+
+      for (let i = 0; i < count; i += 1) {
+        const size = (2.1 + Math.random() * 2.5) * Math.sqrt(STATE.brushMultiplier);
+        const pad = Math.max(artPixelSize(), size) + 5;
+        let px = vx + (Math.random() - 0.5) * 20;
+        let py = Math.max(dockH + pad, vy + (Math.random() - 0.5) * 20);
+        if (circleHitsWords(px, py, pad, words)) {
+          STATE.deflectedTotal += 1;
+          px = 14 + Math.random() * 14;
+          if (circleHitsWords(px, py, pad, words)) continue;
+        }
+        if (STATE.particles.length >= 150) STATE.particles.shift();
+        const ang = Math.random() * Math.PI * 2;
+        const spd = 20 + Math.random() * 52;
+        STATE.particles.push({
+          medId,
+          x: px,
+          y: py,
+          vx: Math.cos(ang) * spd,
+          vy: Math.sin(ang) * spd - 16,
+          gravity: med.gravity,
+          drag: med.drag,
+          size,
+          born: performance.now(),
+          life: 380 + Math.random() * 440,
+          color: pal.accents[i % pal.accents.length] || pal.plate
+        });
+      }
+    }
+
+    // Helper: Calligraphic multi-bristle Sumi Ink line with flying-white separation
+    function drawSumiBristleEdge(ctx, x1, y1, x2, y2, width, bristles, rng, color) {
+      const dx = x2 - x1;
+      const dy = y2 - y1;
+      const len = Math.hypot(dx, dy);
+      if (len < 1) return;
+      const nx = -dy / len;
+      const ny = dx / len;
+      ctx.strokeStyle = color;
+      ctx.lineCap = "round";
+      for (let bi = 0; bi < bristles; bi += 1) {
+        const frac = bristles === 1 ? 0 : (bi / (bristles - 1) - 0.5);
+        const off = frac * width * 0.9;
+        const isOuter = Math.abs(frac) > 0.34;
+        ctx.lineWidth = Math.max(0.85, width * (isOuter ? 0.32 : 0.52));
+        ctx.globalAlpha = isOuter ? 0.55 : 0.88;
+        ctx.beginPath();
+        const segs = Math.max(4, Math.round(len / 44));
+        let penDown = false;
+        for (let s = 0; s <= segs; s += 1) {
+          const u = s / segs;
+          // Flying-white dry bristle gaps toward stroke tail on outer hairs
+          const drySkip = isOuter && u > 0.55 && rng() < (u - 0.45) * 0.65;
+          const wobble = (rng() - 0.5) * 1.15;
+          const px = x1 + dx * u + nx * (off + wobble);
+          const py = y1 + dy * u + ny * (off + wobble);
+          if (drySkip) {
+            penDown = false;
+            continue;
+          }
+          if (!penDown) {
+            ctx.moveTo(px, py);
+            penDown = true;
+          } else {
+            ctx.lineTo(px, py);
+          }
+        }
+        ctx.stroke();
+      }
+    }
+
+    // Procedural 9-Medium Card Renderer
+    function drawCardMedium(st) {
+      const { el, canvas, cardId } = st;
+      const w = el.offsetWidth;
+      const h = el.offsetHeight;
+      if (w <= 4 || h <= 4) return;
+
+      const medId = effectiveMediumForCard(el.getAttribute("data-card-medium"));
+      const isNight = STATE.edition === "night";
+      const pal = getPal(medId);
+      const accent = pal.accents[0] || pal.plate;
+      const accent2 = pal.accents[1] || accent;
+
+      const dpr = Math.min(2, window.devicePixelRatio || 1);
+      const cssW = Math.round(w + 24);
+      const cssH = Math.round(h + 24);
+      if (canvas.width !== Math.round(cssW * dpr) || canvas.height !== Math.round(cssH * dpr)) {
+        canvas.width = Math.round(cssW * dpr);
+        canvas.height = Math.round(cssH * dpr);
+      }
+
+      const ctx = canvas.getContext("2d");
+      ctx.save();
+      ctx.scale(dpr, dpr);
+      ctx.clearRect(0, 0, cssW, cssH);
+
+      const guards = measureCardWordGuards(el, canvas);
+      const p = STATE.reducedMotion ? 1 : Math.max(0, Math.min(1, st.drawProgress));
+      if (p <= 0.01) {
+        ctx.restore();
+        return;
+      }
+
+      const seed = fnv1a(cardId + ":take:" + st.take + ":" + medId);
+      const rng = seededRandom(seed);
+      const b = STATE.brushMultiplier;
+      const x0 = 12;
+      const y0 = 12;
+
+      const outlineP = Math.min(1, p / 0.48);
+      const fillP = Math.max(0, Math.min(1, (p - 0.20) / 0.56));
+      const plateP = Math.max(0, Math.min(1, (p - 0.60) / 0.40));
+
+      // 1. Offset Shadow Plate (behind card surface)
+      if (plateP > 0) {
+        ctx.save();
+        const pOff = medId === "pixel" ? artPixelSize() : Math.round(4.5 + b * 1.5);
+        ctx.fillStyle = pal.plate || pal.ink;
+        ctx.globalAlpha = (isNight ? 0.72 : 0.88) * plateP;
+        if (medId === "linocut") {
+          ctx.translate(x0 + pOff, y0 + pOff - 1);
+          ctx.rotate(0.0055);
+          ctx.fillRect(0, 0, w * plateP, h);
+        } else {
+          ctx.fillRect(x0 + pOff, y0 + pOff, w * plateP, h);
+        }
+        ctx.restore();
+      }
+
+      // 2. Card Surface Fill
+      ctx.save();
+      ctx.fillStyle = pal.paper2 || pal.ground;
+      ctx.globalAlpha = medId === "glowing-glass" ? 0.86 : 0.98;
+      ctx.fillRect(x0, y0, w, h);
+      ctx.restore();
+
+      // 3. Medium-Specific Interior Texture (respecting live word guards)
+      if (fillP > 0) {
+        ctx.save();
+        if (medId === "sumi-ink") {
+          // Subtle diluted hake ink wash band along top margin (clear of text)
+          const washG = ctx.createLinearGradient(x0, y0, x0 + w * 0.75, y0 + 52);
+          washG.addColorStop(0, isNight ? "rgba(236, 232, 223, 0.08)" : "rgba(20, 18, 16, 0.06)");
+          washG.addColorStop(1, "transparent");
+          ctx.fillStyle = washG;
+          ctx.globalAlpha = fillP;
+          ctx.fillRect(x0 + 2, y0 + 2, w - 4, Math.min(54, h * 0.35));
+
+          // Carved vermilion cinnabar hanko seal stamp in bottom-right corner outside word guards
+          const sealX = x0 + w - 26;
+          const sealY = y0 + h - 26;
+          if (!pointInGuards(sealX + 9, sealY + 9, guards)) {
+            ctx.strokeStyle = pal.sealRed || "#D03A2B";
+            ctx.lineWidth = 1.9;
+            ctx.globalAlpha = 0.86 * fillP;
+            ctx.strokeRect(sealX, sealY, 18, 18);
+            ctx.beginPath();
+            ctx.moveTo(sealX + 4, sealY + 5);
+            ctx.lineTo(sealX + 14, sealY + 5);
+            ctx.moveTo(sealX + 9, sealY + 5);
+            ctx.lineTo(sealX + 9, sealY + 14);
+            ctx.moveTo(sealX + 5, sealY + 14);
+            ctx.lineTo(sealX + 13, sealY + 14);
+            ctx.stroke();
+          }
+        } else if (medId === "pixel") {
+          const S = artPixelSize();
+          ctx.fillStyle = accent;
+          ctx.globalAlpha = (isNight ? 0.22 : 0.14) * fillP;
+          for (let gx = x0 + S; gx < x0 + w - S; gx += S * 2) {
+            for (let gy = y0 + S; gy < y0 + Math.min(h - S, 36); gy += S) {
+              if (((Math.round(gx / S) + Math.round(gy / S)) % 2 === 0) && !pointInGuards(gx, gy, guards)) {
+                ctx.fillRect(gx, gy, S, S);
+              }
+            }
+          }
+        } else if (medId === "colored-pencil" || medId === "charcoal") {
+          ctx.strokeStyle = accent;
+          ctx.lineWidth = (medId === "charcoal" ? 2.1 : 1.15) * b;
+          ctx.globalAlpha = (isNight ? 0.20 : 0.14) * fillP;
+          const step = Math.max(6, Math.round(10 / Math.sqrt(b)));
+          ctx.beginPath();
+          for (let d = -h; d < w + h; d += step) {
+            const sx = x0 + Math.max(0, d);
+            const sy = y0 + Math.max(0, -d);
+            const ex = x0 + Math.min(w, d + 24);
+            const ey = y0 + Math.min(h, -d + 24);
+            if (!pointInGuards((sx + ex) * 0.5, (sy + ey) * 0.5, guards)) {
+              ctx.moveTo(sx, sy);
+              ctx.lineTo(ex, ey);
+            }
+          }
+          ctx.stroke();
+        } else if (medId === "watercolor") {
+          const grad = ctx.createRadialGradient(x0 + w * 0.16, y0 + 26, 6, x0 + w * 0.5, y0 + h * 0.5, Math.max(w, h) * 0.72);
+          grad.addColorStop(0, accent);
+          grad.addColorStop(1, "transparent");
+          ctx.fillStyle = grad;
+          ctx.globalAlpha = (isNight ? 0.20 : 0.12) * fillP;
+          ctx.fillRect(x0 + 2, y0 + 2, w - 4, h - 4);
+        } else if (medId === "oil" || medId === "clay") {
+          ctx.strokeStyle = isNight ? "rgba(255, 226, 255, 0.40)" : "rgba(255, 255, 255, 0.86)";
+          ctx.lineWidth = 2.5 * b;
+          ctx.beginPath();
+          ctx.moveTo(x0 + 2, y0 + h - 2);
+          ctx.lineTo(x0 + 2, y0 + 2);
+          ctx.lineTo(x0 + w - 2, y0 + 2);
+          ctx.stroke();
+        } else if (medId === "glowing-glass") {
+          const cg = ctx.createRadialGradient(x0, y0, 2, x0, y0, 260);
+          cg.addColorStop(0, isNight ? "rgba(255, 255, 255, 0.16)" : "rgba(255, 255, 255, 0.42)");
+          cg.addColorStop(1, "transparent");
+          ctx.fillStyle = cg;
+          ctx.fillRect(x0, y0, w, h);
+        }
+        ctx.restore();
+      }
+
+      // 4. Medium-Specific Perimeter Outline
+      ctx.save();
+      const pw = w * outlineP;
+      const ph = h * outlineP;
+
+      if (medId === "sumi-ink") {
+        const nb = Math.max(2, Math.round((3.4 * b) / 1.25));
+        const sw = 2.4 * b;
+        drawSumiBristleEdge(ctx, x0, y0, x0 + pw, y0, sw, nb, rng, pal.ink);
+        drawSumiBristleEdge(ctx, x0 + pw, y0, x0 + pw, y0 + ph, sw * 0.92, nb, rng, pal.ink);
+        drawSumiBristleEdge(ctx, x0 + pw, y0 + ph, x0, y0 + ph, sw, nb, rng, pal.ink);
+        drawSumiBristleEdge(ctx, x0, y0 + ph, x0, y0, sw * 0.95, nb, rng, pal.ink);
+      } else if (medId === "pixel") {
+        const S = artPixelSize();
+        ctx.fillStyle = pal.ink;
+        const cols = Math.floor(pw / S);
+        const rows = Math.floor(ph / S);
+        for (let c = 1; c < cols - 1; c += 1) {
+          ctx.fillRect(x0 + c * S, y0, S, S);
+          ctx.fillRect(x0 + c * S, y0 + (rows - 1) * S, S, S);
+        }
+        for (let r = 1; r < rows - 1; r += 1) {
+          ctx.fillRect(x0, y0 + r * S, S, S);
+          ctx.fillRect(x0 + (cols - 1) * S, y0 + r * S, S, S);
+        }
+      } else if (medId === "glowing-glass") {
+        ctx.lineWidth = 1.4 * b;
+        ctx.strokeStyle = accent2;
+        ctx.globalAlpha = 0.72;
+        ctx.strokeRect(x0 + 1.5, y0 + 1.5, pw, ph);
+        ctx.strokeStyle = accent;
+        ctx.strokeRect(x0 - 1.5, y0 - 1.5, pw, ph);
+        ctx.lineWidth = 1.8 * b;
+        ctx.strokeStyle = pal.ink;
+        ctx.globalAlpha = 0.94;
+        ctx.strokeRect(x0, y0, pw, ph);
+      } else if (medId === "linocut") {
+        ctx.lineWidth = 3.2 * b;
+        ctx.strokeStyle = pal.ink;
+        ctx.strokeRect(x0, y0, pw, ph);
+        ctx.lineWidth = 1.25;
+        ctx.strokeStyle = accent;
+        ctx.strokeRect(x0 + 3.5, y0 + 3.5, Math.max(0, pw - 7), Math.max(0, ph - 7));
+      } else if (medId === "clay") {
+        ctx.lineWidth = 2.8 * b;
+        ctx.strokeStyle = pal.trench || pal.ink;
+        ctx.strokeRect(x0, y0, pw, ph);
+        ctx.lineWidth = 1.4 * b;
+        ctx.strokeStyle = pal.highlight || "rgba(255,253,247,0.82)";
+        ctx.strokeRect(x0 + 2, y0 + 2, Math.max(0, pw - 4), Math.max(0, ph - 4));
+      } else {
+        const passes = (medId === "colored-pencil" || medId === "charcoal") ? 2 : 1;
+        for (let pass = 0; pass < passes; pass += 1) {
+          const j = (rng() - 0.5) * 1.8 * b;
+          ctx.lineWidth = (medId === "oil" ? 3.2 : medId === "charcoal" ? 2.7 : 1.9) * b;
+          ctx.strokeStyle = pass === 0 ? pal.ink : accent;
+          ctx.globalAlpha = pass === 0 ? 0.92 : 0.44;
+          ctx.strokeRect(x0 + j, y0 - j, pw, ph);
+        }
+      }
+      ctx.restore();
+      ctx.restore();
+    }
+
+    let cardResizeObserver = null;
+    function registerAllCards() {
+      if (typeof ResizeObserver !== "undefined") {
+        cardResizeObserver = new ResizeObserver((entries) => {
+          for (let i = 0; i < entries.length; i += 1) {
+            const el = entries[i].target;
+            const cid = el.getAttribute("data-card-id");
+            const st = STATE.cards.get(cid);
+            if (st) {
+              cachedWordRectsAt = 0;
+              drawCardMedium(st);
+            }
+          }
+        });
+      }
+
+      document.querySelectorAll(".kim-card").forEach((el) => {
+        const cardId = el.getAttribute("data-card-id") || ("card-" + Math.random());
+        const canvas = el.querySelector(".kim-card-canvas");
+        if (!canvas || STATE.cards.has(cardId)) return;
+
+        const st = {
+          cardId,
+          el,
+          canvas,
+          take: Number(el.getAttribute("data-take") || "1"),
+          drawProgress: STATE.reducedMotion ? 1 : 0.08,
+          plotting: !STATE.reducedMotion
+        };
+        STATE.cards.set(cardId, st);
+        if (cardResizeObserver) cardResizeObserver.observe(el);
+
+        el.addEventListener("mouseenter", (ev) => {
+          const mId = effectiveMediumForCard(el.getAttribute("data-card-medium"));
+          STATE.activeHoverMedium = mId;
+          spawnParticles(mId, ev.clientX, ev.clientY, 2);
+          if (STATE.mediumMode === "cycle") applyThemeTokens();
+          drawCardMedium(st);
+        });
+      });
+    }
+
+    function replotAllCards(incrementTake) {
+      cachedWordRectsAt = 0;
+      STATE.cards.forEach((st) => {
+        if (incrementTake) {
+          st.take += 1;
+          st.el.setAttribute("data-take", String(st.take));
+        }
+        st.drawProgress = STATE.reducedMotion ? 1 : 0.04;
+        st.plotting = !STATE.reducedMotion;
+        drawCardMedium(st);
+      });
+    }
+
+    function resizeViewportCanvases() {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      [lampsCanvas, particleCanvas, toolCanvas].forEach((c) => {
+        if (!c) return;
+        if (c.width !== w || c.height !== h) {
+          c.width = w;
+          c.height = h;
+        }
+      });
+      STATE.cards.forEach((st) => drawCardMedium(st));
+    }
+
+    function renderDarkroomLamps(nowMs) {
+      const ctx = lampsCanvas.getContext("2d");
+      const w = lampsCanvas.width;
+      const h = lampsCanvas.height;
+      ctx.clearRect(0, 0, w, h);
+
+      const isNight = STATE.edition === "night";
+      const tSec = STATE.reducedMotion ? 0 : nowMs / 1000;
+
+      for (let i = 0; i < SPEC.darkroomLamps.length; i += 1) {
+        const L = SPEC.darkroomLamps[i];
+        const alpha = Math.min(0.42, isNight ? L.alphaNight : L.alphaDay);
+        const dx = Math.sin((tSec / L.period) * Math.PI * 2) * L.drift[0];
+        const dy = Math.cos((tSec / L.period) * Math.PI * 2) * L.drift[1];
+        const cx = (L.anchor[0] + dx) * w;
+        const cy = (L.anchor[1] + dy) * h;
+        const rad = Math.max(w, h) * L.radius;
+
+        const g = ctx.createRadialGradient(cx, cy, 4, cx, cy, rad);
+        g.addColorStop(0, L.hex);
+        g.addColorStop(1, "transparent");
+        ctx.save();
+        ctx.globalAlpha = alpha;
+        ctx.fillStyle = g;
+        ctx.fillRect(0, 0, w, h);
+        ctx.restore();
+      }
+    }
+
+    function renderParticlesAndTool(nowMs, dtSec) {
+      const words = collectViewportWordRects(STATE.particles.length > 0);
+      const dockH = (document.getElementById("kim-dock")?.offsetHeight || 88) + 4;
+
+      const guardEl = document.getElementById("kim-guard-telemetry");
+      if (guardEl) {
+        guardEl.textContent = "Word Guards: " + STATE.wordGuardCount + " active (0 collisions; " + STATE.deflectedTotal + " deflected)";
+      }
+      const partEl = document.getElementById("kim-particle-telemetry");
+      if (partEl) {
+        partEl.textContent = "Particles: " + STATE.particles.length + " / 150";
+      }
+
+      const pctx = particleCanvas.getContext("2d");
+      pctx.clearRect(0, 0, particleCanvas.width, particleCanvas.height);
+
+      const survivors = [];
+      for (let i = 0; i < STATE.particles.length; i += 1) {
+        const pt = STATE.particles[i];
+        const age = nowMs - pt.born;
+        if (age >= pt.life) continue;
+
+        pt.vy += pt.gravity * dtSec;
+        pt.vx *= pt.drag;
+        pt.vy *= pt.drag;
+        const nx = pt.x + pt.vx * dtSec;
+        const ny = pt.y + pt.vy * dtSec;
+        const pad = Math.max(artPixelSize(), pt.size) + 5;
+
+        if (ny - pad <= dockH || circleHitsWords(nx, ny, pad, words)) {
+          STATE.deflectedTotal += 1;
+          continue;
+        }
+        pt.x = nx;
+        pt.y = ny;
+        survivors.push(pt);
+
+        pctx.save();
+        pctx.globalAlpha = Math.max(0, 1 - age / pt.life);
+        pctx.fillStyle = pt.color;
+        if (pt.medId === "pixel") {
+          const S = artPixelSize();
+          pctx.fillRect(Math.round(pt.x / S) * S, Math.round(pt.y / S) * S, S, S);
+        } else {
+          pctx.beginPath();
+          pctx.arc(pt.x, pt.y, pt.size, 0, Math.PI * 2);
+          pctx.fill();
+        }
+        pctx.restore();
+      }
+      STATE.particles = survivors;
+
+      // Hard destination-out mask over dock + every visible live word box (R1.9d)
+      if (survivors.length > 0) {
+        pctx.save();
+        pctx.globalCompositeOperation = "destination-out";
+        pctx.fillStyle = "#000";
+        pctx.fillRect(0, 0, particleCanvas.width, dockH);
+        for (let i = 0; i < words.length; i += 1) {
+          const b = words[i];
+          pctx.fillRect(b.left - 4, b.top - 4, b.width + 8, b.height + 8);
+        }
+        pctx.restore();
+      }
+
+      // Physical Tool Sprite Layer
+      const tctx = toolCanvas.getContext("2d");
+      tctx.clearRect(0, 0, toolCanvas.width, toolCanvas.height);
+      if (STATE.showTool && STATE.pointerInside && !STATE.reducedMotion) {
+        const medId = activeGlobalMediumId();
+        const pal = getPal(medId);
+        const tx = STATE.pointerX;
+        const ty = STATE.pointerY;
+        if (ty > dockH + 14 && !circleHitsWords(tx, ty, 16, words)) {
+          tctx.save();
+          tctx.translate(tx, ty);
+          tctx.strokeStyle = pal.ink;
+          tctx.fillStyle = pal.accents[0] || pal.plate;
+          tctx.lineWidth = 2;
+          if (medId === "pixel") {
+            const S = artPixelSize();
+            tctx.fillRect(-S * 2, 0, S * 4, S);
+            tctx.fillRect(0, -S * 2, S, S * 4);
+          } else if (medId === "sumi-ink") {
+            tctx.rotate(-0.75);
+            // Bamboo handle + tapered wolf-hair tuft
+            tctx.fillStyle = STATE.edition === "night" ? "#A9A397" : "#C9A13B";
+            tctx.fillRect(9, -2.5, 26, 5);
+            tctx.strokeRect(9, -2.5, 26, 5);
+            tctx.fillStyle = pal.ink;
+            tctx.beginPath();
+            tctx.moveTo(0, 0);
+            tctx.quadraticCurveTo(5, -4, 10, -2.8);
+            tctx.lineTo(10, 2.8);
+            tctx.quadraticCurveTo(5, 4, 0, 0);
+            tctx.fill();
+          } else {
+            tctx.rotate(-0.65);
+            tctx.fillRect(4, -3, 26, 6);
+            tctx.strokeRect(4, -3, 26, 6);
+            tctx.beginPath();
+            tctx.moveTo(0, 0);
+            tctx.lineTo(4, -3);
+            tctx.lineTo(4, 3);
+            tctx.closePath();
+            tctx.fill();
+          }
+          tctx.restore();
+        }
+      }
+    }
+
+    // Interactive Business Features: Script Tabs, Copy, Objection Accordion, Unit Economics, 90-Day Checklist
+    function initInteractiveCompendium() {
+      // 1. Script Tabs
+      const tabBtns = document.querySelectorAll(".script-tab-btn");
+      const panels = document.querySelectorAll(".script-panel");
+      tabBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const target = btn.getAttribute("data-script-tab");
+          tabBtns.forEach((b) => {
+            const on = b === btn;
+            b.classList.toggle("kim-btn-active", on);
+            b.setAttribute("aria-selected", String(on));
+          });
+          panels.forEach((p) => p.classList.toggle("active", p.id === "script-" + target));
+          cachedWordRectsAt = 0;
+        });
+      });
+
+      // 2. Copy Script Buttons
+      document.querySelectorAll(".copy-script-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-copy-target");
+          const el = document.getElementById(id);
+          if (!el) return;
+          const text = el.textContent || "";
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).catch(() => {});
+          }
+          const orig = btn.textContent;
+          btn.textContent = "Copied!";
+          setTimeout(() => { btn.textContent = orig; }, 1400);
+        });
+      });
+
+      // 3. Objection Accordion
+      document.querySelectorAll("#objection-accordion .acc-trigger").forEach((trig) => {
+        trig.addEventListener("click", () => {
+          const item = trig.closest(".acc-item");
+          if (!item) return;
+          const willOpen = !item.classList.contains("open");
+          item.classList.toggle("open", willOpen);
+          trig.setAttribute("aria-expanded", String(willOpen));
+          const icon = trig.querySelector(".acc-icon");
+          if (icon) icon.textContent = willOpen ? "-" : "+";
+          cachedWordRectsAt = 0;
+        });
+      });
+
+      // 4. Unit Economics & Pipeline Calculator
+      const elCh = document.getElementById("calc-chapters");
+      const elRet = document.getElementById("calc-retainers");
+      const elSpr = document.getElementById("calc-sprints");
+      const elSyn = document.getElementById("calc-syndicates");
+      const elSh = document.getElementById("calc-share");
+
+      function fmtUSD(n) {
+        return "$" + Math.round(n).toLocaleString("en-US");
+      }
+
+      function updateCalculator() {
+        const chapters = Number(elCh.value);
+        const retainers = Number(elRet.value);
+        const sprints = Number(elSpr.value);
+        const syndicates = Number(elSyn.value);
+        const podPct = Number(elSh.value);
+        const reservePct = 15;
+        const studioPct = 100 - podPct - reservePct;
+
+        document.getElementById("val-chapters").textContent = String(chapters);
+        document.getElementById("val-retainers").textContent = String(retainers);
+        document.getElementById("val-sprints").textContent = String(sprints);
+        document.getElementById("val-syndicates").textContent = String(syndicates);
+        document.getElementById("val-share").textContent = podPct + "%";
+        document.getElementById("val-studio-pct").textContent = studioPct + "%";
+
+        const revRet = chapters * retainers * 2600;
+        const revSpr = chapters * sprints * 950;
+        const revSyn = syndicates * 6800;
+        const monthlyGross = revRet + revSpr + revSyn;
+        const arr = monthlyGross * 12;
+
+        const totalPodPool = monthlyGross * (podPct / 100);
+        const perChapterPod = totalPodPool / chapters;
+        const perMemberAvg = perChapterPod / 4;
+        const studioMargin = monthlyGross * (studioPct / 100);
+        const reservePool = monthlyGross * (reservePct / 100);
+
+        // Funnel math: 20% reply -> 35% discovery -> 30% close = 2.1% combined conversion
+        // Monthly new closes per chapter = monthly sprints + 25% quarterly retainer churn/growth refill (min 0.5)
+        const monthlyClosesPerCh = sprints + Math.max(0.5, retainers * 0.25);
+        const weeklyClosesPerCh = monthlyClosesPerCh / 4.33;
+        const closeRate = 0.30;
+        const discRate = 0.35;
+        const replyRate = 0.20;
+        const weeklyDiscPerCh = weeklyClosesPerCh / closeRate;
+        const weeklyRepliesPerCh = weeklyDiscPerCh / discRate;
+        const weeklyTouchesPerCh = Math.ceil(weeklyRepliesPerCh / replyRate);
+        const weeklyTouchesTotal = weeklyTouchesPerCh * chapters;
+
+        document.getElementById("out-gross").textContent = fmtUSD(monthlyGross);
+        document.getElementById("out-mix-line").textContent =
+          "Retainers " + fmtUSD(revRet) + " + Sprints " + fmtUSD(revSpr) + " + Syndicates " + fmtUSD(revSyn);
+        document.getElementById("out-arr").textContent = fmtUSD(arr);
+        document.getElementById("out-pod").textContent = fmtUSD(perChapterPod);
+        document.getElementById("out-per-member").textContent = "~" + fmtUSD(perMemberAvg) + " avg / pod member / mo";
+        document.getElementById("out-studio").textContent = fmtUSD(studioMargin);
+        document.getElementById("out-reserve").textContent = "Plus " + fmtUSD(reservePool) + "/mo equipment & live reserve (15%)";
+        document.getElementById("out-touches").textContent = weeklyTouchesPerCh + " touches";
+        document.getElementById("out-funnel-mini").textContent =
+          "~" + weeklyRepliesPerCh.toFixed(1) + " replies -> " + weeklyDiscPerCh.toFixed(1) + " calls -> " + weeklyClosesPerCh.toFixed(2) + " closes/wk";
+
+        const barPod = document.getElementById("bar-pod");
+        const barStudio = document.getElementById("bar-studio");
+        const barReserve = document.getElementById("bar-reserve");
+        if (barPod && barStudio && barReserve) {
+          barPod.style.width = podPct + "%";
+          barPod.textContent = podPct + "% POD";
+          barStudio.style.width = studioPct + "%";
+          barStudio.textContent = studioPct + "% STUDIO";
+          barReserve.style.width = reservePct + "%";
+          barReserve.textContent = reservePct + "% RES";
+        }
+
+        document.getElementById("out-funnel-explain").innerHTML =
+          "<strong>Reverse-Engineered BD Funnel Math:</strong> Sustaining " + sprints + " sprint(s)/mo + ~" + Math.max(0.5, retainers * 0.25).toFixed(1) +
+          " retainer refill(s)/mo requires <strong>" + monthlyClosesPerCh.toFixed(1) + " new closes/month per chapter</strong> (" + weeklyClosesPerCh.toFixed(2) +
+          "/wk). Working backwards from <strong>20% reply &rarr; 35% discovery &rarr; 30% close</strong> (2.1% net), each chapter needs <strong>" +
+          weeklyTouchesPerCh + " targeted walk-ins/DMs per week</strong> (" + weeklyTouchesTotal + " total across " + chapters + " chapter" + (chapters === 1 ? "" : "s") + ").";
+      }
+
+      [elCh, elRet, elSpr, elSyn, elSh].forEach((inp) => {
+        if (inp) inp.addEventListener("input", updateCalculator);
+      });
+
+      const presets = {
+        seed: { ch: 1, ret: 3, spr: 2, syn: 0, sh: 60 },
+        cluster: { ch: 5, ret: 4, spr: 2, syn: 2, sh: 60 },
+        network: { ch: 15, ret: 4, spr: 3, syn: 5, sh: 62 }
+      };
+      document.querySelectorAll(".calc-preset-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const p = presets[btn.getAttribute("data-preset")];
+          if (!p) return;
+          elCh.value = String(p.ch);
+          elRet.value = String(p.ret);
+          elSpr.value = String(p.spr);
+          elSyn.value = String(p.syn);
+          elSh.value = String(p.sh);
+          updateCalculator();
+        });
+      });
+      updateCalculator();
+
+      // 5. 90-Day Interactive Checklist (localStorage persistence)
+      const STORAGE_KEY = "li-compendium-90d-v1";
+      const checkboxes = Array.from(document.querySelectorAll("#playbook-checklist input[type='checkbox']"));
+
+      function loadChecklist() {
+        let saved = {};
+        try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"); } catch (e) { saved = {}; }
+        checkboxes.forEach((cb) => {
+          const id = cb.getAttribute("data-task-id");
+          cb.checked = Boolean(saved[id]);
+          const row = cb.closest(".check-row");
+          if (row) row.classList.toggle("is-done", cb.checked);
+        });
+        updateChecklistProgress();
+      }
+
+      function saveChecklist() {
+        const data = {};
+        checkboxes.forEach((cb) => {
+          data[cb.getAttribute("data-task-id")] = cb.checked;
+        });
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) {}
+      }
+
+      function updateChecklistProgress() {
+        const total = checkboxes.length;
+        const done = checkboxes.filter((cb) => cb.checked).length;
+        const pct = total ? Math.round((done / total) * 100) : 0;
+        const title = document.getElementById("check-progress-title");
+        const fill = document.getElementById("check-progress-fill");
+        const bar = document.getElementById("check-progress-bar");
+        if (title) title.textContent = done + " of " + total + " Milestones Complete (" + pct + "%)";
+        if (fill) fill.style.width = pct + "%";
+        if (bar) bar.setAttribute("aria-valuenow", String(pct));
+      }
+
+      checkboxes.forEach((cb) => {
+        cb.addEventListener("change", () => {
+          const row = cb.closest(".check-row");
+          if (row) row.classList.toggle("is-done", cb.checked);
+          saveChecklist();
+          updateChecklistProgress();
+        });
+      });
+
+      const resetBtn = document.getElementById("reset-checklist-btn");
+      if (resetBtn) {
+        resetBtn.addEventListener("click", () => {
+          checkboxes.forEach((cb) => {
+            cb.checked = false;
+            const row = cb.closest(".check-row");
+            if (row) row.classList.remove("is-done");
+          });
+          saveChecklist();
+          updateChecklistProgress();
+        });
+      }
+      loadChecklist();
+
+      // 6. Active Jump Nav Highlight on Scroll
+      const chapters = Array.from(document.querySelectorAll("section.chapter"));
+      const jumpLinks = Array.from(document.querySelectorAll(".jump-link"));
+      function updateActiveJump() {
+        const y = window.scrollY + 170;
+        let currentId = chapters[0]?.id || "ch-01";
+        for (let i = 0; i < chapters.length; i += 1) {
+          if (chapters[i].offsetTop <= y) currentId = chapters[i].id;
+        }
+        jumpLinks.forEach((lnk) => {
+          lnk.classList.toggle("is-current", lnk.getAttribute("href") === "#" + currentId);
+        });
+      }
+      window.addEventListener("scroll", () => {
+        cachedWordRectsAt = 0;
+        updateActiveJump();
+      }, { passive: true });
+      updateActiveJump();
+    }
+
+    // Wire R4 Dock Controls
+    function initControls() {
+      const sel = document.getElementById("kim-medium-select");
+      sel.value = STATE.mediumMode;
+      sel.addEventListener("change", () => {
+        STATE.mediumMode = sel.value;
+        try { localStorage.setItem("kim-medium", STATE.mediumMode); } catch (e) {}
+        applyThemeTokens();
+        renderMediumRibbon();
+        replotAllCards(true);
+      });
+
+      document.getElementById("kim-edition-btn").addEventListener("click", () => {
+        STATE.edition = STATE.edition === "day" ? "night" : "day";
+        try { localStorage.setItem("kim-edition", STATE.edition); } catch (e) {}
+        applyThemeTokens();
+        renderMediumRibbon();
+        STATE.cards.forEach((st) => drawCardMedium(st));
+      });
+
+      document.getElementById("kim-tool-btn").addEventListener("click", () => {
+        STATE.showTool = !STATE.showTool;
+        applyThemeTokens();
+      });
+
+      const slider = document.getElementById("kim-brush-slider");
+      slider.value = String(STATE.brushMultiplier);
+      slider.addEventListener("input", () => {
+        STATE.brushMultiplier = parseFloat(slider.value) || 1.0;
+        try { localStorage.setItem("kim-brush", String(STATE.brushMultiplier)); } catch (e) {}
+        applyThemeTokens();
+        STATE.cards.forEach((st) => drawCardMedium(st));
+      });
+
+      document.getElementById("kim-replot-btn").addEventListener("click", () => {
+        replotAllCards(true);
+        spawnParticles(activeGlobalMediumId(), 32, 160, 6);
+      });
+
+      window.addEventListener("mousemove", (ev) => {
+        STATE.pointerX = ev.clientX;
+        STATE.pointerY = ev.clientY;
+        STATE.pointerInside = true;
+      });
+      window.addEventListener("mouseleave", () => {
+        STATE.pointerInside = false;
+      });
+
+      window.addEventListener("resize", () => {
+        cachedWordRectsAt = 0;
+        resizeViewportCanvases();
+      });
+    }
+
+    // Expose Kinesis in Media Verification API
+    window.KIM = {
+      STATE,
+      SPEC,
+      replotAllCards,
+      verifyWordProtection() {
+        const words = collectViewportWordRects(true);
+        const colliding = STATE.particles.filter((pt) => circleHitsWords(pt.x, pt.y, 0, words));
+        return {
+          ok: colliding.length === 0,
+          activeWordGuards: words.length,
+          liveParticles: STATE.particles.length,
+          collidingParticles: colliding.length,
+          deflectedTotal: STATE.deflectedTotal
+        };
+      }
+    };
+
+    // Animation Loop + Hidden-Tab Fallback (R1.10)
+    let lastTick = performance.now();
+    function tick(nowMs) {
+      const dtSec = Math.min(0.1, Math.max(0.004, (nowMs - lastTick) / 1000));
+      lastTick = nowMs;
+
+      STATE.cards.forEach((st) => {
+        if (st.plotting && st.drawProgress < 1) {
+          st.drawProgress = Math.min(1, st.drawProgress + dtSec * 0.85);
+          if (st.drawProgress >= 1) st.plotting = false;
+          drawCardMedium(st);
+        }
+      });
+
+      renderDarkroomLamps(nowMs);
+      renderParticlesAndTool(nowMs, dtSec);
+    }
+
+    function raf(nowMs) {
+      tick(nowMs);
+      requestAnimationFrame(raf);
+    }
+
+    setInterval(() => {
+      if (document.hidden) tick(performance.now());
+    }, 90);
+
+    // Boot
+    registerAllCards();
+    applyThemeTokens();
+    renderMediumRibbon();
+    initControls();
+    initInteractiveCompendium();
+    resizeViewportCanvases();
+    tick(performance.now());
+    requestAnimationFrame(raf);
+  })();
+  </script>
+</body>
+</html>
